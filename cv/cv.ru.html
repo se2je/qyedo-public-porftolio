@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Резюме — Qyedo, fullstack product engineer</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<!-- ЧЕРНОВИК. Всё в <span class="ph"> — заполнить реальными данными или удалить. -->
+<main class="page">
+
+  <header>
+    <div>
+      <h1><span class="ph">[Имя Фамилия]</span></h1>
+      <div class="handle">qyedo</div>
+      <div class="role">Fullstack product engineer · ИИ-системы</div>
+    </div>
+    <div class="contacts">
+      <div><a href="https://t.me/qyedo">Telegram @qyedo</a></div>
+      <div><span class="ph">[email]</span></div>
+      <div><span class="ph">[сайт-портфолио]</span> · <span class="ph">[GitHub]</span> · <span class="ph">[LinkedIn]</span></div>
+      <div>Remote · UTC-2 — UTC+2</div>
+    </div>
+  </header>
+
+  <section class="summary">
+    <h2>О себе</h2>
+    <p>Fullstack-инженер, который ведёт продукт целиком: интерфейс, бэкенд, платёжный слой и&nbsp;ИИ-системы. Построил GameFi-экосистему для Telegram, Web и&nbsp;Android с&nbsp;единым финансовым слоем, мультитенантную SaaS-платформу с&nbsp;конвейером из&nbsp;шести ИИ-агентов и&nbsp;общий crypto-платёжный слой для нескольких продуктов.</p>
+    <div class="facts">
+      <span><b>2020</b>пишу код</span>
+      <span><b><span class="ph">[N]</span></b>продуктов в продакшене</span>
+      <span><b><span class="ph">[N]</span></b>пользователей</span>
+      <span><b>6</b>ИИ-агентов в конвейере MetaForge</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Опыт</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Fullstack Developer <span class="org">— GC Group</span></div>
+        <div class="dates">2025 — сейчас</div>
+      </div>
+      <div class="job-sub">Crypto / Web3 и внутренние web-продукты. <span class="ph">[команда: N человек; за что отвечаю лично]</span></div>
+      <ul>
+        <li><b>NFINE</b> — GameFi-экосистема для Telegram, Web и Android: сайт токена и приложение. Экономика, социальные механики, farming, задания и prediction-механики работают через единый финансовый слой с журналом транзакций. <span class="ph">[результат: пользователи, объём операций]</span></li>
+        <li><b>MetaForge</b> — мультитенантная SaaS-платформа для управления компанией: проекты, задачи, сотрудники, документы, финансы. Права доступа проверяются на бэкенде по роли и зоне ответственности — та же модель ограничивает контекст встроенного ИИ. <span class="ph">[результат]</span></li>
+        <li><b>ИИ-конвейер MetaForge</b> — оркестрация нескольких моделей по этапам clarifier → architect → developer → reviewer → security → deployer и Docker-среда для запуска сгенерированного кода с живым предпросмотром.</li>
+        <li><b>Платёжный слой</b> для нескольких продуктов: платёжные сессии, отслеживание транзакций и подготовка выплат на кошельки пользователей. <span class="ph">[сколько продуктов, объём]</span></li>
+        <li><b>Realtime и фоновые задачи</b>: WebSocket, blockchain-проверки, ежедневные задания, начисление наград.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title"><span class="ph">[должность / проекты]</span></div>
+        <div class="dates">2023 — 2025</div>
+      </div>
+      <div class="job-sub"><span class="ph">[чем занимался между стажировкой и GC Group]</span></div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Frontend Developer, стажёр <span class="org">— Smart Techno Lab</span></div>
+        <div class="dates">2023 · 4 месяца</div>
+      </div>
+      <div class="job-sub">Коммерческая frontend-разработка в команде. <span class="ph">[стек и 1–2 конкретные задачи]</span></div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Freelance Developer</div>
+        <div class="dates">2020 — 2023</div>
+      </div>
+      <div class="job-sub">Сайты и лендинги для частных заказчиков на HTML, CSS и JavaScript.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Другие проекты</h2>
+    <ul>
+      <li><b>BAC Token</b> — сайт токена и Telegram Mini App для Business Angels Community: регистрация через Telegram, балансы, пополнение через crypto-платёжный шлюз, внутренний магазин. Дизайн продукта и fullstack (React, Python).</li>
+      <li><b>FreeSmrks</b> — сайт запуска crypto-токена: дизайн и frontend на React.</li>
+      <li><b>Под NDA</b> (могу разобрать лично): платёжный шлюз для TON; система операций с криптокошельками; единый шлюз к ИИ-провайдерам (Claude, OpenAI, DeepSeek, Grok); TON DevTools — аналитика токенов, пулов, бирж и транзакций.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Как я работаю с ИИ</h2>
+    <p>Майндкодинг вместо вайбкодинга: ИИ пишет много кода, решения принимаю я. Агенты ускоряют работу, а&nbsp;архитектура, модель данных, платежи, права доступа и&nbsp;безопасность остаются под моим контролем. Инструменты: <span class="ph">[список]</span>. <span class="ph">[пример результата: MVP за N недель]</span></p>
+  </section>
+
+  <section>
+    <h2>Навыки</h2>
+    <dl class="skills">
+      <dt>Фронтенд</dt><dd>TypeScript, React, MobX, Redux, Zustand, React Router, Tailwind CSS, SCSS Modules</dd>
+      <dt>Бэкенд</dt><dd>Go (chi), Python, FastAPI, Pydantic, REST API, WebSocket, JWT</dd>
+      <dt>Деньги и Web3</dt><dd>TON SDK, платёжные шлюзы, журнал транзакций, индексация транзакций, <span class="nw">wallet deep-linking</span>, USDT</dd>
+      <dt>ИИ-системы</dt><dd>LLM-оркестрация, мультиагентные конвейеры, Claude · OpenAI · DeepSeek · Grok, <span class="nw">Docker-песочницы</span>, n8n</dd>
+      <dt>Данные</dt><dd>MongoDB, PostgreSQL, SQLite, MinIO, S3 / GCS</dd>
+      <dt>Платформы</dt><dd>Telegram Mini Apps, Web, Android WebView, Docker, Git (Gitea, GitLab)</dd>
+      <dt>Языки</dt><dd>Русский — родной, английский — C1</dd>
+      <dt>Образование</dt><dd><span class="ph">[вуз, специальность, год — или убрать строку]</span></dd>
+    </dl>
+  </section>
+
+</main>
+</body>
+</html>
