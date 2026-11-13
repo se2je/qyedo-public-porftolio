@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Виталий Левин (qyedo) — fullstack product engineer. Строю продукты целиком: интерфейс, бэкенд, платёжный слой и ИИ-системы. Майндкодинг вместо вайбкодинга.">
-<meta name="theme-color" content="#0b0a09">
+<meta name="theme-color" content="#0c0c0b">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Виталий Левин — fullstack product engineer">
 <meta property="og:description" content="Строю продукты целиком — от интерфейса до финансового ядра и ИИ-агентов. Пишу с ИИ — думаю сам.">
@@ -16,646 +16,534 @@
 <link rel="canonical" href="https://se2je.github.io/qyedo-public-porftolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a09'/%3E%3Ctext x='12' y='46' font-family='monospace' font-size='40' font-weight='700' fill='%23e9e5d8'%3Eq%3C/text%3E%3Ccircle cx='48' cy='42' r='5.5' fill='%23d99a3d'/%3E%3C/svg%3E">
 <title>Виталий Левин — fullstack product engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:slnt,wght,CRSV,SHRP@-12..0,100..900,0..1,0..100&family=Onest:wght@400;500;600&family=Martian+Mono:wdth,wght@75..112.5,300..600&display=swap">
+<script>
+  // hide the hero until the intro animation is ready (never longer than 3.5 s)
+  (function(){ var d = document.documentElement;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    d.classList.add('is-loading'); setTimeout(function(){ d.classList.remove('is-loading'); }, 3500); })();
+</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
   :root{
-    --bg:#0b0a09;
-    --surface:#121110;
-    --line:#242119;
-    --line-soft:#1a1814;
-    --text:#e9e5d8;
-    --text-dim:#9a9484;
-    --text-mute:#857f70;
-    --amber:#d99a3d;
-    --amber-dim:#8a6a2e;
+    --bg:#0c0c0b;
+    --bg-2:#141413;
+    --surface:#141413;
+    --line:rgba(239,237,230,.11);
+    --line-soft:rgba(239,237,230,.06);
+    --line-strong:rgba(239,237,230,.24);
+    --text:#efede6;
+    --text-dim:#a6a49b;
+    --text-mute:#8e8c83;
+    --accent:#d4ff3f;
+    --accent-ink:#0c0c0b;
+    --accent-dim:rgba(212,255,63,.38);
+    --amber:var(--accent);
+    --amber-dim:var(--accent-dim);
 
-    --c-frontend:#d99a3d;
-    --c-go:#4fb8ad;
-    --c-py:#6fa8dc;
-    --c-data:#84b366;
-    --c-web3:#a98adf;
-    --c-platform:#dd7fa0;
-    --c-infra:#95a1ae;
-    --nav-h:57px;
+    --f-display:'Geologica', 'Onest', system-ui, sans-serif;
+    --f-text:'Onest', system-ui, sans-serif;
+    --f-mono:'Martian Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+    --nav-h:72px;
+    --pad:clamp(20px, 4vw, 56px);
+    --ease:cubic-bezier(.2,.7,.1,1);
   }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  /* ---------- base ---------- */
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ background:var(--bg); -webkit-text-size-adjust:100%; }
+  html.lenis, html.lenis body{ height:auto; }
+  .lenis.lenis-smooth{ scroll-behavior:auto !important; }
+  .lenis.lenis-stopped{ overflow:hidden; }
   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'IBM Plex Sans', sans-serif;
-    line-height:1.65;
-    font-size:15.5px;
-    -webkit-font-smoothing:antialiased;
+    background:var(--bg); color:var(--text);
+    font-family:var(--f-text); font-size:16px; line-height:1.6; font-stretch:87.5%;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:clip;
   }
-  ::selection{ background:var(--amber); color:#161208; }
-
-  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--text); }
-  .mono{ font-family:'JetBrains Mono', monospace; }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
   a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; }
+  button{ font:inherit; color:inherit; }
+  h1,h2,h3,h4{ font-family:var(--f-display); font-weight:600; letter-spacing:-.02em; line-height:1.1; color:var(--text); }
+  .mono{ font-family:var(--f-mono); }
+  .nw{ white-space:nowrap; }
+  .dim{ color:var(--text-dim); }
+  .wrap-wide{ max-width:1360px; margin:0 auto; padding:0 var(--pad); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
 
-  #bg{ position:fixed; inset:0; z-index:-1; pointer-events:none; display:block; }
+  /* film grain + cursor follower */
+  .grain{
+    position:fixed; inset:-50%; width:200%; height:200%; z-index:90; pointer-events:none; opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 1.2s steps(5) infinite;
+  }
+  @keyframes grain{ 0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-5%)} 60%{transform:translate(-2%,6%)} 80%{transform:translate(5%,-2%)} 100%{transform:translate(0,0)} }
+  .cursor{
+    position:fixed; top:0; left:0; z-index:120; pointer-events:none; display:none;
+    width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%;
+    background:var(--accent); color:var(--accent-ink); mix-blend-mode:difference;
+    align-items:center; justify-content:center; text-align:center;
+    font-family:var(--f-mono); font-size:10px; letter-spacing:.02em; line-height:1.2;
+    transition:width .4s var(--ease), height .4s var(--ease), margin .4s var(--ease);
+  }
+  @media(pointer:fine){ .has-motion .cursor{ display:flex; } }
+  .cursor.is-link{ width:34px; height:34px; margin:-17px 0 0 -17px; }
+  .cursor.is-big{ width:88px; height:88px; margin:-44px 0 0 -44px; mix-blend-mode:normal; }
+  .cursor-label{ opacity:0; transition:opacity .2s; }
+  .cursor.is-big .cursor-label{ opacity:1; }
 
-  .wrap-wide{ max-width:1180px; margin:0 auto; padding:0 26px; }
-
-  /* ---------- NAV ---------- */
-  nav{ border-bottom:1px solid var(--line); background:rgba(11,10,9,0.7); backdrop-filter:blur(6px); position:sticky; top:0; z-index:10;}
-  nav .wrap-wide{ display:flex; align-items:center; justify-content:space-between; height:calc(var(--nav-h) - 1px); gap:20px; }
-  .brand{ font-family:'JetBrains Mono', monospace; font-weight:500; font-size:14.5px; color:var(--text); }
-  .brand .dot{ color:var(--amber); }
-  .navlinks{ display:none; gap:26px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--text-dim); margin-right:auto; margin-left:36px;}
-  .navlinks a:hover{ color:var(--text); }
-  @media(min-width:680px){ .navlinks{ display:flex; } }
-  .nav-right{ display:flex; align-items:center; gap:18px; }
-  .nav-cta{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--amber); border-bottom:1px solid var(--amber-dim); padding-bottom:2px; white-space:nowrap;}
-  .nav-cta:hover{ border-color:var(--amber); }
-
-  .langtoggle{ display:flex; border:1px solid var(--line); border-radius:2px; overflow:hidden; font-family:'JetBrains Mono', monospace; font-size:12px; }
-  .langtoggle button{ background:none; border:none; color:var(--text-mute); padding:6px 10px; cursor:pointer; font-family:inherit; font-size:inherit; }
-  .langtoggle button.active{ background:var(--amber); color:#191307; }
+  /* ---------- nav ---------- */
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:60; height:var(--nav-h); transition:transform .6s var(--ease), background-color .3s, border-color .3s; border-bottom:1px solid transparent; }
+  .nav.is-scrolled{ background:rgba(12,12,11,.74); -webkit-backdrop-filter:blur(14px) saturate(140%); backdrop-filter:blur(14px) saturate(140%); border-bottom-color:var(--line-soft); }
+  .nav.is-hidden{ transform:translateY(-101%); }
+  .nav .wrap-wide{ height:100%; display:flex; align-items:center; gap:24px; }
+  .brand{ font-family:var(--f-display); font-weight:700; font-size:21px; letter-spacing:-.04em; }
+  .brand i{ font-style:normal; color:var(--accent); }
+  .navlinks{ display:none; gap:2px; margin-left:auto; }
+  .navlinks a{ padding:8px 14px; border-radius:999px; font-size:14.5px; color:var(--text-dim); transition:color .2s, background-color .2s; }
+  .navlinks a:hover{ color:var(--text); background:var(--line-soft); }
+  @media(min-width:860px){ .navlinks{ display:flex; } }
+  .nav-right{ display:flex; align-items:center; gap:10px; margin-left:auto; }
+  @media(min-width:860px){ .nav-right{ margin-left:8px; } }
+  .langtoggle{ display:flex; padding:3px; border:1px solid var(--line); border-radius:999px; font-family:var(--f-mono); font-size:10.5px; }
+  .langtoggle button{ background:none; border:0; color:var(--text-mute); padding:6px 10px; border-radius:999px; cursor:pointer; letter-spacing:.04em; transition:color .2s, background-color .2s; }
+  .langtoggle button.active{ background:var(--text); color:var(--bg); }
   .langtoggle button:not(.active):hover{ color:var(--text); }
+  .nav-cv{ display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 16px; border-radius:999px; background:var(--accent); color:var(--accent-ink); font-size:14px; font-weight:500; white-space:nowrap; }
+  .nav-cv:hover{ background:#e2ff7c; }
+  @media(max-width:420px){ .nav-cv{ padding:0 12px; } }
 
-  /* ---------- HERO ---------- */
-  header.hero{ padding:56px 0 52px; position:relative; }
-  .hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1fr; gap:40px; align-items:center; }
-  @media(min-width:900px){
-    header.hero{ min-height:calc(100vh - var(--nav-h)); padding:72px 0 52px; display:flex; flex-direction:column; justify-content:center; }
-    .hero-grid{ grid-template-columns:1.08fr 0.92fr; gap:56px; }
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px; height:54px; padding:0 28px;
+    border-radius:999px; border:1px solid var(--line-strong); color:var(--text);
+    font-family:var(--f-text); font-weight:500; font-size:15.5px; white-space:nowrap;
+    transition:background-color .25s, color .25s, border-color .25s;
   }
+  .btn-primary{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .btn-primary:hover{ background:#e2ff7c; border-color:#e2ff7c; }
+  .btn-ghost:hover{ border-color:var(--text); }
+  .btn .arr{ display:inline-block; transition:transform .4s var(--ease); }
+  .btn:hover .arr{ transform:translate(3px,-3px); }
+  .btn:hover .arr.down{ transform:translateY(3px); }
 
-  .hero-status{
-    display:inline-flex; align-items:center; gap:9px;
-    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-dim);
-    border:1px solid var(--line); border-radius:999px; padding:6px 14px 6px 11px;
-    background:rgba(18,17,16,0.75); margin-bottom:22px;
-  }
-  @media(max-width:420px){ .hero-status{ font-size:11px; padding:6px 12px 6px 10px; } }
-  .hero-status .pulse{ width:8px; height:8px; border-radius:50%; background:var(--c-data); flex-shrink:0; animation:pulse 2.2s ease-out infinite; }
-  @keyframes pulse{
-    0%{ box-shadow:0 0 0 0 rgba(132,179,102,.55); }
-    70%{ box-shadow:0 0 0 9px rgba(132,179,102,0); }
-    100%{ box-shadow:0 0 0 0 rgba(132,179,102,0); }
-  }
-  .hero-name{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin-bottom:16px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--text-dim); }
-  .hero-name .sep{ color:var(--text-mute); }
-  .hero-name .role{ color:var(--amber); }
-  .hero-name .name{ color:var(--text); font-weight:500; }
+  /* ---------- hero ---------- */
+  .hero{ position:relative; min-height:100svh; display:flex; padding:calc(var(--nav-h) + 8px) 0 24px; }
+  .hero > .wrap-wide{ width:100%; display:flex; flex-direction:column; }
+  .hero-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; font-family:var(--f-mono); font-size:11.5px; color:var(--text-dim); letter-spacing:.02em; }
+  .avail{ display:inline-flex; align-items:center; gap:10px; }
+  .avail i{ width:8px; height:8px; border-radius:50%; background:var(--accent); animation:ping 2.4s var(--ease) infinite; }
+  @keyframes ping{ 0%{ box-shadow:0 0 0 0 rgba(212,255,63,.55); } 70%,100%{ box-shadow:0 0 0 10px rgba(212,255,63,0); } }
 
-  .hero-tagline{
-    display:inline-flex; align-items:center; gap:10px; margin-top:20px;
-    font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--text);
-    border-bottom:1px dashed var(--amber-dim); padding-bottom:3px;
+  .hero-name{
+    margin-top:auto; padding-top:3vh;
+    font-family:var(--f-display); font-weight:600; font-size:clamp(64px, min(11.6vw, 21vh), 210px);
+    line-height:.86; letter-spacing:-.055em;
   }
-  .hero-tagline .k{ color:var(--amber); }
-  .hero-tagline:hover{ border-bottom-color:var(--amber); }
+  .hn-line{ display:block; white-space:nowrap; }
+  .hn-line + .hn-line{ padding-left:.92em; }
+  .hero-name .char{ display:inline-block; font-variation-settings:"wght" var(--wght, 600), "SHRP" var(--shrp, 0); }
 
-  .hero-stats{
-    position:relative; z-index:2; margin-top:52px;
-    display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;
-  }
-  @media(min-width:760px){ .hero-stats{ grid-template-columns:repeat(4,1fr); } }
-  .hero-stat{ background:rgba(13,12,11,0.94); padding:18px 20px 17px; }
-  .hero-stat .v{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:30px; line-height:1.1; color:var(--text); }
-  .hero-stat .l{ margin-top:7px; font-family:'JetBrains Mono', monospace; font-size:12px; line-height:1.5; color:var(--text-dim); }
+  .hero-grid{ display:grid; grid-template-columns:1fr; gap:32px; margin-top:clamp(20px, 3.5vh, 40px); align-items:end; }
+  @media(min-width:980px){ .hero-grid{ grid-template-columns:minmax(0,1fr) minmax(0,500px); gap:56px; } }
+  .hero-role{ font-family:var(--f-mono); font-size:12px; color:var(--accent); letter-spacing:.02em; margin-bottom:16px; min-height:1.5em; }
+  .hero-lead{ font-family:var(--f-display); font-weight:400; font-size:clamp(22px, 2.2vw, 34px); line-height:1.2; letter-spacing:-.025em; max-width:600px; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
 
+  .hero-facts{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-top:clamp(24px, 4vh, 44px); padding-top:18px; border-top:1px solid var(--line); }
+  @media(min-width:980px){ .hero-facts{ grid-template-columns:repeat(3, auto) 1fr; gap:72px; } }
+  .hero-facts b{ display:block; font-family:var(--f-display); font-weight:600; font-size:clamp(28px, 2.8vw, 44px); letter-spacing:-.04em; line-height:1; white-space:nowrap; }
+  .hero-facts span{ display:block; margin-top:8px; font-size:13px; line-height:1.35; color:var(--text-dim); max-width:200px; }
+  .scroll-cue{ display:none; justify-self:end; align-self:end; align-items:center; gap:12px; font-family:var(--f-mono); font-size:11px; color:var(--text-mute); }
+  .scroll-cue i{ width:1px; height:40px; background:linear-gradient(var(--text) 0 50%, transparent 50%); background-size:100% 200%; animation:cue 1.8s var(--ease) infinite; }
+  @keyframes cue{ 0%{ background-position:0 100%; } 100%{ background-position:0 -100%; } }
+  @media(min-width:980px){ .scroll-cue{ display:inline-flex; } }
+  .is-loading .hero [data-intro], .is-loading .hero-name{ visibility:hidden; }
 
-  /* mindcoding session terminal */
-  .mc-term .term-body{ padding:16px 18px 18px; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.55; }
-  .mc-cmd{ color:var(--text); margin-bottom:12px; word-break:break-word; min-height:1.55em; }
-  .mc-cmd .p{ color:var(--amber); }
-  .mc-line{
-    display:grid; grid-template-columns:56px 1fr 14px; gap:12px; align-items:baseline; padding:3px 0;
-    opacity:0; transform:translateY(4px); transition:opacity .25s ease, transform .25s ease;
-  }
+  /* ---------- terminal ---------- */
+  .term{ position:relative; background:#111110; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 40px 90px -40px rgba(0,0,0,.9); }
+  .term-bar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 18px; border-bottom:1px solid var(--line-soft); font-family:var(--f-mono); font-size:10.5px; color:var(--text-mute); letter-spacing:.02em; }
+  .term-bar .rec{ display:inline-flex; align-items:center; gap:8px; color:var(--text-dim); }
+  .term-bar .rec i{ width:7px; height:7px; border-radius:50%; background:var(--accent); animation:blink 1.4s steps(1) infinite; }
+  .mc-term .term-body{ padding:18px 18px 20px; font-family:var(--f-mono); font-size:11.5px; line-height:1.75; min-height:206px; }
+  .mc-cmd{ color:var(--text); margin-bottom:12px; word-break:break-word; min-height:1.75em; }
+  .mc-cmd .p{ color:var(--accent); }
+  .mc-line{ display:grid; grid-template-columns:56px 1fr 14px; gap:12px; align-items:baseline; opacity:0; transform:translateY(4px); transition:opacity .25s ease, transform .25s ease; }
   .mc-line.show{ opacity:1; transform:none; }
-  .mc-line .s{ color:var(--text-dim); }
+  .mc-line .s{ color:var(--text-mute); }
   .mc-line .t{ color:var(--text-dim); }
   .mc-line .m{ text-align:right; }
   .mc-line .m.wait{ color:var(--text-mute); }
-  .mc-line .m.ok{ color:var(--c-data); }
-  .mc-line .m.bad{ color:#e0705a; }
-  .mc-line.bad .s, .mc-line.bad .t{ color:#e39a88; }
-  .mc-line.fix .s{ color:var(--amber); }
+  .mc-line .m.ok{ color:var(--accent); }
+  .mc-line .m.bad{ color:#ff7a5c; }
+  .mc-line.fix .s{ color:var(--accent); }
   .mc-line.fix .t{ color:var(--text); }
-  .mc-done{ margin-top:12px; padding-top:12px; border-top:1px dashed var(--line); color:var(--amber); opacity:0; transition:opacity .3s ease; }
+  .mc-done{ margin-top:12px; padding-top:12px; border-top:1px dashed var(--line); color:var(--accent); opacity:0; transition:opacity .3s ease; }
   .mc-done.show{ opacity:1; }
-  .mc-caret{ display:inline-block; width:7px; height:14px; margin-left:3px; vertical-align:-2px; background:var(--amber); animation:blink 1.1s step-end infinite; }
-
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.1em;
-    color:var(--text-dim); text-transform:uppercase; margin-bottom:20px;
-  }
-
-  .hero h1{
-    font-size:clamp(30px, 3.6vw, 46px);
-    line-height:1.13;
-    letter-spacing:-0.02em;
-    max-width:620px;
-  }
-  .hero h1 em{ font-style:normal; color:var(--amber); }
-  .nw{ white-space:nowrap; }
-
-  .hero p.sub{
-    margin-top:22px; max-width:560px; font-size:16px; color:var(--text-dim); line-height:1.7;
-  }
-
-  .hero-cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
-  .btn{
-    font-family:'JetBrains Mono', monospace; font-weight:500; font-size:13.5px;
-    padding:11px 20px; display:inline-flex; align-items:center; gap:8px;
-    border:1px solid var(--line); border-radius:2px;
-  }
-  .btn-primary{ background:var(--amber); color:#191307; border-color:var(--amber); }
-  .btn-primary:hover{ background:#e8a94c; }
-  .btn-ghost{ color:var(--text); }
-  .btn-ghost:hover{ border-color:var(--text-mute); }
-
-  /* terminal panel signature */
-  .term{
-    background:rgba(18,17,16,0.82); border:1px solid var(--line); border-radius:4px; overflow:hidden;
-    backdrop-filter:blur(2px);
-  }
-  .term-bar{ display:flex; align-items:center; gap:6px; padding:10px 14px; border-bottom:1px solid var(--line); }
-  .term-bar span{ width:10px; height:10px; border-radius:50%; }
-  .term-bar span:nth-child(1){ background:#ff5f57; }
-  .term-bar span:nth-child(2){ background:#febc2e; }
-  .term-bar span:nth-child(3){ background:#28c840; }
-  .term-title{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-mute); margin-left:6px; }
-  .term-body{ padding:18px 18px 16px; }
+  .mc-caret{ display:inline-block; width:7px; height:13px; margin-left:3px; vertical-align:-2px; background:var(--accent); animation:blink 1.1s steps(1) infinite; }
   @keyframes blink{ 50%{ opacity:0; } }
 
-  /* ---------- SECTIONS ---------- */
-  .section{ padding:56px 0; border-top:1px solid var(--line); background:rgba(11,10,9,0.55); }
-  .sec-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:34px; }
-  .sec-head .idx{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-mute); }
-  .sec-head h2{ font-size:22px; }
-  .sec-head .rule{ flex:1; height:1px; background:var(--line); }
+  /* ---------- marquee ---------- */
+  .marquee{ overflow:hidden; white-space:nowrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(18px, 3vh, 30px) 0; user-select:none; }
+  .marquee-track{ display:inline-flex; will-change:transform; animation:marquee 46s linear infinite; }
+  .has-motion .marquee-track{ animation:none; }
+  @keyframes marquee{ to{ transform:translateX(-50%); } }
+  .marquee-item{ display:inline-flex; align-items:center; gap:.5em; padding-right:.5em; font-family:var(--f-display); font-weight:500; font-size:clamp(30px, 4.4vw, 68px); letter-spacing:-.04em; line-height:1.1; color:var(--text); }
+  .marquee-item:nth-child(even){ color:transparent; -webkit-text-stroke:1px var(--line-strong); }
+  .marquee-item::after{ content:''; flex:none; width:.2em; height:.2em; border-radius:50%; background:var(--accent); }
 
-  /* ---------- TAGS ---------- */
-  .tag{
-    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:12px;
-    color:var(--text-dim); border:1px solid var(--line); border-radius:2px;
-    padding:3px 8px; margin:0 6px 6px 0; background:transparent;
-  }
-  .tag[data-cat="frontend"]{ color:var(--c-frontend); border-color:rgba(217,154,61,.35); background:rgba(217,154,61,.06); }
-  .tag[data-cat="go"]{ color:var(--c-go); border-color:rgba(79,184,173,.35); background:rgba(79,184,173,.06); }
-  .tag[data-cat="py"]{ color:var(--c-py); border-color:rgba(111,168,220,.35); background:rgba(111,168,220,.06); }
-  .tag[data-cat="data"]{ color:var(--c-data); border-color:rgba(132,179,102,.35); background:rgba(132,179,102,.06); }
-  .tag[data-cat="web3"]{ color:var(--c-web3); border-color:rgba(169,138,223,.35); background:rgba(169,138,223,.06); }
-  .tag[data-cat="platform"]{ color:var(--c-platform); border-color:rgba(221,127,160,.35); background:rgba(221,127,160,.06); }
-  .tag[data-cat="ai"]{ color:var(--c-platform); border-color:rgba(221,127,160,.35); background:rgba(221,127,160,.06); }
-  .tag[data-cat="infra"]{ color:var(--c-infra); border-color:rgba(149,161,174,.35); background:rgba(149,161,174,.06); }
+  /* ---------- sections ---------- */
+  .section{ position:relative; padding:clamp(100px, 15vh, 190px) 0; }
+  .sec-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px; margin-bottom:clamp(44px, 8vh, 96px); }
+  .sec-title{ font-family:var(--f-display); font-weight:600; font-size:clamp(54px, 9.4vw, 160px); line-height:.9; letter-spacing:-.055em; }
+  .sec-title .line{ padding-bottom:.06em; }
+  .sec-note{ max-width:400px; font-size:15.5px; line-height:1.55; color:var(--text-dim); }
+  .subhead{ margin:clamp(80px, 12vh, 140px) 0 32px; font-family:var(--f-display); font-weight:500; font-size:clamp(26px, 2.6vw, 40px); letter-spacing:-.035em; color:var(--text); }
+  .eyebrow{ font-family:var(--f-mono); font-size:10.5px; color:var(--accent); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
 
+  /* ---------- tags & status ---------- */
+  .tag{ display:inline-flex; align-items:center; margin:0 6px 8px 0; padding:6px 12px; border:1px solid var(--line); border-radius:999px; font-family:var(--f-mono); font-size:10.5px; color:var(--text-dim); letter-spacing:.01em; transition:border-color .2s, color .2s; }
+  .tag:hover{ border-color:var(--accent-dim); color:var(--text); }
+  .status{ display:inline-flex; align-items:center; gap:7px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mute); white-space:nowrap; }
+  .status::before{ content:''; width:7px; height:7px; border-radius:50%; background:currentColor; }
+  .status.live{ color:var(--accent); }
+  .status.wip, .status.concept, .status.playground{ color:var(--text-dim); }
 
-  /* ---------- NFINE-specific components ---------- */
-  .nf-hero-row{ display:grid; grid-template-columns:1fr; gap:32px; }
-  @media(min-width:960px){ .nf-hero-row{ grid-template-columns:1fr 1fr; gap:44px; align-items:start; } }
-  .nf-hero-shot{ width:100%; margin-top:0; }
-  .nf-hero-shot + .mf-caption{ max-width:none; }
-  .nf-meta{ margin-top:18px; display:grid; gap:5px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-mute); }
-  .nf-meta b{ color:var(--text-dim); font-weight:500; }
-
-  .flow-chain{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--amber); line-height:2; letter-spacing:.01em; border-left:2px solid var(--line); padding-left:14px; margin-top:8px; }
-  .nf-transition{
-    text-align:center; max-width:620px; margin:48px auto 44px;
-    padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
-  .nf-transition .k{
-    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.16em;
-    text-transform:uppercase; color:var(--amber); margin-bottom:10px;
-  }
-  .nf-transition p{ font-size:14.5px; color:var(--text-dim); line-height:1.75; }
-
-  .nf-split{ display:grid; grid-template-columns:1fr; gap:22px; align-items:start; margin-top:52px; }
-  @media(min-width:700px){
-    .nf-split{ grid-template-columns:260px 1fr; gap:38px; }
-    .nf-split-rev{ grid-template-columns:1fr 260px; }
-    .nf-split-rev .nf-split-media{ order:2; }
-    .nf-split-rev h4, .nf-split-rev p{ text-align:right; }
-    .nf-split-rev p{ margin-left:auto; }
-  }
-  .nf-split-media{ margin:0 auto; max-width:260px; }
-  .nf-split h4{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; color:var(--text); margin-bottom:9px; }
-  .nf-split p{ font-size:13.5px; color:var(--text-dim); line-height:1.75; max-width:460px; }
-
-  .cases-intro{ color:var(--text-dim); font-size:14px; max-width:600px; margin-bottom:8px; line-height:1.7; }
-
-  .subhead{
-    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--text-mute); display:flex; align-items:center; gap:14px;
-    margin:56px 0 30px;
-  }
-  .subhead::after{ content:''; flex:1; height:1px; background:var(--line); }
-  .subhead:first-of-type{ margin-top:44px; }
-
-  /* status badges */
-  .status{
-    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
-    padding:3px 9px; border-radius:2px; border:1px solid var(--line); color:var(--text-mute); white-space:nowrap;
-  }
-  .status.live{ color:var(--c-data); border-color:rgba(132,179,102,.35); }
-  .status.wip{ color:var(--amber); border-color:rgba(217,154,61,.35); }
-  .status.concept{ color:var(--c-web3); border-color:rgba(169,138,223,.35); }
-  .status.playground{ color:var(--c-py); border-color:rgba(111,168,220,.35); }
-  .status.nda{ color:var(--text-mute); border-color:var(--line); }
-
-  /* media placeholder */
-  .media{ position:relative; overflow:hidden; border:1px solid var(--line); border-radius:6px; background:var(--surface); }
-  .media:not(.is-placeholder){ cursor:zoom-in; }
-  .media:not(.is-placeholder):hover{ border-color:var(--text-mute); }
-  .media img{ width:100%; height:100%; object-fit:cover; display:block; transition:opacity .15s ease; }
+  /* ---------- media ---------- */
+  .media{ position:relative; overflow:hidden; border-radius:16px; background:var(--bg-2); border:1px solid var(--line-soft); cursor:zoom-in; }
+  .media img{ display:block; width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--ease); }
+  .media:hover img{ transform:scale(1.025); }
   .media-desktop{ aspect-ratio:16/10; }
   .media-wide{ aspect-ratio:16/9; }
   .media-auto{ aspect-ratio:auto; }
-  .media-auto img{ height:auto; display:block; }
+  .media-auto img{ height:auto; }
+  .mf-caption{ margin-top:12px; font-family:var(--f-mono); font-size:10.5px; line-height:1.6; color:var(--text-mute); letter-spacing:.01em; }
 
-  /* MetaForge — expanded case components */
-  .mf-text{ font-size:14px; color:var(--text-dim); line-height:1.8; max-width:760px; margin-top:12px; }
-  .mf-label{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:16.5px; color:var(--text); margin-top:44px; margin-bottom:2px; }
-  .mf-caption{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-mute); margin-top:9px; text-align:center; }
+  /* ---------- cases ---------- */
+  .feature{ padding:clamp(64px, 11vh, 128px) 0; border-top:1px solid var(--line); }
+  .sec-head + .feature{ padding-top:0; border-top:0; }
+  .feature-eyebrow{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin-bottom:22px; font-family:var(--f-mono); font-size:10.5px; color:var(--text-mute); letter-spacing:.06em; }
+  .feature-index{ color:var(--accent); }
+  .feature h3{ font-size:clamp(44px, 6.4vw, 104px); font-weight:600; line-height:.9; letter-spacing:-.05em; margin-bottom:20px; }
+  .feature-summary{ font-family:var(--f-display); font-weight:400; font-size:clamp(20px, 1.8vw, 27px); line-height:1.25; letter-spacing:-.02em; color:var(--text); max-width:680px; }
+  .mf-text{ margin-top:14px; max-width:720px; font-size:16px; line-height:1.7; color:var(--text-dim); }
+  .mf-label{ margin-top:72px; margin-bottom:4px; font-size:clamp(24px, 2.2vw, 34px); letter-spacing:-.035em; }
+  .nf-meta, .feature-meta{ margin-top:24px; display:grid; gap:8px; max-width:760px; font-size:14.5px; line-height:1.5; color:var(--text-dim); }
+  .nf-meta b, .feature-meta b{ color:var(--text); font-weight:500; }
+  .feature-stack{ margin-top:20px; }
+  .feature-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .feature-cta .btn{ height:48px; padding:0 22px; font-size:14.5px; }
+  .feature-highlights{ display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .hltag{ display:inline-flex; padding:6px 12px; border-radius:999px; border:1px solid rgba(212,255,63,.28); background:rgba(212,255,63,.07); color:var(--accent); font-family:var(--f-mono); font-size:10.5px; letter-spacing:.02em; }
+  .cases-intro{ max-width:640px; font-size:15.5px; line-height:1.6; color:var(--text-dim); }
 
-  .layers{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
-  .layer{ flex:1 1 220px; border:1px solid var(--line); border-radius:4px; padding:14px 16px; }
-  .layer .t{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--amber); text-transform:uppercase; letter-spacing:.05em; margin-bottom:9px; }
-  .layer .tags{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-mute); margin-bottom:9px; line-height:1.7; }
-  .layer .d{ font-size:12.5px; color:var(--text-dim); line-height:1.65; }
-
-  .mf-shot-lg{ max-width:760px; }
-  .mf-shot-lg + .mf-caption{ max-width:760px; }
-  .mf-shot-sm{ width:100%; max-width:640px; margin:0 auto; }
-  .mf-shots-grid{ display:grid; gap:30px 20px; grid-template-columns:1fr; margin-top:26px; }
-  @media(min-width:700px){ .mf-shots-grid{ grid-template-columns:1fr 1fr; } }
-
-  /* scroll reveal */
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-  @media(prefers-reduced-motion: reduce){
-    .reveal{ transition:none; opacity:1; transform:none; }
-  }
-  .layers .layer:nth-child(1){ transition-delay:0ms; }
-  .layers .layer:nth-child(2){ transition-delay:70ms; }
-  .layers .layer:nth-child(3){ transition-delay:140ms; }
-  .layers .layer:nth-child(4){ transition-delay:210ms; }
-  .modes .mode-card:nth-child(1){ transition-delay:0ms; }
-  .modes .mode-card:nth-child(2){ transition-delay:70ms; }
-  .modes .mode-card:nth-child(3){ transition-delay:140ms; }
-  .more-grid .more-card:nth-child(1){ transition-delay:0ms; }
-  .more-grid .more-card:nth-child(2){ transition-delay:70ms; }
-  .more-grid .more-card:nth-child(3){ transition-delay:140ms; }
-  .mf-shots-grid > div:nth-child(1) .media{ transition-delay:0ms; }
-  .mf-shots-grid > div:nth-child(2) .media{ transition-delay:70ms; }
-  .mf-shots-grid > div:nth-child(3) .media{ transition-delay:140ms; }
-  .mf-shots-grid > div:nth-child(4) .media{ transition-delay:210ms; }
-
-  /* lightbox */
-  .lightbox{
-    position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
-    background:rgba(6,5,4,0.9); padding:32px; cursor:zoom-out;
-  }
-  .lightbox.open{ display:flex; }
-  .lightbox img{ max-width:100%; max-height:100%; object-fit:contain; border:1px solid var(--line); border-radius:4px; }
-  .lightbox-close{
-    position:fixed; top:20px; right:24px; width:38px; height:38px; border-radius:50%;
-    background:var(--surface); border:1px solid var(--line); color:var(--text-dim);
-    font-family:'JetBrains Mono', monospace; font-size:16px; line-height:1; cursor:pointer;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .lightbox-close:hover{ color:var(--text); border-color:var(--text-mute); }
-
-  /* featured case */
-  .feature{ padding:48px 0; border-top:1px solid var(--line); }
-  .subhead + .feature{ padding-top:0; border-top:none; }
-  .feature-grid{ display:grid; gap:28px; align-items:start; grid-template-columns:1fr; }
-  @media(min-width:860px){
-    .feature-grid{ grid-template-columns:1.3fr 1fr; gap:48px; }
-    .feature-grid.flip{ grid-template-columns:1fr 1.3fr; }
-  }
-  .feature-grid.flip .feature-visual{ order:2; }
+  .feature-grid{ display:grid; grid-template-columns:1fr; gap:40px; align-items:start; }
+  @media(min-width:980px){ .feature-grid{ grid-template-columns:1.25fr 1fr; gap:64px; } .feature-grid.flip{ grid-template-columns:1fr 1.25fr; } }
   .feature-visual{ display:grid; gap:12px; order:-1; }
-  @media(min-width:860px){ .feature-visual{ order:0; } }
-  .feature-visual .mobiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-  .feature-visual .mobiles.bac-mobiles{ grid-template-columns:repeat(2,1fr); gap:10px; width:100%; }
-  @media(min-width:860px){ .feature-visual .mobiles.bac-mobiles{ grid-template-columns:repeat(4,1fr); width:100%; gap:12px; } }
-  .feature-eyebrow{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-mute); margin-bottom:14px; }
-  .feature-index{ color:var(--amber); }
-  .feature h3{ font-size:25px; margin-bottom:10px; }
-  .feature-summary{ color:var(--text-dim); font-size:15px; line-height:1.7; max-width:480px; }
-  .feature-meta{ margin-top:16px; display:grid; gap:5px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-mute); }
-  .feature-meta b{ color:var(--text-dim); font-weight:500; }
-  .feature-highlights{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-  .hltag{
-    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase;
-    padding:5px 10px; border:1px solid rgba(217,154,61,.35); color:var(--amber); border-radius:2px; background:rgba(217,154,61,.06);
-  }
-  .feature-stack{ margin-top:16px; }
-  .feature-cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-
-  /* pipeline (MetaForge) */
-  .pipeline{ display:flex; flex-wrap:wrap; margin-top:32px; }
-  .pipeline-step{ flex:1 1 110px; padding:12px 12px 0 0; border-top:2px solid var(--line); position:relative; }
-  .pipeline-step::before{ content:''; position:absolute; top:-2px; left:0; width:8px; height:2px; background:var(--amber); }
-  .pipeline-step .n{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--amber); margin-bottom:6px; }
-  .pipeline-step .t{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text); }
-
-  .modes{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
-  .mode-card{ border:1px solid var(--line); border-radius:4px; padding:14px 16px; flex:1 1 230px; }
-  .mode-card .t{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--amber); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; }
-  .mode-card .d{ font-size:12.5px; color:var(--text-dim); line-height:1.65; }
-  .mode-card .tech{ margin-top:10px; font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-mute); }
-
-  /* compact feature (FreeSmrks) */
-  .feature-compact{ padding:36px 0; }
-  .compact-row{ display:grid; gap:22px; grid-template-columns:1fr; align-items:start; }
-  @media(min-width:860px){ .compact-row{ grid-template-columns:1fr 1.7fr; align-items:center; } }
+  @media(min-width:980px){ .feature-visual{ order:0; } .feature-grid.flip .feature-visual{ order:2; } }
+  .feature-visual .mobiles{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  @media(min-width:980px){ .feature-visual .mobiles.bac-mobiles{ grid-template-columns:repeat(4,1fr); gap:12px; } }
+  .feature-compact{ padding:clamp(56px, 9vh, 104px) 0; }
+  .compact-row{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+  @media(min-width:980px){ .compact-row{ grid-template-columns:1fr 1.5fr; gap:56px; } }
   .compact-media{ order:1; }
-  @media(min-width:860px){ .compact-media{ order:0; } }
+  @media(min-width:980px){ .compact-media{ order:0; } }
   .fs-thumbs{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
-  .compact-text h3{ font-size:19px; margin-bottom:8px; }
+  .compact-text h3{ font-size:clamp(40px, 5vw, 80px); }
 
-  /* more work grid */
-  .more-grid{ display:grid; gap:18px; grid-template-columns:1fr; }
-  @media(min-width:700px){ .more-grid{ grid-template-columns:repeat(3,1fr); } }
-  .more-card{ display:block; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--surface); transition:border-color .15s ease; }
-  .more-card:hover{ border-color:var(--text-mute); }
-  .more-card .media{ border:none; border-radius:0; border-bottom:1px solid var(--line); }
-  .more-card-body{ padding:15px 16px 17px; }
-  .more-card-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px; }
-  .more-card h4{ font-size:14.5px; }
-  .more-card .cat{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-mute); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; }
-  .more-card p{ font-size:13px; color:var(--text-dim); line-height:1.6; }
-  .more-card .go{ margin-top:12px; display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); }
-  .more-card:hover .go{ color:var(--amber); }
-
-  /* private work */
-  .private-box{ background:rgba(18,17,16,0.6); border:1px solid var(--line); border-radius:4px; padding:22px 24px; }
-  .private-intro{ font-size:13.5px; color:var(--text-dim); max-width:620px; margin-bottom:18px; line-height:1.7; }
-  .private-row{ display:flex; align-items:baseline; gap:14px; padding:9px 0; font-family:'JetBrains Mono', monospace; font-size:12.5px; border-top:1px solid var(--line); }
-  .private-row:first-of-type{ border-top:none; }
-  .private-id{ color:var(--amber); flex-shrink:0; }
-  .private-title{ color:var(--text-dim); flex:1; }
-  .private-more{ margin-top:16px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-mute); }
-
-  /* ---------- MINDCODING ---------- */
-  .mc-intro{ display:grid; grid-template-columns:1fr; gap:28px; align-items:start; }
-  @media(min-width:900px){ .mc-intro{ grid-template-columns:1.3fr 1fr; gap:52px; } }
-  .mc-kicker{ font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; }
-  .mc-lead{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:clamp(24px, 3vw, 34px); line-height:1.2; letter-spacing:-0.015em; color:var(--text); max-width:640px; }
-  .mc-text{ margin-top:16px; font-size:15px; color:var(--text-dim); line-height:1.75; max-width:640px; }
-  .mc-text b{ color:var(--text); font-weight:600; }
-
-  .mc-proof{ border:1px solid var(--line); border-radius:6px; background:rgba(18,17,16,.78); padding:20px 22px; }
-  .mc-proof .h{ font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim); margin-bottom:16px; }
-  .mc-proof-item{ display:grid; grid-template-columns:64px 1fr; gap:3px 14px; padding:13px 0; border-top:1px solid var(--line); }
-  .mc-proof-item:first-of-type{ border-top:none; padding-top:0; }
-  .mc-proof-item .v{ grid-row:span 2; font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:26px; line-height:1.1; color:var(--amber); }
-  .mc-proof-item .v.word{ font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:500; padding-top:5px; }
-  .mc-proof-item .t{ font-size:14px; color:var(--text); line-height:1.5; }
-  .mc-proof-item .d{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-dim); line-height:1.6; word-break:break-word; }
-  .mc-proof .more{ display:inline-block; margin-top:16px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--amber); border-bottom:1px solid var(--amber-dim); padding-bottom:2px; }
-  .mc-proof .more:hover{ border-color:var(--amber); }
-
-  .mc-vs{ border:1px solid var(--line); border-radius:6px; overflow:hidden; }
-  .mc-vs-row{ display:grid; grid-template-columns:1fr 1fr; }
-  .mc-vs-row > div{ padding:13px 18px; font-size:14px; line-height:1.55; border-top:1px solid var(--line); display:flex; gap:10px; }
-  .mc-vs-row:first-child > div{ border-top:none; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; padding-top:12px; padding-bottom:12px; }
-  .mc-vs-row .vibe{ color:var(--text-mute); }
-  .mc-vs-row .mind{ color:var(--text); background:rgba(217,154,61,.05); border-left:1px solid var(--line); }
-  .mc-vs-row:first-child .mind{ color:var(--amber); }
-  .mc-vs-row:not(:first-child) .vibe::before{ content:'✕'; font-family:'JetBrains Mono', monospace; color:#e0705a; opacity:.8; flex-shrink:0; }
-  .mc-vs-row:not(:first-child) .mind::before{ content:'✓'; font-family:'JetBrains Mono', monospace; color:var(--amber); flex-shrink:0; }
-  @media(max-width:560px){ .mc-vs-row > div{ padding:12px 12px; font-size:13px; } }
-
-  .mc-loop{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden; }
-  @media(min-width:760px){ .mc-loop{ grid-template-columns:repeat(3,1fr); } }
-  @media(min-width:1080px){ .mc-loop{ grid-template-columns:repeat(6,1fr); } }
-  .mc-step{ background:rgba(14,13,12,.95); padding:16px 16px 18px; }
-  .mc-step .n{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); }
-  .mc-step .t{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:15.5px; color:var(--text); margin:6px 0 6px; }
-  .mc-step .d{ font-size:12.5px; color:var(--text-dim); line-height:1.55; }
-
-  .mc-trust{ display:grid; grid-template-columns:1fr; gap:14px; }
-  @media(min-width:760px){ .mc-trust{ grid-template-columns:1fr 1fr; } }
-  .mc-card{ border:1px solid var(--line); border-radius:6px; padding:18px 20px 12px; background:rgba(18,17,16,.65); }
-  .mc-card .h{ font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px; }
-  .mc-card.ai .h{ color:var(--c-data); }
-  .mc-card.me .h{ color:var(--amber); }
-  .mc-card.me{ border-color:rgba(217,154,61,.35); }
-  .mc-card ul{ list-style:none; }
-  .mc-card li{ display:flex; gap:12px; padding:9px 0; font-size:14px; color:var(--text-dim); border-top:1px solid var(--line-soft); }
-  .mc-card li:first-child{ border-top:none; }
-  .mc-card li::before{ content:'→'; font-family:'JetBrains Mono', monospace; color:var(--text-mute); flex-shrink:0; }
-  .mc-card.me li{ color:var(--text); }
-  .mc-card.me li::before{ content:'■'; color:var(--amber); font-size:8px; line-height:2.6; }
-
-  .mc-facts{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px; }
-  @media(min-width:760px){ .mc-facts{ grid-template-columns:1fr 1fr; } }
-  .mc-fact{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; padding:13px 16px; border:1px dashed var(--line); border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-dim); }
-  .mc-fact .v{ color:var(--text); }
-  .mc-fact .k{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); }
-
-  /* ---------- CASE BRIEF ---------- */
-  .case-brief{ margin-top:30px; display:grid; gap:14px; }
-  .case-challenges{ display:grid; grid-template-columns:1fr; gap:12px; }
-  @media(min-width:760px){ .case-challenges{ grid-template-columns:repeat(3,1fr); } }
-  .challenge{ border:1px solid var(--line); border-radius:6px; padding:16px 18px 17px; background:rgba(18,17,16,.72); }
-  .challenge .n{ font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--amber); }
-  .challenge h4{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:16px; line-height:1.35; color:var(--text); margin:7px 0 9px; }
-  .challenge .prob{ font-size:13.5px; line-height:1.65; color:var(--text-dim); }
-  .challenge .sol{ margin-top:9px; font-size:13.5px; line-height:1.65; color:var(--text); }
-  .challenge .sol::before{ content:'→ '; font-family:'JetBrains Mono', monospace; color:var(--amber); }
-  .case-results{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; padding:13px 16px; border:1px dashed var(--line); border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-dim); }
-  .case-results .k{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
-  .case-results .v{ color:var(--text); }
-  .case-results .v + .v::before{ content:'·'; margin-right:14px; color:var(--text-mute); }
-
-  .case-more{ margin-top:26px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .case-more > summary{ list-style:none; cursor:pointer; display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; padding:16px 2px; font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--amber); }
-  .case-more > summary::-webkit-details-marker{ display:none; }
-  .case-more > summary .ic{ width:24px; height:24px; flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--amber-dim); border-radius:50%; font-size:14px; line-height:1; transition:transform .2s ease; }
-  .case-more[open] > summary .ic{ transform:rotate(45deg); }
-  .case-more > summary:hover .ic{ border-color:var(--amber); }
-  .case-more > summary .hint{ font-size:12px; color:var(--text-dim); }
-  .case-more-body{ padding-bottom:40px; }
-
-  /* ---------- SKILLS ---------- */
-  .skills-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
-  @media(min-width:700px){ .skills-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(min-width:1000px){ .skills-grid{ grid-template-columns:repeat(3,1fr); } }
-  .skill-card{ display:flex; flex-direction:column; border:1px solid var(--line); border-radius:6px; padding:18px 20px 16px; background:rgba(18,17,16,.72); }
-  .skill-card .h{ display:flex; align-items:center; gap:10px; margin-bottom:8px; }
-  .skill-card .dot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; background:var(--c, var(--amber)); }
-  .skill-card h4{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:16.5px; color:var(--text); }
-  .skill-card .d{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin-bottom:12px; }
-  .skill-card .where{ margin-top:auto; padding-top:11px; border-top:1px solid var(--line-soft); font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-dim); }
-  .skill-card .where a{ color:var(--amber); border-bottom:1px solid var(--amber-dim); }
-  .skill-card .where a:hover{ border-color:var(--amber); }
-
-  /* ---------- RESUME ---------- */
-  .resume-box{
-    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
-    background:var(--surface); border:1px solid var(--line); border-radius:4px; padding:24px 26px;
+  .nf-hero-row{ display:grid; grid-template-columns:1fr; gap:40px; }
+  @media(min-width:1040px){ .nf-hero-row{ grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; } }
+  .nf-hero-shot{ width:100%; }
+  .flow-chain{ margin-top:12px; padding-left:16px; border-left:2px solid var(--accent); font-family:var(--f-mono); font-size:11.5px; line-height:2; color:var(--accent); }
+  .nf-transition{ max-width:760px; margin:88px auto 64px; text-align:center; }
+  .nf-transition .k{ margin-bottom:16px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .nf-transition p{ font-family:var(--f-display); font-size:clamp(21px, 2.2vw, 32px); line-height:1.25; letter-spacing:-.025em; color:var(--text); }
+  .nf-split{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center; margin-top:72px; }
+  @media(min-width:780px){
+    .nf-split{ grid-template-columns:300px 1fr; gap:64px; }
+    .nf-split-rev{ grid-template-columns:1fr 300px; }
+    .nf-split-rev .nf-split-media{ order:2; }
   }
-  .resume-box .t{ font-size:16px; font-family:'JetBrains Mono', monospace; color:var(--text); }
-  .resume-box .d{ font-size:13px; color:var(--text-mute); margin-top:6px; }
+  .nf-split-media{ width:100%; max-width:300px; margin:0 auto; }
+  .nf-split h4{ margin-bottom:12px; font-size:clamp(24px, 2.2vw, 34px); letter-spacing:-.035em; }
+  .nf-split p{ max-width:520px; font-size:15.5px; line-height:1.7; color:var(--text-dim); }
 
-  /* ---------- FOOTER ---------- */
-  footer{ padding:56px 0 46px; border-top:1px solid var(--line); background:rgba(11,10,9,0.55); }
-  footer .row{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; }
-  footer h2{ font-size:22px; margin-bottom:10px; }
-  footer .meta{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-mute); }
-  footer .foot-lead{ max-width:540px; margin-bottom:12px; font-size:15px; line-height:1.7; color:var(--text-dim); }
-  footer .contacts{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
-  footer .contacts a{ font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--amber); }
-  footer .contacts a:hover{ color:#e8a94c; }
-  footer .bottom{ margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-mute); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  .mf-shot-lg{ max-width:none; }
+  .mf-shot-sm{ width:100%; }
+  .mf-shots-grid{ display:grid; grid-template-columns:1fr; gap:36px 24px; margin-top:28px; }
+  @media(min-width:780px){ .mf-shots-grid{ grid-template-columns:1fr 1fr; } }
 
-  @media(max-width:600px){
-    .resume-box{ flex-direction:column; align-items:flex-start; }
-    footer .row{ flex-direction:column; align-items:flex-start; }
-    footer .contacts{ align-items:flex-start; }
-    .navlinks{ margin-left:16px; }
+  .layers{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1px; margin-top:26px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .layer{ background:var(--bg); padding:22px 24px; }
+  .layer .t{ margin-bottom:10px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .layer .tags{ margin-bottom:10px; font-family:var(--f-mono); font-size:11px; line-height:1.8; color:var(--text-mute); }
+  .layer .d{ font-size:14.5px; line-height:1.6; color:var(--text-dim); }
+  .pipeline{ display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); margin-top:34px; border-top:1px solid var(--line); }
+  .pipeline-step{ position:relative; padding:18px 12px 0 0; }
+  .pipeline-step::before{ content:''; position:absolute; top:-1px; left:0; width:28px; height:2px; background:var(--accent); }
+  .pipeline-step .n{ margin-bottom:6px; font-family:var(--f-mono); font-size:10.5px; color:var(--text-mute); }
+  .pipeline-step .t{ font-family:var(--f-display); font-size:18px; font-weight:500; letter-spacing:-.02em; color:var(--text); }
+  .modes{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-top:26px; }
+  .mode-card{ padding:22px 24px; border:1px solid var(--line); border-radius:16px; background:var(--bg-2); }
+  .mode-card .t{ margin-bottom:10px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .mode-card .d{ font-size:14.5px; line-height:1.6; color:var(--text-dim); }
+  .mode-card .tech{ margin-top:12px; font-family:var(--f-mono); font-size:10.5px; color:var(--text-mute); }
+
+  /* case brief */
+  .case-brief{ display:grid; gap:32px; margin-top:clamp(44px, 7vh, 72px); }
+  .case-challenges{ display:grid; grid-template-columns:1fr; gap:32px; }
+  @media(min-width:880px){ .case-challenges{ grid-template-columns:repeat(3, 1fr); gap:40px; } }
+  .challenge{ padding-top:20px; border-top:1px solid var(--line-strong); }
+  .challenge .n{ font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+  .challenge h4{ margin:14px 0 12px; font-size:clamp(21px, 1.8vw, 26px); line-height:1.12; letter-spacing:-.03em; }
+  .challenge .prob{ font-size:15px; line-height:1.6; color:var(--text-dim); }
+  .challenge .sol{ margin-top:14px; padding-left:14px; border-left:2px solid var(--accent); font-size:15px; line-height:1.6; color:var(--text); }
+  .case-results{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 32px; padding:24px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .case-results .k{ flex-basis:100%; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mute); }
+  .case-results .v{ font-family:var(--f-display); font-size:clamp(21px, 2.1vw, 30px); font-weight:500; letter-spacing:-.03em; line-height:1.15; color:var(--text); }
+  .case-results .k + .v{ color:var(--accent); }
+
+  .case-more{ margin-top:8px; border-bottom:1px solid var(--line); }
+  .case-more > summary{ list-style:none; display:flex; align-items:center; gap:18px; padding:22px 0; cursor:pointer; font-family:var(--f-display); font-size:clamp(19px, 1.6vw, 24px); font-weight:500; letter-spacing:-.025em; color:var(--text); }
+  .case-more > summary::-webkit-details-marker{ display:none; }
+  .case-more > summary .ic{ flex:none; width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-family:var(--f-text); font-size:22px; line-height:1; transition:transform .5s var(--ease); }
+  .case-more[open] > summary .ic{ transform:rotate(135deg); }
+  .case-more > summary .hint{ margin-left:auto; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.02em; color:var(--text-mute); }
+  @media(max-width:760px){ .case-more > summary .hint{ display:none; } }
+  .case-more-body{ padding-bottom:56px; }
+
+  /* more work + private */
+  .more-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
+  @media(min-width:780px){ .more-grid{ grid-template-columns:repeat(3, 1fr); } }
+  .more-card{ display:block; }
+  .more-card-body{ padding:18px 2px 0; }
+  .more-card-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .more-card h4{ font-size:22px; letter-spacing:-.03em; }
+  .more-card .cat{ margin-top:6px; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.04em; color:var(--text-mute); }
+  .more-card p{ margin-top:10px; font-size:14.5px; line-height:1.55; color:var(--text-dim); }
+  .more-card .go{ display:inline-flex; margin-top:14px; padding-bottom:2px; border-bottom:1px solid var(--line-strong); font-size:14px; color:var(--text); transition:color .2s, border-color .2s; }
+  .more-card:hover .go{ color:var(--accent); border-color:var(--accent); }
+  .private-box{ border-top:1px solid var(--line-strong); }
+  .private-intro{ max-width:640px; margin:22px 0 10px; font-size:15.5px; line-height:1.6; color:var(--text-dim); }
+  .private-row{ display:grid; grid-template-columns:56px minmax(0,1fr) auto; gap:16px; align-items:baseline; padding:20px 0; border-bottom:1px solid var(--line); transition:padding .5s var(--ease); }
+  .private-row:hover{ padding-left:12px; }
+  .private-id{ font-family:var(--f-mono); font-size:10.5px; color:var(--accent); }
+  .private-title{ font-family:var(--f-display); font-size:clamp(17px, 1.6vw, 23px); line-height:1.3; letter-spacing:-.025em; color:var(--text); }
+  .private-more{ margin-top:22px; font-size:14.5px; color:var(--text-mute); }
+
+  /* ---------- mindcoding ---------- */
+  .mc-intro{ display:grid; grid-template-columns:1fr; gap:32px; align-items:end; }
+  @media(min-width:980px){ .mc-intro{ grid-template-columns:1.3fr 1fr; gap:72px; } }
+  .mc-lead{ font-family:var(--f-display); font-weight:500; font-size:clamp(36px, 5vw, 80px); line-height:.98; letter-spacing:-.045em; }
+  .mc-lead em{ font-style:normal; color:var(--accent); }
+  .mc-text{ max-width:520px; font-size:16.5px; line-height:1.65; color:var(--text-dim); }
+  .mc-text + .mc-text{ margin-top:16px; }
+  .mc-text b{ color:var(--text); font-weight:500; }
+
+  .mc-vs{ margin-top:clamp(72px, 12vh, 140px); }
+  .mc-vs-head, .mc-vs-row{ display:grid; grid-template-columns:1fr 1fr; gap:24px 40px; }
+  .mc-vs-head{ padding-bottom:14px; border-bottom:1px solid var(--line-strong); font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mute); }
+  .mc-vs-head .mind{ color:var(--accent); }
+  .mc-vs-row{ padding:22px 0; border-bottom:1px solid var(--line); font-family:var(--f-display); font-size:clamp(17px, 1.9vw, 28px); line-height:1.2; letter-spacing:-.025em; }
+  .mc-vs-row .vibe{ color:var(--text-mute); }
+  .mc-vs-row .vibe span{ background:linear-gradient(currentColor, currentColor) no-repeat 0 58% / 100% 1px; }
+  .mc-vs-row .mind{ color:var(--text); }
+
+  .mc-process{ margin-top:clamp(72px, 12vh, 140px); }
+  .mc-process-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:32px; }
+  .mc-process-head h3{ font-size:clamp(30px, 3.4vw, 52px); letter-spacing:-.04em; }
+  .mc-progress{ flex:1; max-width:340px; height:2px; background:var(--line); overflow:hidden; display:none; }
+  .mc-progress i{ display:block; height:100%; background:var(--accent); transform-origin:0 50%; transform:scaleX(0); }
+  .mc-track{ display:grid; grid-template-columns:1fr; }
+  @media(min-width:700px){ .mc-track{ grid-template-columns:repeat(2, 1fr); column-gap:40px; } }
+  .mc-step{ padding:28px 0 36px; border-top:1px solid var(--line); }
+  .mc-step .n{ font-family:var(--f-display); font-weight:300; font-size:clamp(64px, 7vw, 120px); line-height:.9; letter-spacing:-.06em; color:transparent; -webkit-text-stroke:1px var(--line-strong); transition:color .5s, -webkit-text-stroke-color .5s; }
+  .mc-step.is-active .n, .mc-step:hover .n{ color:var(--accent); -webkit-text-stroke-color:var(--accent); }
+  .mc-step .t{ margin-top:20px; font-family:var(--f-display); font-size:clamp(23px, 2.1vw, 32px); font-weight:600; letter-spacing:-.035em; }
+  .mc-step .d{ margin-top:10px; max-width:360px; font-size:15.5px; line-height:1.55; color:var(--text-dim); }
+  @media(min-width:1024px){
+    .has-motion .mc-progress{ display:block; }
+    .has-motion .mc-track{ display:flex; width:max-content; }
+    .has-motion .mc-step{ flex:none; width:min(31vw, 420px); padding:8px 48px 8px 32px; border-top:0; border-left:1px solid var(--line); }
+  }
+
+  .mc-facts{ display:grid; grid-template-columns:1fr; gap:1px; margin-top:clamp(64px, 10vh, 112px); background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
+  @media(min-width:900px){ .mc-facts{ grid-template-columns:repeat(3, 1fr); } }
+  .mc-fact{ display:flex; flex-direction:column; gap:14px; padding:28px 28px 32px; background:var(--bg); }
+  .mc-fact .k{ font-family:var(--f-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mute); }
+  .mc-fact .v{ font-family:var(--f-display); font-size:clamp(19px, 1.6vw, 24px); line-height:1.28; letter-spacing:-.025em; color:var(--text); }
+  .mc-fact .v a{ border-bottom:1px solid var(--accent); }
+  .mc-fact .v a:hover{ color:var(--accent); }
+
+  /* ---------- stack ---------- */
+  .stack-list{ border-top:1px solid var(--line-strong); }
+  .stack-row{ display:grid; grid-template-columns:1fr; gap:12px; padding:30px 0; border-bottom:1px solid var(--line); }
+  @media(min-width:900px){ .stack-row{ grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:56px; align-items:baseline; padding:38px 0; } }
+  .stack-row h3{ font-size:clamp(28px, 3.3vw, 52px); letter-spacing:-.045em; line-height:1; transition:transform .6s var(--ease), color .3s; }
+  .stack-row:hover h3{ transform:translateX(16px); color:var(--accent); }
+  .stack-row .d{ font-size:16.5px; line-height:1.55; color:var(--text); }
+  .stack-row .tools{ margin-top:12px; font-family:var(--f-mono); font-size:11px; line-height:1.9; color:var(--text-mute); }
+
+  /* ---------- resume ---------- */
+  .resume-box{ display:grid; grid-template-columns:1fr; gap:32px; align-items:end; padding:clamp(32px, 5vw, 72px); border-radius:28px; background:var(--accent); color:var(--accent-ink); }
+  @media(min-width:900px){ .resume-box{ grid-template-columns:1fr auto; } }
+  .resume-box .t{ font-family:var(--f-display); font-weight:600; font-size:clamp(40px, 5.6vw, 92px); line-height:.9; letter-spacing:-.055em; color:var(--accent-ink); }
+  .resume-box .d{ margin-top:16px; max-width:460px; font-size:16px; line-height:1.5; color:rgba(12,12,11,.72); }
+  .resume-actions{ display:flex; flex-wrap:wrap; gap:10px; }
+  .resume-box .btn{ background:var(--accent-ink); border-color:var(--accent-ink); color:var(--accent); }
+  .resume-box .btn:hover{ background:#262624; border-color:#262624; }
+  .resume-box .btn-ghost{ background:transparent; color:var(--accent-ink); border-color:rgba(12,12,11,.35); }
+  .resume-box .btn-ghost:hover{ background:transparent; border-color:var(--accent-ink); }
+
+  /* ---------- footer ---------- */
+  footer{ padding:clamp(100px, 15vh, 190px) 0 28px; border-top:1px solid var(--line); }
+  .foot-title{ font-family:var(--f-display); font-weight:600; font-size:clamp(58px, 10.5vw, 180px); line-height:.88; letter-spacing:-.06em; }
+  .foot-title .line{ padding-bottom:.06em; }
+  .foot-lead{ margin-top:32px; max-width:580px; font-size:17px; line-height:1.55; color:var(--text-dim); }
+  .foot-links{ display:flex; flex-wrap:wrap; align-items:baseline; gap:16px 44px; margin-top:52px; }
+  .foot-mail{ padding-bottom:6px; font-family:var(--f-display); font-weight:500; font-size:clamp(28px, 3.8vw, 60px); letter-spacing:-.04em; line-height:1.1; background:linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 0% 2px; transition:background-size .6s var(--ease), color .3s; word-break:break-all; }
+  .foot-mail:hover{ background-size:100% 2px; color:var(--accent); }
+  .foot-tg{ font-size:18px; padding-bottom:2px; border-bottom:1px solid var(--line-strong); transition:border-color .2s, color .2s; }
+  .foot-tg:hover{ color:var(--accent); border-color:var(--accent); }
+  .foot-meta{ margin-top:22px; font-family:var(--f-mono); font-size:11px; letter-spacing:.02em; color:var(--text-mute); }
+  footer .bottom{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; margin-top:clamp(72px, 12vh, 140px); padding-top:20px; border-top:1px solid var(--line); font-family:var(--f-mono); font-size:10.5px; letter-spacing:.02em; color:var(--text-mute); }
+  footer .bottom a:hover{ color:var(--text); }
+
+  /* ---------- lightbox ---------- */
+  .lightbox{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:32px; background:rgba(8,8,7,.92); cursor:zoom-out; }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:100%; max-height:100%; object-fit:contain; border-radius:12px; }
+  .lightbox-close{ position:fixed; top:20px; right:24px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--bg-2); color:var(--text); font-size:16px; line-height:1; cursor:pointer; }
+  .lightbox-close:hover{ border-color:var(--accent); color:var(--accent); }
+
+  @media(prefers-reduced-motion:reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .grain{ display:none; }
   }
 </style>
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
 
-<nav>
+<nav class="nav" id="nav">
   <div class="wrap-wide">
-    <div class="brand">qyedo<span class="dot">.</span></div>
+    <a href="#top" class="brand" aria-label="qyedo">qyedo<i>.</i></a>
     <div class="navlinks">
-      <a href="#mindcoding" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</a>
-      <a href="#cases" data-ru="кейсы" data-en="cases">кейсы</a>
-      <a href="#stack" data-ru="стек" data-en="stack">стек</a>
-      <a href="#resume" data-ru="резюме" data-en="resume">резюме</a>
+      <a href="#mindcoding" data-ru="Майндкодинг" data-en="Mindcoding">Майндкодинг</a>
+      <a href="#cases" data-ru="Кейсы" data-en="Cases">Кейсы</a>
+      <a href="#stack" data-ru="Стек" data-en="Stack">Стек</a>
+      <a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a>
     </div>
     <div class="nav-right">
-      <div class="langtoggle">
-        <button data-lang="ru" class="active">RU</button>
-        <button data-lang="en">EN</button>
-      </div>
-      <a href="https://t.me/qyedo" class="nav-cta" target="_blank" rel="noopener">telegram ↗</a>
+      <div class="langtoggle"><button data-lang="ru" class="active">RU</button><button data-lang="en">EN</button></div>
+      <a href="Qyedo_CV.pdf" class="nav-cv resume-link" download="Vitalij_Levin_CV_RU.pdf"><span data-ru="Резюме" data-en="CV">Резюме</span><span aria-hidden="true">↓</span></a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap-wide">
+    <div class="hero-top" data-intro>
+      <span class="avail"><i></i><span data-ru="Открыт к предложениям" data-en="Open to offers">Открыт к предложениям</span></span>
+      <span data-ru="remote или офис · full-time" data-en="remote or on-site · full-time">remote или офис · full-time</span>
+    </div>
+    <h1 class="hero-name">
+      <span class="hn-line" data-ru="Виталий" data-en="Vitalij">Виталий</span>
+      <span class="hn-line" data-ru="Левин" data-en="Levin">Левин</span>
+    </h1>
     <div class="hero-grid">
-      <div>
-        <div class="hero-status"><span class="pulse"></span><span data-ru="Открыт к предложениям · remote / офис" data-en="Open to offers · remote / on-site">Открыт к предложениям · remote / офис</span></div>
-        <div class="hero-name">
-          <span class="name" data-ru="Виталий Левин" data-en="Vitalij Levin">Виталий Левин</span>
-          <span class="sep">/</span><span>qyedo</span>
-          <span class="sep">/</span><span class="role">fullstack product engineer</span>
-        </div>
-        <h1 data-i18n-html="hero.title">Строю продукты <em>целиком</em> — от&nbsp;интерфейса до&nbsp;финансового ядра и&nbsp;<span class="nw">ИИ-агентов</span></h1>
-        <p class="sub" data-i18n-html="hero.sub">В одиночку построил GameFi-экосистему для Telegram, Web и Android (5&nbsp;000 регистраций), с&nbsp;нуля до&nbsp;MVP — SaaS-платформу с&nbsp;ИИ-агентами, которой уже пользуются первые клиенты, и&nbsp;crypto-платёжный слой для пяти продуктов.</p>
-        <a href="#mindcoding" class="hero-tagline"><span class="k">&gt;</span><span data-ru="Пишу с ИИ — думаю сам" data-en="I code with AI — and think for myself">Пишу с ИИ — думаю сам</span><span class="k">↓</span></a>
-        <div class="hero-cta">
-          <a href="#cases" class="btn btn-primary" data-ru="Смотреть кейсы" data-en="View cases">Смотреть кейсы</a>
-          <a href="#" class="btn btn-ghost resume-link" download="Qyedo_CV.pdf" data-ru="Резюме PDF" data-en="Resume PDF">Резюме PDF</a>
-          <a href="https://t.me/qyedo" class="btn btn-ghost" target="_blank" rel="noopener">Telegram ↗</a>
-          <a href="mailto:qyedodev@gmail.com" class="btn btn-ghost">qyedodev@gmail.com</a>
+      <div class="hero-copy">
+        <p class="hero-role" data-intro>Fullstack product engineer</p>
+        <p class="hero-lead" data-intro data-i18n-html="hero.lead">Строю продукты целиком — от&nbsp;интерфейса до&nbsp;денег и&nbsp;ИИ-агентов. <span class="dim">Пишу с&nbsp;ИИ, думаю сам.</span></p>
+        <div class="hero-actions" data-intro>
+          <a href="#cases" class="btn btn-primary magnetic"><span data-ru="Смотреть кейсы" data-en="See the work">Смотреть кейсы</span><span class="arr down" aria-hidden="true">↓</span></a>
+          <a href="https://t.me/qyedo" class="btn btn-ghost magnetic" target="_blank" rel="noopener">Telegram <span class="arr" aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="term mc-term">
-        <div class="term-bar"><span></span><span></span><span></span><div class="term-title">mindcoding — session</div></div>
+      <div class="term mc-term" data-intro>
+        <div class="term-bar"><span class="rec"><i></i>mindcoding</span><span>claude code · live</span></div>
         <div class="term-body" id="mc-term" aria-live="off"></div>
       </div>
     </div>
-
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="v">2020</div><div class="l" data-ru="пишу код с 2020 года" data-en="writing code since 2020">пишу код с 2020 года</div></div>
-      <div class="hero-stat"><div class="v">10+</div><div class="l" data-ru="продуктов в продакшене" data-en="products in production">продуктов в продакшене</div></div>
-      <div class="hero-stat"><div class="v">5&nbsp;000</div><div class="l" data-ru="регистраций в NFINE, сделанном в одиночку" data-en="sign-ups in NFINE, built single-handedly">регистраций в NFINE, сделанном в одиночку</div></div>
-      <div class="hero-stat"><div class="v">6</div><div class="l" data-ru="ИИ-агентов в конвейере MetaForge" data-en="AI agents in the MetaForge pipeline">ИИ-агентов в конвейере MetaForge</div></div>
+    <div class="hero-facts" data-intro>
+      <div><b data-count="10" data-suffix="+">10+</b><span data-ru="продуктов в продакшене" data-en="products in production">продуктов в продакшене</span></div>
+      <div><b data-count="5000">5&nbsp;000</b><span data-ru="регистраций в NFINE — сделал в одиночку" data-en="sign-ups in NFINE — built solo">регистраций в NFINE — сделал в одиночку</span></div>
+      <div><b data-count="6">6</b><span data-ru="ИИ-агентов в конвейере MetaForge" data-en="AI agents in the MetaForge pipeline">ИИ-агентов в конвейере MetaForge</span></div>
+      <a href="#mindcoding" class="scroll-cue"><i></i><span data-ru="листай" data-en="scroll">листай</span></a>
     </div>
   </div>
 </header>
 
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span class="marquee-item">Product engineering</span>
+  <span class="marquee-item">React</span>
+  <span class="marquee-item">TypeScript</span>
+  <span class="marquee-item">Go</span>
+  <span class="marquee-item">Python</span>
+  <span class="marquee-item">TON</span>
+  <span class="marquee-item">PostgreSQL</span>
+  <span class="marquee-item">MongoDB</span>
+  <span class="marquee-item">Claude Code</span>
+  <span class="marquee-item">LLM agents</span>
+  <span class="marquee-item">Docker</span>
+  <span class="marquee-item">WebSocket</span>
+  <span class="marquee-item">Product engineering</span>
+  <span class="marquee-item">React</span>
+  <span class="marquee-item">TypeScript</span>
+  <span class="marquee-item">Go</span>
+  <span class="marquee-item">Python</span>
+  <span class="marquee-item">TON</span>
+  <span class="marquee-item">PostgreSQL</span>
+  <span class="marquee-item">MongoDB</span>
+  <span class="marquee-item">Claude Code</span>
+  <span class="marquee-item">LLM agents</span>
+  <span class="marquee-item">Docker</span>
+  <span class="marquee-item">WebSocket</span>
+</div></div>
+
 <section class="section" id="mindcoding">
   <div class="wrap-wide">
     <div class="sec-head">
-      <span class="idx mono">01</span><h2 data-ru="Майндкодинг" data-en="Mindcoding">Майндкодинг</h2><div class="rule"></div>
+      <h2 class="sec-title" data-ru="Майндкодинг" data-en="Mindcoding">Майндкодинг</h2>
+      <p class="sec-note" data-ru="Как я пишу код вместе с ИИ — и почему это не вайбкодинг." data-en="How I write code with AI — and why it isn't vibe coding.">Как я пишу код вместе с ИИ — и почему это не вайбкодинг.</p>
     </div>
 
     <div class="mc-intro">
+      <p class="mc-lead" data-i18n-html="mc.lead">ИИ пишет код. <em>Решения принимаю&nbsp;я.</em></p>
       <div>
-        <div class="mc-kicker" data-ru="не вайбкодинг" data-en="not vibe coding">не вайбкодинг</div>
-        <p class="mc-lead" data-ru="ИИ пишет много кода. Решения принимаю я." data-en="AI writes a lot of the code. I make the decisions.">ИИ пишет много кода. Решения принимаю я.</p>
         <p class="mc-text" data-i18n-html="mc.what">Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг</b> — мой термин для обратного: <b>знаешь и отвечаешь за каждую строку.</b></p>
-        <p class="mc-text" data-ru="Агенты ускоряют мою работу, но архитектура, модель данных и всё, что касается денег и прав доступа, остаётся под моим контролем. За этим стоят годы обычной разработки руками: я понимаю код, который читаю, и вижу, когда модель уверенно ошибается." data-en="Agents make me faster, but the architecture, the data model and everything that touches money or access control stays under my control. Behind that are years of writing code by hand: I understand the code I read, and I can tell when a model is confidently wrong.">Агенты ускоряют мою работу, но архитектура, модель данных и всё, что касается денег и прав доступа, остаётся под моим контролем. За этим стоят годы обычной разработки руками: я понимаю код, который читаю, и вижу, когда модель уверенно ошибается.</p>
+        <p class="mc-text" data-ru="Агенты ускоряют работу, но архитектура, модель данных, деньги и права доступа остаются под моим контролем. За этим — годы разработки руками: я вижу, когда модель уверенно ошибается." data-en="Agents make me faster, but the architecture, the data model, money and access control stay under my control. Behind that are years of writing code by hand: I can tell when a model is confidently wrong.">Агенты ускоряют работу, но архитектура, модель данных, деньги и права доступа остаются под моим контролем. За этим — годы разработки руками: я вижу, когда модель уверенно ошибается.</p>
       </div>
-      <aside class="mc-proof">
-        <div class="h" data-ru="Я не только пользуюсь ИИ — я строил ИИ-системы" data-en="I don't just use AI — I've built AI systems">Я не только пользуюсь ИИ — я строил ИИ-системы</div>
-        <div class="mc-proof-item">
-          <div class="v">6</div>
-          <div class="t" data-ru="агентов в конвейере разработки MetaForge" data-en="agents in the MetaForge dev pipeline">агентов в конвейере разработки MetaForge</div>
-          <div class="d">clarifier → architect → developer → reviewer → security → deployer</div>
-        </div>
-        <div class="mc-proof-item">
-          <div class="v">4</div>
-          <div class="t" data-ru="ИИ-провайдера за единым шлюзом" data-en="AI providers behind one gateway">ИИ-провайдера за единым шлюзом</div>
-          <div class="d">Claude · OpenAI · DeepSeek · Grok · NDA</div>
-        </div>
-        <div class="mc-proof-item">
-          <div class="v word">Docker</div>
-          <div class="t" data-ru="изолированное окружение на каждую сессию" data-en="an isolated environment per session">изолированное окружение на каждую сессию</div>
-          <div class="d" data-ru="сгенерированный код запускается с живым превью" data-en="generated code runs with a live preview">сгенерированный код запускается с живым превью</div>
-        </div>
-        <a class="more" href="#case-metaforge" data-ru="Смотреть кейс MetaForge →" data-en="See the MetaForge case →">Смотреть кейс MetaForge →</a>
-      </aside>
     </div>
 
-    <div class="subhead" data-ru="Вайбкодинг и майндкодинг" data-en="Vibe coding vs mindcoding">Вайбкодинг и майндкодинг</div>
     <div class="mc-vs">
-      <div class="mc-vs-row"><div class="vibe" data-ru="вайбкодинг" data-en="vibe coding">вайбкодинг</div><div class="mind" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="«Сделай» в чат" data-en="&quot;Make it work&quot; in a chat">«Сделай» в чат</div><div class="mind" data-ru="Правила, карта проекта и пул задач до первой строки кода" data-en="Rules, a project map and a task pool before the first line of code">Правила, карта проекта и пул задач до первой строки кода</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="Принять всё, что сгенерировано" data-en="Accept whatever was generated">Принять всё, что сгенерировано</div><div class="mind" data-ru="Каждый результат проходит мою приёмку" data-en="Every result goes through my review">Каждый результат проходит мою приёмку</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="Одна модель на всё" data-en="One model for everything">Одна модель на всё</div><div class="mind" data-ru="Модель под задачу" data-en="The right model for each task">Модель под задачу</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="Архитектура появляется сама" data-en="Architecture just happens">Архитектура появляется сама</div><div class="mind" data-ru="Архитектуру проектирую я" data-en="I design the architecture">Архитектуру проектирую я</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="«Работает — значит готово»" data-en="&quot;It runs, ship it&quot;">«Работает — значит готово»</div><div class="mind" data-ru="Готово, когда прошло проверку и тесты" data-en="Done means checked and tested">Готово, когда прошло проверку и тесты</div></div>
+      <div class="mc-vs-head"><div data-ru="вайбкодинг" data-en="vibe coding">вайбкодинг</div><div class="mind" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</div></div>
+      <div class="mc-vs-row"><div class="vibe"><span data-ru="«Сделай» в чат" data-en="&quot;Make it work&quot; in a chat">«Сделай» в чат</span></div><div class="mind" data-ru="Правила, карта проекта и пул задач до первой строки кода" data-en="Rules, a project map and a task pool before the first line of code">Правила, карта проекта и пул задач до первой строки кода</div></div>
+      <div class="mc-vs-row"><div class="vibe"><span data-ru="Принять всё, что сгенерировано" data-en="Accept whatever was generated">Принять всё, что сгенерировано</span></div><div class="mind" data-ru="Каждый результат проходит мою приёмку" data-en="Every result goes through my review">Каждый результат проходит мою приёмку</div></div>
+      <div class="mc-vs-row"><div class="vibe"><span data-ru="Архитектура появляется сама" data-en="Architecture just happens">Архитектура появляется сама</span></div><div class="mind" data-ru="Архитектуру проектирую я" data-en="I design the architecture">Архитектуру проектирую я</div></div>
+      <div class="mc-vs-row"><div class="vibe"><span data-ru="«Работает — значит готово»" data-en="&quot;It runs, ship it&quot;">«Работает — значит готово»</span></div><div class="mind" data-ru="Готово, когда прошло проверку и тесты" data-en="Done means checked and tested">Готово, когда прошло проверку и тесты</div></div>
     </div>
 
-    <div class="subhead" data-ru="Мой процесс" data-en="My process">Мой процесс</div>
-    <div class="mc-loop">
-      <div class="mc-step"><div class="n">01</div><div class="t" data-ru="Правила" data-en="Rules">Правила</div><div class="d" data-ru="Вместе с агентом пишу свод правил работы с проектом" data-en="I write the working rules for the project together with the agent">Вместе с агентом пишу свод правил работы с проектом</div></div>
-      <div class="mc-step"><div class="n">02</div><div class="t" data-ru="Карта" data-en="Map">Карта</div><div class="d" data-ru="Ключевые файлы, карта проекта, документация и памятка по навигации" data-en="Key files, a project map, docs and a navigation guide for the agent">Ключевые файлы, карта проекта, документация и памятка по навигации</div></div>
-      <div class="mc-step"><div class="n">03</div><div class="t" data-ru="Пул задач" data-en="Task pool">Пул задач</div><div class="d" data-ru="Файл по шаблону: задачи и приоритеты проекта" data-en="A templated file with the tasks and priorities of the project">Файл по шаблону: задачи и приоритеты проекта</div></div>
-      <div class="mc-step"><div class="n">04</div><div class="t" data-ru="Выполнение" data-en="Execution">Выполнение</div><div class="d" data-ru="По одной задаче или пачкой до 10 по одному направлению" data-en="One task at a time or a batch of up to 10 in one area">По одной задаче или пачкой до 10 по одному направлению</div></div>
-      <div class="mc-step"><div class="n">05</div><div class="t" data-ru="Сверка" data-en="Self-check">Сверка</div><div class="d" data-ru="Агент сверяется с архитектурой и заводит задачи на улучшения" data-en="The agent checks against the architecture and files improvement tasks">Агент сверяется с архитектурой и заводит задачи на улучшения</div></div>
-      <div class="mc-step"><div class="n">06 ↺</div><div class="t" data-ru="Приёмка" data-en="Review">Приёмка</div><div class="d" data-ru="Результат проверяю я — решение о приёмке за мной" data-en="I check the result — acceptance is my call">Результат проверяю я — решение о приёмке за мной</div></div>
+    <div class="mc-process">
+      <div class="mc-process-head"><h3 data-ru="Мой процесс" data-en="My process">Мой процесс</h3><div class="mc-progress" aria-hidden="true"><i></i></div></div>
+      <div class="mc-track">
+        <div class="mc-step"><div class="n">01</div><div class="t" data-ru="Правила" data-en="Rules">Правила</div><div class="d" data-ru="Вместе с агентом пишу свод правил работы с проектом" data-en="I write the working rules for the project together with the agent">Вместе с агентом пишу свод правил работы с проектом</div></div>
+        <div class="mc-step"><div class="n">02</div><div class="t" data-ru="Карта" data-en="Map">Карта</div><div class="d" data-ru="Ключевые файлы, карта проекта, документация и памятка по навигации" data-en="Key files, a project map, docs and a navigation guide for the agent">Ключевые файлы, карта проекта, документация и памятка по навигации</div></div>
+        <div class="mc-step"><div class="n">03</div><div class="t" data-ru="Пул задач" data-en="Task pool">Пул задач</div><div class="d" data-ru="Файл по шаблону: задачи и приоритеты проекта" data-en="A templated file with the tasks and priorities of the project">Файл по шаблону: задачи и приоритеты проекта</div></div>
+        <div class="mc-step"><div class="n">04</div><div class="t" data-ru="Выполнение" data-en="Execution">Выполнение</div><div class="d" data-ru="По одной задаче или пачкой до 10 по одному направлению" data-en="One task at a time or a batch of up to 10 in one area">По одной задаче или пачкой до 10 по одному направлению</div></div>
+        <div class="mc-step"><div class="n">05</div><div class="t" data-ru="Сверка" data-en="Self-check">Сверка</div><div class="d" data-ru="Агент сверяется с архитектурой и заводит задачи на улучшения" data-en="The agent checks against the architecture and files improvement tasks">Агент сверяется с архитектурой и заводит задачи на улучшения</div></div>
+        <div class="mc-step"><div class="n">06</div><div class="t" data-ru="Приёмка" data-en="Review">Приёмка</div><div class="d" data-ru="Результат проверяю я — решение о приёмке за мной" data-en="I check the result — acceptance is my call">Результат проверяю я — решение о приёмке за мной</div></div>
+      </div>
     </div>
 
-    <div class="subhead" data-ru="Где ИИ, а где я" data-en="What I delegate, what I own">Где ИИ, а где я</div>
-    <div class="mc-trust">
-      <div class="mc-card ai">
-        <div class="h" data-ru="Отдаю агенту" data-en="I hand to the agent">Отдаю агенту</div>
-        <ul>
-          <li data-ru="Задачи из пула — по одной или пачкой" data-en="Tasks from the pool — one by one or in batches">Задачи из пула — по одной или пачкой</li>
-          <li data-ru="Код, тесты и рефакторинг" data-en="Code, tests and refactoring">Код, тесты и рефакторинг</li>
-          <li data-ru="Сверку с архитектурными файлами" data-en="Checking work against the architecture docs">Сверку с архитектурными файлами</li>
-          <li data-ru="Новые задачи на улучшение сервиса" data-en="Filing new improvement tasks">Новые задачи на улучшение сервиса</li>
-        </ul>
-      </div>
-      <div class="mc-card me">
-        <div class="h" data-ru="Остаётся за мной" data-en="Stays with me">Остаётся за мной</div>
-        <ul>
-          <li data-ru="Архитектура и правила проекта" data-en="Architecture and project rules">Архитектура и правила проекта</li>
-          <li data-ru="Приоритеты в пуле задач" data-en="Priorities in the task pool">Приоритеты в пуле задач</li>
-          <li data-ru="Приёмка каждого результата" data-en="Reviewing every result">Приёмка каждого результата</li>
-          <li data-ru="Деньги, права доступа и безопасность" data-en="Money, access control and security">Деньги, права доступа и безопасность</li>
-        </ul>
-      </div>
-    </div>
     <div class="mc-facts">
-      <div class="mc-fact"><span class="k" data-ru="инструменты" data-en="tools">инструменты</span><span class="v" data-ru="Claude Code · Codex · Greta — мой агент для MetaForge" data-en="Claude Code · Codex · Greta — my own agent for MetaForge">Claude Code · Codex · Greta — мой агент для MetaForge</span></div>
-      <div class="mc-fact"><span class="k" data-ru="скорость" data-en="speed">скорость</span><span class="v" data-ru="задача, на которую junior/middle потратил бы день, — около 5 минут работы агента и моя приёмка" data-en="a task that would take a junior/middle dev a day — about 5 minutes of agent time plus my review">задача, на которую junior/middle потратил бы день, — около 5 минут работы агента и моя приёмка</span></div>
+      <div class="mc-fact"><span class="k" data-ru="инструменты" data-en="tools">инструменты</span><span class="v" data-ru="Claude Code, Codex и Greta — мой агент для MetaForge" data-en="Claude Code, Codex and Greta — my own agent for MetaForge">Claude Code, Codex и Greta — мой агент для MetaForge</span></div>
+      <div class="mc-fact"><span class="k" data-ru="скорость" data-en="speed">скорость</span><span class="v" data-ru="Задача на день для junior/middle — около 5 минут работы агента и моя приёмка" data-en="A day's task for a junior/middle dev — about 5 minutes of agent time plus my review">Задача на день для junior/middle — около 5 минут работы агента и моя приёмка</span></div>
+      <div class="mc-fact"><span class="k" data-ru="ИИ-системы" data-en="AI systems">ИИ-системы</span><span class="v" data-i18n-html="mc.proof">Строил сам: 6 агентов в&nbsp;MetaForge, шлюз к&nbsp;4 провайдерам, Docker-песочницы. <a href="#case-metaforge">Кейс&nbsp;→</a></span></div>
     </div>
   </div>
 </section>
@@ -663,11 +551,9 @@
 <section class="section" id="cases">
   <div class="wrap-wide">
     <div class="sec-head">
-      <span class="idx mono">02</span><h2 data-ru="Кейсы" data-en="Cases">Кейсы</h2><div class="rule"></div>
+      <h2 class="sec-title" data-ru="Кейсы" data-en="Cases">Кейсы</h2>
+      <p class="sec-note" data-ru="Продукты, где я вёл интерфейс, бэкенд и интеграции. Полный разбор — под раскрытием." data-en="Products where I owned the interface, the backend and the integrations. The full story is one click away.">Продукты, где я вёл интерфейс, бэкенд и интеграции. Полный разбор — под раскрытием.</p>
     </div>
-    <p class="cases-intro" data-ru="Продукты, где я вёл интерфейс, бэкенд и интеграции. В каждом кейсе — роль, ключевые инженерные задачи и результат, полный разбор — под раскрытием." data-en="Products where I owned the interface, the backend and the integrations. Each case shows my role, the key engineering problems and the outcome; the full story is one click away.">Продукты, где я вёл интерфейс, бэкенд и интеграции. В каждом кейсе — роль, ключевые инженерные задачи и результат, полный разбор — под раскрытием.</p>
-
-    <div class="subhead">Selected work</div>
 
     <!-- ============ FEATURE 01 — METAFORGE ============ -->
     <div class="feature" id="case-metaforge">
@@ -1182,10 +1068,10 @@
       </div>
     </div>
 
-    <div class="subhead">More work</div>
+    <div class="subhead" data-ru="Другие работы" data-en="More work">Другие работы</div>
     <div class="more-grid" id="more-work-grid"></div>
 
-    <div class="subhead" data-ru="Закрытые проекты" data-en="Private work">Private work</div>
+    <div class="subhead" data-ru="Закрытые проекты" data-en="Private work">Закрытые проекты</div>
     <div class="private-box">
       <p class="private-intro" data-ru="Часть коммерческих проектов нельзя опубликовать полностью. По некоторым могу показать материалы лично, по другим — рассказать об архитектуре и своей роли." data-en="Some commercial projects can't be published in full. I can show materials for a few privately, and walk through architecture and my role on the rest.">
         Часть коммерческих проектов нельзя опубликовать полностью. По некоторым могу показать материалы лично, по другим — рассказать об архитектуре и своей роли.
@@ -1202,81 +1088,48 @@
 <section class="section" id="stack">
   <div class="wrap-wide">
     <div class="sec-head">
-      <span class="idx mono">03</span><h2 data-ru="Стек" data-en="Stack">Стек</h2><div class="rule"></div>
+      <h2 class="sec-title" data-ru="Стек" data-en="Stack">Стек</h2>
+      <p class="sec-note" data-ru="Сгруппировано по задачам, а не по языкам." data-en="Grouped by what it does, not by language.">Сгруппировано по задачам, а не по языкам.</p>
     </div>
-    <p class="cases-intro" style="margin-bottom:28px;" data-ru="Сгруппировано по задачам, а не по языкам. Под каждой группой — где я это применял." data-en="Grouped by what it does, not by language. Each group links to where I used it.">Сгруппировано по задачам, а не по языкам. Под каждой группой — где я это применял.</p>
-    <div class="skills-grid">
-      <div class="skill-card" style="--c:var(--c-frontend)">
-        <div class="h"><span class="dot"></span><h4 data-ru="Продуктовый фронтенд" data-en="Product frontend">Продуктовый фронтенд</h4></div>
-        <p class="d" data-ru="Большие React-приложения с централизованным состоянием, защищёнными маршрутами и единым API-слоем." data-en="Large React apps with centralized state, protected routes and a single API layer.">Большие React-приложения с централизованным состоянием, защищёнными маршрутами и единым API-слоем.</p>
-        <div class="tags"><span class="tag" data-cat="frontend">TypeScript</span><span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="frontend">Redux</span><span class="tag" data-cat="frontend">Zustand</span><span class="tag" data-cat="frontend">React Router</span><span class="tag" data-cat="frontend">Tailwind CSS</span><span class="tag" data-cat="frontend">SCSS Modules</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-nfine">NFINE</a> · <a href="#case-metaforge">MetaForge</a> · <a href="#case-bac">BAC</a></div>
-      </div>
-      <div class="skill-card" style="--c:var(--c-go)">
-        <div class="h"><span class="dot"></span><h4 data-ru="Бэкенд" data-en="Backend">Бэкенд</h4></div>
-        <p class="d" data-ru="Модульный монолит на Go, асинхронный FastAPI, realtime через WebSocket и фоновые воркеры." data-en="A modular Go monolith, async FastAPI, realtime over WebSocket and background workers.">Модульный монолит на Go, асинхронный FastAPI, realtime через WebSocket и фоновые воркеры.</p>
-        <div class="tags"><span class="tag" data-cat="go">Go</span><span class="tag" data-cat="go">chi</span><span class="tag" data-cat="py">Python</span><span class="tag" data-cat="py">FastAPI</span><span class="tag" data-cat="py">Pydantic</span><span class="tag" data-cat="py">Motor</span><span class="tag" data-cat="infra">REST API</span><span class="tag" data-cat="infra">WebSocket</span><span class="tag" data-cat="infra">JWT</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-metaforge">MetaForge</a> · <a href="#case-nfine">NFINE</a> · <a href="#case-bac">BAC</a></div>
-      </div>
-      <div class="skill-card" style="--c:var(--c-web3)">
-        <div class="h"><span class="dot"></span><h4 data-ru="Деньги и Web3" data-en="Money &amp; Web3">Деньги и Web3</h4></div>
-        <p class="d" data-ru="Платёжный слой для пополнений, обмена и выплат: каждая операция фиксируется в журнале транзакций." data-en="A payment layer for top-ups, exchange and payouts — every operation lands in the transaction ledger.">Платёжный слой для пополнений, обмена и выплат: каждая операция фиксируется в журнале транзакций.</p>
-        <div class="tags"><span class="tag" data-cat="web3">TON SDK</span><span class="tag" data-cat="web3">Payment Gateway</span><span class="tag" data-cat="web3">Transaction Ledger</span><span class="tag" data-cat="web3">TX Indexing</span><span class="tag" data-cat="web3">Wallet Deep-linking</span><span class="tag" data-cat="web3">USDT</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-nfine">NFINE</a> · <a href="#case-bac">BAC</a> · <span>NDA</span></div>
-      </div>
-      <div class="skill-card" style="--c:var(--c-platform)">
-        <div class="h"><span class="dot"></span><h4 data-ru="ИИ-системы" data-en="AI systems">ИИ-системы</h4></div>
-        <p class="d" data-ru="Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода." data-en="An agent pipeline, permission-scoped context, one gateway to several providers and isolated execution of generated code.">Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода.</p>
-        <div class="tags"><span class="tag" data-cat="ai">Claude Code · Codex</span><span class="tag" data-cat="ai">LLM orchestration</span><span class="tag" data-cat="ai">Multi-agent pipeline</span><span class="tag" data-cat="ai">Claude · OpenAI · DeepSeek · Grok</span><span class="tag" data-cat="ai">Docker sandboxes</span><span class="tag" data-cat="ai">n8n</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-metaforge">MetaForge</a> · <span>NDA</span> · <a href="#mindcoding" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</a></div>
-      </div>
-      <div class="skill-card" style="--c:var(--c-data)">
-        <div class="h"><span class="dot"></span><h4 data-ru="Данные и хранилища" data-en="Data &amp; storage">Данные и хранилища</h4></div>
-        <p class="d" data-ru="Мультитенантность с отдельной базой на компанию и файловое хранилище, не привязанное к провайдеру." data-en="Multi-tenancy with a database per company, and file storage that isn't tied to one provider.">Мультитенантность с отдельной базой на компанию и файловое хранилище, не привязанное к провайдеру.</p>
-        <div class="tags"><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="data">PostgreSQL</span><span class="tag" data-cat="data">SQLite</span><span class="tag" data-cat="data">MinIO</span><span class="tag" data-cat="data">S3 / GCS</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-metaforge">MetaForge</a> · <a href="#case-nfine">NFINE</a></div>
-      </div>
-      <div class="skill-card" style="--c:var(--c-infra)">
-        <div class="h"><span class="dot"></span><h4 data-ru="Платформы и доставка" data-en="Platforms &amp; delivery">Платформы и доставка</h4></div>
-        <p class="d" data-ru="Одно приложение для Telegram, Web и Android; Docker и Git-интеграции." data-en="One app across Telegram, Web and Android; Docker and Git integrations.">Одно приложение для Telegram, Web и Android; Docker и Git-интеграции.</p>
-        <div class="tags"><span class="tag" data-cat="platform">Telegram Mini Apps</span><span class="tag" data-cat="platform">Web</span><span class="tag" data-cat="platform">Android WebView</span><span class="tag" data-cat="platform">Desktop</span><span class="tag" data-cat="infra">Docker</span><span class="tag" data-cat="infra">Git · Gitea · GitLab</span></div>
-        <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-nfine">NFINE</a> · <a href="#case-bac">BAC</a> · <a href="#case-metaforge">MetaForge</a></div>
-      </div>
+    <div class="stack-list">
+      <div class="stack-row"><h3 data-ru="Продуктовый фронтенд" data-en="Product frontend">Продуктовый фронтенд</h3><div><p class="d" data-ru="Большие React-приложения с централизованным состоянием, защищёнными маршрутами и единым API-слоем." data-en="Large React apps with centralized state, protected routes and a single API layer.">Большие React-приложения с централизованным состоянием, защищёнными маршрутами и единым API-слоем.</p><p class="tools">TypeScript · React · MobX · Redux · Zustand · React Router · Tailwind CSS · SCSS Modules</p></div></div>
+      <div class="stack-row"><h3 data-ru="Бэкенд" data-en="Backend">Бэкенд</h3><div><p class="d" data-ru="Модульный монолит на Go, асинхронный FastAPI, realtime через WebSocket и фоновые воркеры." data-en="A modular Go monolith, async FastAPI, realtime over WebSocket and background workers.">Модульный монолит на Go, асинхронный FastAPI, realtime через WebSocket и фоновые воркеры.</p><p class="tools">Go · chi · Python · FastAPI · Pydantic · Motor · REST API · WebSocket · JWT</p></div></div>
+      <div class="stack-row"><h3 data-ru="Деньги и Web3" data-en="Money &amp; Web3">Деньги и Web3</h3><div><p class="d" data-ru="Платёжный слой для пополнений, обмена и выплат: каждая операция фиксируется в журнале транзакций." data-en="A payment layer for top-ups, exchange and payouts — every operation lands in the transaction ledger.">Платёжный слой для пополнений, обмена и выплат: каждая операция фиксируется в журнале транзакций.</p><p class="tools">TON SDK · Payment gateway · Transaction ledger · TX indexing · Wallet deep-linking · USDT</p></div></div>
+      <div class="stack-row"><h3 data-ru="ИИ-системы" data-en="AI systems">ИИ-системы</h3><div><p class="d" data-ru="Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода." data-en="An agent pipeline, permission-scoped context, one gateway to several providers and isolated execution of generated code.">Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода.</p><p class="tools">Claude Code · Codex · LLM orchestration · Multi-agent pipeline · Claude · OpenAI · DeepSeek · Grok · Docker sandboxes · n8n</p></div></div>
+      <div class="stack-row"><h3 data-ru="Данные и хранилища" data-en="Data &amp; storage">Данные и хранилища</h3><div><p class="d" data-ru="Мультитенантность с отдельной базой на компанию и файловое хранилище, не привязанное к провайдеру." data-en="Multi-tenancy with a database per company, and file storage that isn&#39;t tied to one provider.">Мультитенантность с отдельной базой на компанию и файловое хранилище, не привязанное к провайдеру.</p><p class="tools">MongoDB · PostgreSQL · SQLite · MinIO · S3 / GCS</p></div></div>
+      <div class="stack-row"><h3 data-ru="Платформы и доставка" data-en="Platforms &amp; delivery">Платформы и доставка</h3><div><p class="d" data-ru="Одно приложение для Telegram, Web и Android; Docker и Git-интеграции." data-en="One app across Telegram, Web and Android; Docker and Git integrations.">Одно приложение для Telegram, Web и Android; Docker и Git-интеграции.</p><p class="tools">Telegram Mini Apps · Web · Android WebView · Desktop · Docker · Git · Gitea · GitLab</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="resume">
   <div class="wrap-wide">
-    <div class="sec-head">
-      <span class="idx mono">04</span><h2 data-ru="Резюме" data-en="Resume">Резюме</h2><div class="rule"></div>
-    </div>
     <div class="resume-box">
       <div>
-        <div class="t" data-ru="Vitalij_Levin_CV_RU.pdf" data-en="Vitalij_Levin_CV_EN.pdf">Vitalij_Levin_CV_RU.pdf</div>
-        <div class="d" data-ru="Опыт, технологии и контакты на одной странице." data-en="Experience, tech stack, and contacts on one page.">Опыт, технологии и контакты на одной странице.</div>
+        <div class="t" data-ru="Резюме" data-en="Resume">Резюме</div>
+        <p class="d" data-ru="Одна страница: опыт, стек и контакты. На русском и английском." data-en="One page: experience, stack and contacts. In Russian and English.">Одна страница: опыт, стек и контакты. На русском и английском.</p>
       </div>
-      <a id="resume-dl" class="btn btn-primary" download="Qyedo_CV.pdf" href="#" data-ru="Скачать резюме" data-en="Download resume">Скачать резюме</a>
+      <div class="resume-actions">
+        <a class="btn magnetic" href="Qyedo_CV.pdf" download="Vitalij_Levin_CV_RU.pdf">PDF · RU <span class="arr down" aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost magnetic" href="Qyedo_CV_EN.pdf" download="Vitalij_Levin_CV_EN.pdf">PDF · EN <span class="arr down" aria-hidden="true">↓</span></a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <div class="wrap-wide">
-    <div class="row">
-      <div>
-        <h2 data-ru="Давайте поговорим" data-en="Let's talk">Давайте поговорим</h2>
-        <p class="foot-lead" data-ru="Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ." data-en="I'm looking for a team that needs an engineer who owns the whole product — from the interface to the money layer and AI.">Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ.</p>
-        <div class="meta" data-ru="full-time · удалённо или в офисе · UTC-2 — UTC+2" data-en="full-time · remote or on-site · UTC-2 — UTC+2">full-time · удалённо или в офисе · UTC-2 — UTC+2</div>
-      </div>
-      <div class="contacts">
-        <a href="https://t.me/qyedo" target="_blank" rel="noopener">Telegram @qyedo →</a>
-        <a href="mailto:qyedodev@gmail.com">qyedodev@gmail.com →</a>
-      </div>
+    <h2 class="foot-title" data-ru="Давайте поговорим" data-en="Let's talk">Давайте поговорим</h2>
+    <p class="foot-lead" data-ru="Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ." data-en="I'm looking for a team that needs an engineer who owns the whole product — from the interface to the money layer and AI.">Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ.</p>
+    <div class="foot-links">
+      <a class="foot-mail" href="mailto:qyedodev@gmail.com">qyedodev@gmail.com</a>
+      <a class="foot-tg" href="https://t.me/qyedo" target="_blank" rel="noopener">Telegram @qyedo ↗</a>
     </div>
+    <div class="foot-meta" data-ru="full-time · удалённо или в офисе · UTC-2 — UTC+2" data-en="full-time · remote or on-site · UTC-2 — UTC+2">full-time · удалённо или в офисе · UTC-2 — UTC+2</div>
     <div class="bottom">
-      <div data-ru="qyedo · Виталий Левин" data-en="qyedo · Vitalij Levin">qyedo · Виталий Левин</div>
-      <div>2026</div>
+      <span data-ru="qyedo · Виталий Левин" data-en="qyedo · Vitalij Levin">qyedo · Виталий Левин</span>
+      <span>© 2026</span>
+      <a href="#top" data-ru="Наверх ↑" data-en="Back to top ↑">Наверх ↑</a>
     </div>
   </div>
 </footer>
@@ -1286,6 +1139,11 @@
   <img id="lightbox-img" src="" alt="">
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 <script>
 // ---------- i18n ----------
 const RESUME_URL = { ru: "Qyedo_CV.pdf", en: "Qyedo_CV_EN.pdf" };
@@ -1294,17 +1152,21 @@ const RESUME_NAME = { ru: "Vitalij_Levin_CV_RU.pdf", en: "Vitalij_Levin_CV_EN.pd
 // Texts that contain markup (accents, placeholders) — swapped via innerHTML.
 // Plain texts keep using data-ru / data-en attributes.
 const I18N_HTML = {
-  'hero.title': {
-    ru: 'Строю продукты <em>целиком</em> — от&nbsp;интерфейса до&nbsp;финансового ядра и&nbsp;<span class="nw">ИИ-агентов</span>',
-    en: 'I build <em>whole</em> products — from the interface to the money layer and AI&nbsp;agents'
+  'hero.lead': {
+    ru: 'Строю продукты целиком — от&nbsp;интерфейса до&nbsp;денег и&nbsp;ИИ-агентов. <span class="dim">Пишу с&nbsp;ИИ, думаю сам.</span>',
+    en: 'I build whole products — from the interface to the money layer and AI&nbsp;agents. <span class="dim">I code with AI and think for myself.</span>'
   },
-  'hero.sub': {
-    ru: 'В одиночку построил GameFi-экосистему для Telegram, Web и Android (5&nbsp;000 регистраций), с&nbsp;нуля до&nbsp;MVP — SaaS-платформу с&nbsp;ИИ-агентами, которой уже пользуются первые клиенты, и&nbsp;crypto-платёжный слой для пяти продуктов.',
-    en: 'Single-handedly built a GameFi ecosystem for Telegram, Web and Android (5,000 sign-ups), took a SaaS platform with AI agents from idea to MVP — now used by its first clients — and built a crypto payment layer shared by five products.'
+  'mc.lead': {
+    ru: 'ИИ пишет код. <em>Решения принимаю&nbsp;я.</em>',
+    en: 'AI writes the code. <em>I make the calls.</em>'
   },
   'mc.what': {
     ru: 'Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг</b> — мой термин для обратного: <b>знаешь и отвечаешь за каждую строку.</b>',
     en: 'Vibe coding is not knowing what the model wrote. <b>Mindcoding</b> — my term for the opposite: <b>knowing it and owning every line.</b>'
+  },
+  'mc.proof': {
+    ru: 'Строил сам: 6 агентов в&nbsp;MetaForge, шлюз к&nbsp;4 провайдерам, Docker-песочницы. <a href="#case-metaforge">Кейс&nbsp;→</a>',
+    en: 'Built them myself: 6 agents in MetaForge, a gateway to 4 providers, Docker sandboxes. <a href="#case-metaforge">See the case&nbsp;→</a>'
   }
 };
 
@@ -1312,28 +1174,26 @@ const I18N_HTML = {
 // Stylised run of the real workflow: rules → map → task pool → batch → self-check → human review.
 const MC_SCRIPT = {
   ru: {
-    cmd: 'claude "возьми задачи из пула: платежи"',
+    cmd: 'claude "задачи из пула: платежи"',
     steps: [
-      ['rules',  'правила проекта и памятка агента', 'ok'],
-      ['map',    'карта проекта · архитектурные файлы', 'ok'],
-      ['pool',   'пачка задач по направлению «платежи»', 'ok'],
-      ['build',  'код и тесты по каждой задаче', 'ok'],
-      ['check',  'сверка с архитектурой · +1 задача в пул', 'ok'],
-      ['review', 'отправлено на приёмку человеку', 'ok']
+      ['rules',  'правила и карта проекта', 'ok'],
+      ['pool',   'пачка задач: платежи', 'ok'],
+      ['build',  'код и тесты', 'ok'],
+      ['check',  'сверка с архитектурой', 'ok'],
+      ['review', 'на приёмку человеку', 'ok']
     ],
-    done: 'решение о приёмке — за мной'
+    done: 'решение — за мной'
   },
   en: {
-    cmd: 'claude "take tasks from the pool: payments"',
+    cmd: 'claude "pool tasks: payments"',
     steps: [
-      ['rules',  'project rules and the agent guide', 'ok'],
-      ['map',    'project map · architecture docs', 'ok'],
-      ['pool',   'a batch of tasks: payments', 'ok'],
-      ['build',  'code and tests for each task', 'ok'],
-      ['check',  'checked against architecture · +1 task', 'ok'],
+      ['rules',  'project rules and map', 'ok'],
+      ['pool',   'a batch: payments', 'ok'],
+      ['build',  'code and tests', 'ok'],
+      ['check',  'checked vs architecture', 'ok'],
       ['review', 'sent for human review', 'ok']
     ],
-    done: 'acceptance is my call'
+    done: 'the call is mine'
   }
 };
 
@@ -1405,6 +1265,7 @@ function startMindTerm(lang){
 const TITLE = { ru: 'Виталий Левин — fullstack product engineer', en: 'Vitalij Levin — fullstack product engineer' };
 
 function setLang(lang){
+  if (window.Motion) Motion.beforeLang();
   document.getElementById('html-root').lang = lang;
   document.title = TITLE[lang];
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
@@ -1422,6 +1283,7 @@ function setLang(lang){
     dl.setAttribute('download', RESUME_NAME[lang]);
   });
   startMindTerm(lang);
+  if (window.Motion) Motion.afterLang();
 }
 
 document.querySelectorAll('.langtoggle button').forEach(b => {
@@ -1528,11 +1390,13 @@ function openLightbox(src, alt){
   lightboxImg.alt = alt || '';
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
+  if (window.Motion) Motion.pause();
 }
 function closeLightbox(){
   lightbox.classList.remove('open');
   lightboxImg.src = '';
   document.body.style.overflow = '';
+  if (window.Motion) Motion.resume();
 }
 
 document.addEventListener('click', (e) => {
@@ -1545,91 +1409,268 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
 });
 
-// ---------- scroll reveal ----------
-(function(){
-  const targets = document.querySelectorAll(
-    '.sec-head, .subhead, .layer, .mode-card, .more-card, .private-row, .private-box, .resume-box, .media, h3, footer .row, .mc-proof, .mc-vs, .mc-step, .mc-card, .mc-fact, .challenge, .skill-card'
-  );
-  targets.forEach(el => el.classList.add('reveal'));
+// ---------- motion: GSAP (ScrollTrigger, SplitText, ScrambleText) + Lenis ----------
+// Everything is visible without this block; it only adds motion when the libraries loaded
+// and the visitor hasn't asked for reduced motion.
+window.Motion = (function(){
+  const root = document.documentElement;
+  const api = { beforeLang(){}, afterLang(){}, pause(){}, resume(){} };
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !window.gsap || !window.ScrollTrigger || !window.SplitText){
+    root.classList.remove('is-loading');
+    return api;
+  }
+  gsap.registerPlugin(...[ScrollTrigger, SplitText, window.ScrambleTextPlugin].filter(Boolean));
+  root.classList.add('has-motion');
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  const started = performance.now();
 
-  if ('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
+  // smooth scroll
+  let lenis = null;
+  if (window.Lenis){
+    lenis = new Lenis({ lerp: 0.1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href');
+    if (id.length < 2) return;
+    const el = id === '#top' ? document.body : document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(id === '#top' ? 0 : el, { offset: -80, duration: 1.5 });
+    else el.scrollIntoView({ behavior: 'smooth' });
+  });
+  api.pause = () => { if (lenis) lenis.stop(); };
+  api.resume = () => { if (lenis) lenis.start(); };
+
+  const fmt = n => root.lang === 'en' ? n.toLocaleString('en-US') : n.toLocaleString('ru-RU').replace(/\s/g, ' ');
+
+  // ---- text splitting (redone after a language switch) ----
+  let nameSplit = null, titleSplit = null, titleTweens = [];
+  const splitName = () => (nameSplit = new SplitText('.hn-line', { type: 'chars', charsClass: 'char' })).chars;
+  const splitTitles = () => { titleSplit = new SplitText('.sec-title, .foot-title', { type: 'words,chars', wordsClass: 'word', charsClass: 'char', mask: 'words' }); };
+
+  function animateTitles(){
+    document.querySelectorAll('.sec-title, .foot-title').forEach(title => {
+      titleTweens.push(gsap.from(title.querySelectorAll('.char'), {
+        yPercent: 115, duration: 1.2, ease: 'expo.out', stagger: 0.024,
+        scrollTrigger: { trigger: title, start: 'top 88%', once: true }
+      }));
+    });
+  }
+
+  // ---- hero name: weight + sharpness follow the cursor ----
+  let introDone = false, prox = [];
+  const bindProximity = chars => { prox = chars.map(el => ({ el, w: 600, s: 0 })); };
+  if (fine){
+    let mx = -1e4, my = -1e4, inside = false;
+    window.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; inside = true; }, { passive: true });
+    root.addEventListener('pointerleave', () => { inside = false; });
+    gsap.ticker.add(() => {
+      if (!introDone || !prox.length || window.scrollY > window.innerHeight) return;
+      const R = Math.max(260, window.innerWidth * 0.2);
+      for (const p of prox){
+        const r = p.el.getBoundingClientRect();
+        let k = inside ? Math.max(0, 1 - Math.hypot(mx - (r.left + r.width / 2), my - (r.top + r.height / 2)) / R) : 0;
+        k = k * k * (3 - 2 * k);
+        p.w += (600 + 300 * k - p.w) * 0.14;
+        p.s += (100 * k - p.s) * 0.14;
+        p.el.style.setProperty('--wght', p.w.toFixed(1));
+        p.el.style.setProperty('--shrp', p.s.toFixed(1));
+      }
+    });
+  }
+
+  let countTweens = [];
+  function countUp(){
+    document.querySelectorAll('.hero-facts b[data-count]').forEach(b => {
+      const end = +b.dataset.count, suffix = b.dataset.suffix || '', o = { v: 0 };
+      countTweens.push(gsap.to(o, { v: end, duration: 1.8, ease: 'power3.out', onUpdate: () => { b.textContent = fmt(Math.round(o.v)) + suffix; } }));
+    });
+  }
+
+  function intro(chars){
+    if (performance.now() - started > 2600){ root.classList.remove('is-loading'); introDone = true; return; }
+    const role = document.querySelector('.hero-role');
+    const roleText = role ? role.textContent : '';
+    gsap.set(chars, { yPercent: 70, autoAlpha: 0, '--wght': 120 });
+    gsap.set('.hero [data-intro]', { autoAlpha: 0, y: 28 });
+    if (role && window.ScrambleTextPlugin) role.textContent = '';
+    root.classList.remove('is-loading');
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: () => { introDone = true; } });
+    tl.to(chars, { yPercent: 0, autoAlpha: 1, duration: 1.4, stagger: 0.05 }, 0.1)
+      .to(chars, { '--wght': 600, duration: 2, ease: 'power2.out', stagger: 0.05 }, 0.1)
+      .to('.hero [data-intro]', { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.09 }, 0.6)
+      .add(countUp, 0.9);
+    if (role && window.ScrambleTextPlugin){
+      tl.to(role, { duration: 1.4, ease: 'none', scrambleText: { text: roleText, chars: '01_<>/{}#*', speed: 0.6 } }, 0.7);
+    }
+  }
+
+  // ---- "my process": horizontal, pinned on wide screens ----
+  function processPin(){
+    gsap.matchMedia().add('(min-width: 1024px)', () => {
+      const wrap = document.querySelector('.mc-process');
+      const track = wrap && wrap.querySelector('.mc-track');
+      if (!track) return;
+      const steps = track.querySelectorAll('.mc-step');
+      const bar = wrap.querySelector('.mc-progress i');
+      const dist = () => Math.max(0, track.scrollWidth - wrap.clientWidth);
+      gsap.to(track, {
+        x: () => -dist(), ease: 'none',
+        scrollTrigger: {
+          trigger: wrap, start: 'center center', end: () => '+=' + dist(), pin: true, scrub: 0.6,
+          invalidateOnRefresh: true, anticipatePin: 1,
+          onUpdate: self => {
+            if (bar) bar.style.transform = 'scaleX(' + self.progress.toFixed(3) + ')';
+            const i = Math.round(self.progress * (steps.length - 1));
+            steps.forEach((s, j) => s.classList.toggle('is-active', j === i));
+          }
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
-    targets.forEach(el => io.observe(el));
-  } else {
-    targets.forEach(el => el.classList.add('in'));
-  }
-})();
-
-
-// ---------- background node network ----------
-(function(){
-  const canvas = document.getElementById('bg');
-  const ctx = canvas.getContext('2d');
-  let w, h, nodes;
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
-
-  function resize(){
-    w = window.innerWidth; h = window.innerHeight;
-    canvas.width = w * DPR; canvas.height = h * DPR;
-    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
-    ctx.setTransform(DPR,0,0,DPR,0,0);
+    });
   }
 
-  function initNodes(){
-    const count = Math.min(60, Math.floor((w*h)/28000));
-    nodes = Array.from({length: count}, (_, i) => ({
-      x: Math.random()*w, y: Math.random()*h,
-      vx: (Math.random()-0.5)*0.18, vy: (Math.random()-0.5)*0.18,
-      amber: i % 9 === 0
+  function reveals(){
+    const sel = '.sec-note, .mc-lead, .mc-text, .mc-vs-head, .mc-vs-row, .mc-process-head, .mc-step, .mc-fact,' +
+      ' .feature-eyebrow, .feature h3, .feature-summary, .feature > .mf-text, .nf-hero-text > .mf-text, .nf-meta, .feature-meta,' +
+      ' .feature-stack, .feature-cta, .challenge, .case-results, .case-more > summary, .compact-text > *, .subhead,' +
+      ' .stack-row, .more-card, .private-intro, .private-row, .private-more, .resume-box, .foot-lead, .foot-links, .foot-meta';
+    gsap.utils.toArray(sel).forEach(el => {
+      if (el.closest('.case-more-body') || el.closest('.hero')) return;
+      gsap.from(el, { y: 44, autoAlpha: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
+    });
+    gsap.utils.toArray('.media').forEach(m => {
+      if (m.closest('.case-more-body')) return;
+      const st = { trigger: m, start: 'top 90%', once: true };
+      gsap.fromTo(m, { clipPath: 'inset(12% 7% 12% 7% round 16px)' },
+        { clipPath: 'inset(0% 0% 0% 0% round 16px)', duration: 1.5, ease: 'expo.out', clearProps: 'clipPath', scrollTrigger: st });
+      const img = m.querySelector('img');
+      if (img) gsap.fromTo(img, { scale: 1.2 }, { scale: 1, duration: 1.8, ease: 'expo.out', clearProps: 'transform', scrollTrigger: { ...st } });
+    });
+    // vibe-coding lines get struck through as they scroll past
+    gsap.utils.toArray('.mc-vs-row').forEach(row => {
+      const s = row.querySelector('.vibe span');
+      if (!s) return;
+      gsap.fromTo(s, { backgroundSize: '0% 1px', color: '#efede6' },
+        { backgroundSize: '100% 1px', color: '#8e8c83', ease: 'none', scrollTrigger: { trigger: row, start: 'top 82%', end: 'top 50%', scrub: true } });
+    });
+  }
+
+  function marquee(){
+    const track = document.querySelector('.marquee-track');
+    if (!track) return;
+    const loop = gsap.to(track, { xPercent: -50, ease: 'none', duration: 42, repeat: -1 });
+    loop.totalTime(loop.duration() * 200);
+    let dir = 1;
+    ScrollTrigger.create({ start: 0, end: 'max', onUpdate: self => {
+      dir = self.direction || dir;
+      const boost = Math.min(Math.abs(self.getVelocity()) / 260, 6);
+      gsap.to(loop, { timeScale: dir * (1 + boost), duration: 0.2, overwrite: true,
+        onComplete: () => gsap.to(loop, { timeScale: dir, duration: 1.4, ease: 'power2.out', overwrite: true }) });
+    }});
+  }
+
+  function navWatch(){
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    ScrollTrigger.create({ start: 0, end: 'max', onUpdate: self => {
+      const y = self.scroll();
+      nav.classList.toggle('is-scrolled', y > 30);
+      nav.classList.toggle('is-hidden', y > window.innerHeight * 0.7 && self.direction === 1);
+    }});
+  }
+
+  function pointer(){
+    if (!fine) return;
+    document.querySelectorAll('.magnetic').forEach(el => {
+      const xTo = gsap.quickTo(el, 'x', { duration: 0.7, ease: 'elastic.out(1, 0.45)' });
+      const yTo = gsap.quickTo(el, 'y', { duration: 0.7, ease: 'elastic.out(1, 0.45)' });
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        xTo((e.clientX - r.left - r.width / 2) * 0.3);
+        yTo((e.clientY - r.top - r.height / 2) * 0.4);
+      });
+      el.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+    });
+    if (window.ScrambleTextPlugin){
+      document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('pointerenter', () => {
+        gsap.to(a, { duration: 0.5, overwrite: true, scrambleText: { text: a.textContent, chars: 'lowerCase', speed: 0.8 } });
+      }));
+    }
+    const cur = document.querySelector('.cursor');
+    if (!cur) return;
+    const label = cur.querySelector('.cursor-label');
+    const cx = gsap.quickTo(cur, 'x', { duration: 0.45, ease: 'power3' });
+    const cy = gsap.quickTo(cur, 'y', { duration: 0.45, ease: 'power3' });
+    gsap.set(cur, { autoAlpha: 0 });
+    let shown = false;
+    window.addEventListener('pointermove', e => {
+      if (!shown){ shown = true; gsap.set(cur, { x: e.clientX, y: e.clientY }); gsap.to(cur, { autoAlpha: 1, duration: 0.3 }); }
+      cx(e.clientX); cy(e.clientY);
+    }, { passive: true });
+    root.addEventListener('pointerleave', () => { shown = false; gsap.to(cur, { autoAlpha: 0, duration: 0.2 }); });
+    const L = { ru: { view: 'смотреть', open: 'открыть' }, en: { view: 'view', open: 'open' } };
+    document.addEventListener('pointerover', e => {
+      const big = e.target.closest('.media, .more-card');
+      const link = e.target.closest('a, button, summary');
+      const words = L[root.lang === 'en' ? 'en' : 'ru'];
+      if (big){ cur.className = 'cursor is-big'; label.textContent = big.closest('.more-card') ? words.open : words.view; }
+      else if (link){ cur.className = 'cursor is-link'; label.textContent = ''; }
+      else { cur.className = 'cursor'; label.textContent = ''; }
+    });
+  }
+
+  function detailsWatch(){
+    document.querySelectorAll('.case-more').forEach(d => d.addEventListener('toggle', () => {
+      if (d.open){
+        gsap.from(d.querySelectorAll('.case-more-body > *'), { y: 30, autoAlpha: 0, duration: 0.9, ease: 'power3.out', stagger: 0.035, overwrite: true });
+      }
+      ScrollTrigger.refresh();
     }));
   }
 
-  function step(){
-    ctx.clearRect(0,0,w,h);
-    const maxDist = Math.min(150, w/6);
-
-    for(const n of nodes){
-      n.x += n.vx; n.y += n.vy;
-      if(n.x < 0) n.x = w; if(n.x > w) n.x = 0;
-      if(n.y < 0) n.y = h; if(n.y > h) n.y = 0;
-    }
-
-    for(let i=0; i<nodes.length; i++){
-      for(let j=i+1; j<nodes.length; j++){
-        const a = nodes[i], b = nodes[j];
-        const dx = a.x-b.x, dy = a.y-b.y;
-        const dist = Math.sqrt(dx*dx+dy*dy);
-        if(dist < maxDist){
-          const op = (1 - dist/maxDist) * 0.16;
-          ctx.strokeStyle = 'rgba(154,148,132,' + op + ')';
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    for(const n of nodes){
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.amber ? 1.8 : 1.3, 0, Math.PI*2);
-      ctx.fillStyle = n.amber ? 'rgba(217,154,61,0.55)' : 'rgba(154,148,132,0.4)';
-      ctx.fill();
-    }
-
-    requestAnimationFrame(step);
+  function init(){
+    const chars = splitName();
+    bindProximity(chars);
+    splitTitles();
+    processPin();      // pinned section first, so triggers below it measure the extra scroll
+    animateTitles();
+    reveals();
+    marquee();
+    navWatch();
+    pointer();
+    detailsWatch();
+    intro(chars);
+    ScrollTrigger.refresh();
   }
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(init);
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 
-  resize(); initNodes();
-  window.addEventListener('resize', () => { resize(); initNodes(); });
-  requestAnimationFrame(step);
+  api.beforeLang = () => {
+    if (!nameSplit) return;
+    titleTweens.forEach(t => { if (t.scrollTrigger) t.scrollTrigger.kill(); t.kill(); });
+    titleTweens = [];
+    prox = [];
+    nameSplit.revert();
+    if (titleSplit) titleSplit.revert();
+  };
+  api.afterLang = () => {
+    if (!nameSplit) return;
+    const chars = splitName();
+    gsap.set(chars, { '--wght': 600 });
+    bindProximity(chars);
+    splitTitles();
+    countTweens.forEach(t => t.kill());
+    countTweens = [];
+    document.querySelectorAll('.hero-facts b[data-count]').forEach(b => { b.textContent = fmt(+b.dataset.count) + (b.dataset.suffix || ''); });
+    ScrollTrigger.refresh();
+  };
+  return api;
 })();
 </script>
 
