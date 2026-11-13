@@ -7,9 +7,6 @@
   --mute:#736d60;
   --line:#e2dccf;
   --accent:#95600f;
-  --ph-bg:#f8ecd8;
-  --ph-line:#d6a65e;
-  --ph-ink:#76490b;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -68,13 +65,6 @@ li::before{ content:'—'; position:absolute; left:0; color:var(--accent); }
 .skills dd{ color:var(--dim); }
 
 .nw{ white-space:nowrap; }
-
-/* placeholders — fill in before publishing */
-.ph{
-  font-family:'JetBrains Mono', monospace; font-size:.86em; color:var(--ph-ink);
-  background:var(--ph-bg); border:1px dashed var(--ph-line); border-radius:2px; padding:0 2px;
-  -webkit-box-decoration-break:clone; box-decoration-break:clone;
-}
 
 @media screen{
   body{ background:#e9e6df; }

@@ -3,15 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Qyedo — fullstack product engineer. Строю продукты целиком: интерфейс, бэкенд, платёжный слой и ИИ-системы. Майндкодинг вместо вайбкодинга.">
+<meta name="description" content="Виталий Левин (qyedo) — fullstack product engineer. Строю продукты целиком: интерфейс, бэкенд, платёжный слой и ИИ-системы. Майндкодинг вместо вайбкодинга.">
 <meta name="theme-color" content="#0b0a09">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Qyedo — fullstack product engineer">
+<meta property="og:title" content="Виталий Левин — fullstack product engineer">
 <meta property="og:description" content="Строю продукты целиком — от интерфейса до финансового ядра и ИИ-агентов. Пишу с ИИ — думаю сам.">
-<meta name="twitter:card" content="summary">
-<!-- TODO: add og:url and og:image once the final site URL is known (both must be absolute URLs) -->
+<meta property="og:url" content="https://se2je.github.io/qyedo-public-porftolio/">
+<meta property="og:image" content="https://se2je.github.io/qyedo-public-porftolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://se2je.github.io/qyedo-public-porftolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a09'/%3E%3Ctext x='12' y='46' font-family='monospace' font-size='40' font-weight='700' fill='%23e9e5d8'%3Eq%3C/text%3E%3Ccircle cx='48' cy='42' r='5.5' fill='%23d99a3d'/%3E%3C/svg%3E">
-<title>Qyedo — fullstack product engineer</title>
+<title>Виталий Левин — fullstack product engineer</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -97,6 +101,7 @@
   .hero-name{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin-bottom:16px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--text-dim); }
   .hero-name .sep{ color:var(--text-mute); }
   .hero-name .role{ color:var(--amber); }
+  .hero-name .name{ color:var(--text); font-weight:500; }
 
   .hero-tagline{
     display:inline-flex; align-items:center; gap:10px; margin-top:20px;
@@ -105,7 +110,6 @@
   }
   .hero-tagline .k{ color:var(--amber); }
   .hero-tagline:hover{ border-bottom-color:var(--amber); }
-  .btn-ph{ border-style:dashed; cursor:default; }
 
   .hero-stats{
     position:relative; z-index:2; margin-top:52px;
@@ -117,12 +121,6 @@
   .hero-stat .v{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:30px; line-height:1.1; color:var(--text); }
   .hero-stat .l{ margin-top:7px; font-family:'JetBrains Mono', monospace; font-size:12px; line-height:1.5; color:var(--text-dim); }
 
-  /* placeholder for facts the owner still has to fill in */
-  .ph{
-    font-family:'JetBrains Mono', monospace; font-size:.8em; font-weight:500; letter-spacing:0;
-    color:var(--amber); background:rgba(217,154,61,.08);
-    border:1px dashed rgba(217,154,61,.55); border-radius:3px; padding:.05em .4em; white-space:nowrap;
-  }
 
   /* mindcoding session terminal */
   .mc-term .term-body{ padding:16px 18px 18px; font-family:'JetBrains Mono', monospace; font-size:12.5px; line-height:1.55; }
@@ -437,7 +435,6 @@
   .mc-step .n{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); }
   .mc-step .t{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:15.5px; color:var(--text); margin:6px 0 6px; }
   .mc-step .d{ font-size:12.5px; color:var(--text-dim); line-height:1.55; }
-  .mc-note{ margin-top:12px; font-size:12px; }
 
   .mc-trust{ display:grid; grid-template-columns:1fr; gap:14px; }
   @media(min-width:760px){ .mc-trust{ grid-template-columns:1fr 1fr; } }
@@ -456,6 +453,7 @@
   .mc-facts{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px; }
   @media(min-width:760px){ .mc-facts{ grid-template-columns:1fr 1fr; } }
   .mc-fact{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; padding:13px 16px; border:1px dashed var(--line); border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-dim); }
+  .mc-fact .v{ color:var(--text); }
   .mc-fact .k{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); }
 
   /* ---------- CASE BRIEF ---------- */
@@ -470,6 +468,8 @@
   .challenge .sol::before{ content:'→ '; font-family:'JetBrains Mono', monospace; color:var(--amber); }
   .case-results{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; padding:13px 16px; border:1px dashed var(--line); border-radius:4px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-dim); }
   .case-results .k{ font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+  .case-results .v{ color:var(--text); }
+  .case-results .v + .v::before{ content:'·'; margin-right:14px; color:var(--text-mute); }
 
   .case-more{ margin-top:26px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .case-more > summary{ list-style:none; cursor:pointer; display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; padding:16px 2px; font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--amber); }
@@ -547,20 +547,20 @@
   <div class="wrap-wide">
     <div class="hero-grid">
       <div>
-        <div class="hero-status"><span class="pulse"></span><span data-ru="Открыт к предложениям · full-time remote" data-en="Open to offers · full-time remote">Открыт к предложениям · full-time remote</span></div>
+        <div class="hero-status"><span class="pulse"></span><span data-ru="Открыт к предложениям · remote / офис" data-en="Open to offers · remote / on-site">Открыт к предложениям · remote / офис</span></div>
         <div class="hero-name">
-          <span class="ph" data-ru="[Имя Фамилия]" data-en="[Full Name]">[Имя Фамилия]</span>
+          <span class="name" data-ru="Виталий Левин" data-en="Vitalij Levin">Виталий Левин</span>
           <span class="sep">/</span><span>qyedo</span>
           <span class="sep">/</span><span class="role">fullstack product engineer</span>
         </div>
         <h1 data-i18n-html="hero.title">Строю продукты <em>целиком</em> — от&nbsp;интерфейса до&nbsp;финансового ядра и&nbsp;<span class="nw">ИИ-агентов</span></h1>
-        <p class="sub" data-i18n-html="hero.sub">Построил GameFi-экосистему для Telegram, Web и Android с собственным финансовым ядром, мультитенантную SaaS-платформу с оркестрацией ИИ-моделей и платёжный слой на TON для <span class="ph">[N]</span> продуктов.</p>
+        <p class="sub" data-i18n-html="hero.sub">В одиночку построил GameFi-экосистему для Telegram, Web и Android (5&nbsp;000 регистраций), с&nbsp;нуля до&nbsp;MVP — SaaS-платформу с&nbsp;ИИ-агентами, которой уже пользуются первые клиенты, и&nbsp;crypto-платёжный слой для пяти продуктов.</p>
         <a href="#mindcoding" class="hero-tagline"><span class="k">&gt;</span><span data-ru="Пишу с ИИ — думаю сам" data-en="I code with AI — and think for myself">Пишу с ИИ — думаю сам</span><span class="k">↓</span></a>
         <div class="hero-cta">
           <a href="#cases" class="btn btn-primary" data-ru="Смотреть кейсы" data-en="View cases">Смотреть кейсы</a>
           <a href="#" class="btn btn-ghost resume-link" download="Qyedo_CV.pdf" data-ru="Резюме PDF" data-en="Resume PDF">Резюме PDF</a>
           <a href="https://t.me/qyedo" class="btn btn-ghost" target="_blank" rel="noopener">Telegram ↗</a>
-          <span class="btn btn-ghost btn-ph"><span class="ph">[email]</span></span>
+          <a href="mailto:qyedodev@gmail.com" class="btn btn-ghost">qyedodev@gmail.com</a>
         </div>
       </div>
       <div class="term mc-term">
@@ -571,8 +571,8 @@
 
     <div class="hero-stats">
       <div class="hero-stat"><div class="v">2020</div><div class="l" data-ru="пишу код с 2020 года" data-en="writing code since 2020">пишу код с 2020 года</div></div>
-      <div class="hero-stat"><div class="v"><span class="ph">[N]</span></div><div class="l" data-ru="продуктов в продакшене" data-en="products in production">продуктов в продакшене</div></div>
-      <div class="hero-stat"><div class="v"><span class="ph">[N]</span></div><div class="l" data-ru="пользователей в моих продуктах" data-en="users across my products">пользователей в моих продуктах</div></div>
+      <div class="hero-stat"><div class="v">10+</div><div class="l" data-ru="продуктов в продакшене" data-en="products in production">продуктов в продакшене</div></div>
+      <div class="hero-stat"><div class="v">5&nbsp;000</div><div class="l" data-ru="регистраций в NFINE, сделанном в одиночку" data-en="sign-ups in NFINE, built single-handedly">регистраций в NFINE, сделанном в одиночку</div></div>
       <div class="hero-stat"><div class="v">6</div><div class="l" data-ru="ИИ-агентов в конвейере MetaForge" data-en="AI agents in the MetaForge pipeline">ИИ-агентов в конвейере MetaForge</div></div>
     </div>
   </div>
@@ -588,7 +588,7 @@
       <div>
         <div class="mc-kicker" data-ru="не вайбкодинг" data-en="not vibe coding">не вайбкодинг</div>
         <p class="mc-lead" data-ru="ИИ пишет много кода. Решения принимаю я." data-en="AI writes a lot of the code. I make the decisions.">ИИ пишет много кода. Решения принимаю я.</p>
-        <p class="mc-text" data-i18n-html="mc.what">Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг — когда знает и отвечает за каждую строку.</b></p>
+        <p class="mc-text" data-i18n-html="mc.what">Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг</b> — мой термин для обратного: <b>знаешь и отвечаешь за каждую строку.</b></p>
         <p class="mc-text" data-ru="Агенты ускоряют мою работу, но архитектура, модель данных и всё, что касается денег и прав доступа, остаётся под моим контролем. За этим стоят годы обычной разработки руками: я понимаю код, который читаю, и вижу, когда модель уверенно ошибается." data-en="Agents make me faster, but the architecture, the data model and everything that touches money or access control stays under my control. Behind that are years of writing code by hand: I understand the code I read, and I can tell when a model is confidently wrong.">Агенты ускоряют мою работу, но архитектура, модель данных и всё, что касается денег и прав доступа, остаётся под моим контролем. За этим стоят годы обычной разработки руками: я понимаю код, который читаю, и вижу, когда модель уверенно ошибается.</p>
       </div>
       <aside class="mc-proof">
@@ -615,48 +615,47 @@
     <div class="subhead" data-ru="Вайбкодинг и майндкодинг" data-en="Vibe coding vs mindcoding">Вайбкодинг и майндкодинг</div>
     <div class="mc-vs">
       <div class="mc-vs-row"><div class="vibe" data-ru="вайбкодинг" data-en="vibe coding">вайбкодинг</div><div class="mind" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="«Сделай» в чат" data-en="&quot;Make it work&quot; in a chat">«Сделай» в чат</div><div class="mind" data-ru="Спецификация и план до первой строки кода" data-en="A spec and a plan before the first line of code">Спецификация и план до первой строки кода</div></div>
-      <div class="mc-vs-row"><div class="vibe" data-ru="Принять всё, что сгенерировано" data-en="Accept whatever was generated">Принять всё, что сгенерировано</div><div class="mind" data-ru="Ревью каждого изменения" data-en="Every change gets reviewed">Ревью каждого изменения</div></div>
+      <div class="mc-vs-row"><div class="vibe" data-ru="«Сделай» в чат" data-en="&quot;Make it work&quot; in a chat">«Сделай» в чат</div><div class="mind" data-ru="Правила, карта проекта и пул задач до первой строки кода" data-en="Rules, a project map and a task pool before the first line of code">Правила, карта проекта и пул задач до первой строки кода</div></div>
+      <div class="mc-vs-row"><div class="vibe" data-ru="Принять всё, что сгенерировано" data-en="Accept whatever was generated">Принять всё, что сгенерировано</div><div class="mind" data-ru="Каждый результат проходит мою приёмку" data-en="Every result goes through my review">Каждый результат проходит мою приёмку</div></div>
       <div class="mc-vs-row"><div class="vibe" data-ru="Одна модель на всё" data-en="One model for everything">Одна модель на всё</div><div class="mind" data-ru="Модель под задачу" data-en="The right model for each task">Модель под задачу</div></div>
       <div class="mc-vs-row"><div class="vibe" data-ru="Архитектура появляется сама" data-en="Architecture just happens">Архитектура появляется сама</div><div class="mind" data-ru="Архитектуру проектирую я" data-en="I design the architecture">Архитектуру проектирую я</div></div>
       <div class="mc-vs-row"><div class="vibe" data-ru="«Работает — значит готово»" data-en="&quot;It runs, ship it&quot;">«Работает — значит готово»</div><div class="mind" data-ru="Готово, когда прошло проверку и тесты" data-en="Done means checked and tested">Готово, когда прошло проверку и тесты</div></div>
     </div>
 
-    <div class="subhead" data-ru="Мой цикл" data-en="My loop">Мой цикл</div>
+    <div class="subhead" data-ru="Мой процесс" data-en="My process">Мой процесс</div>
     <div class="mc-loop">
-      <div class="mc-step"><div class="n">01</div><div class="t" data-ru="Спецификация" data-en="Spec">Спецификация</div><div class="d" data-ru="Что делаем и как поймём, что готово" data-en="What we're building and how we'll know it's done">Что делаем и как поймём, что готово</div></div>
-      <div class="mc-step"><div class="n">02</div><div class="t" data-ru="План" data-en="Plan">План</div><div class="d" data-ru="Шаги, затронутые модули, риски" data-en="Steps, affected modules, risks">Шаги, затронутые модули, риски</div></div>
-      <div class="mc-step"><div class="n">03</div><div class="t" data-ru="Генерация" data-en="Generate">Генерация</div><div class="d" data-ru="Малыми изменениями, модель под задачу" data-en="Small diffs, the right model per task">Малыми изменениями, модель под задачу</div></div>
-      <div class="mc-step"><div class="n">04</div><div class="t" data-ru="Ревью" data-en="Review">Ревью</div><div class="d" data-ru="Читаю каждый diff" data-en="I read every diff">Читаю каждый diff</div></div>
-      <div class="mc-step"><div class="n">05</div><div class="t" data-ru="Проверка" data-en="Verify">Проверка</div><div class="d" data-ru="Тесты и ручной прогон критичных сценариев" data-en="Tests plus a manual run of critical paths">Тесты и ручной прогон критичных сценариев</div></div>
-      <div class="mc-step"><div class="n">06 ↺</div><div class="t" data-ru="Правила" data-en="Rules">Правила</div><div class="d" data-ru="Ошибки агента превращаю в правила на следующий раз" data-en="Agent mistakes become rules for next time">Ошибки агента превращаю в правила на следующий раз</div></div>
+      <div class="mc-step"><div class="n">01</div><div class="t" data-ru="Правила" data-en="Rules">Правила</div><div class="d" data-ru="Вместе с агентом пишу свод правил работы с проектом" data-en="I write the working rules for the project together with the agent">Вместе с агентом пишу свод правил работы с проектом</div></div>
+      <div class="mc-step"><div class="n">02</div><div class="t" data-ru="Карта" data-en="Map">Карта</div><div class="d" data-ru="Ключевые файлы, карта проекта, документация и памятка по навигации" data-en="Key files, a project map, docs and a navigation guide for the agent">Ключевые файлы, карта проекта, документация и памятка по навигации</div></div>
+      <div class="mc-step"><div class="n">03</div><div class="t" data-ru="Пул задач" data-en="Task pool">Пул задач</div><div class="d" data-ru="Файл по шаблону: задачи и приоритеты проекта" data-en="A templated file with the tasks and priorities of the project">Файл по шаблону: задачи и приоритеты проекта</div></div>
+      <div class="mc-step"><div class="n">04</div><div class="t" data-ru="Выполнение" data-en="Execution">Выполнение</div><div class="d" data-ru="По одной задаче или пачкой до 10 по одному направлению" data-en="One task at a time or a batch of up to 10 in one area">По одной задаче или пачкой до 10 по одному направлению</div></div>
+      <div class="mc-step"><div class="n">05</div><div class="t" data-ru="Сверка" data-en="Self-check">Сверка</div><div class="d" data-ru="Агент сверяется с архитектурой и заводит задачи на улучшения" data-en="The agent checks against the architecture and files improvement tasks">Агент сверяется с архитектурой и заводит задачи на улучшения</div></div>
+      <div class="mc-step"><div class="n">06 ↺</div><div class="t" data-ru="Приёмка" data-en="Review">Приёмка</div><div class="d" data-ru="Результат проверяю я — решение о приёмке за мной" data-en="I check the result — acceptance is my call">Результат проверяю я — решение о приёмке за мной</div></div>
     </div>
-    <p class="mc-note"><span class="ph" data-ru="[сверь с твоим реальным процессом]" data-en="[check against your real process]">[сверь с твоим реальным процессом]</span></p>
 
     <div class="subhead" data-ru="Где ИИ, а где я" data-en="What I delegate, what I own">Где ИИ, а где я</div>
     <div class="mc-trust">
       <div class="mc-card ai">
-        <div class="h" data-ru="Доверяю ИИ" data-en="I delegate to AI">Доверяю ИИ</div>
+        <div class="h" data-ru="Отдаю агенту" data-en="I hand to the agent">Отдаю агенту</div>
         <ul>
-          <li data-ru="Типовой код и CRUD" data-en="Boilerplate and CRUD">Типовой код и CRUD</li>
-          <li data-ru="Вёрстку по готовому дизайну" data-en="Layout from a finished design">Вёрстку по готовому дизайну</li>
-          <li data-ru="Тесты, миграции и рефакторинг" data-en="Tests, migrations and refactoring">Тесты, миграции и рефакторинг</li>
-          <li data-ru="Разбор незнакомой кодовой базы" data-en="Exploring an unfamiliar codebase">Разбор незнакомой кодовой базы</li>
+          <li data-ru="Задачи из пула — по одной или пачкой" data-en="Tasks from the pool — one by one or in batches">Задачи из пула — по одной или пачкой</li>
+          <li data-ru="Код, тесты и рефакторинг" data-en="Code, tests and refactoring">Код, тесты и рефакторинг</li>
+          <li data-ru="Сверку с архитектурными файлами" data-en="Checking work against the architecture docs">Сверку с архитектурными файлами</li>
+          <li data-ru="Новые задачи на улучшение сервиса" data-en="Filing new improvement tasks">Новые задачи на улучшение сервиса</li>
         </ul>
       </div>
       <div class="mc-card me">
         <div class="h" data-ru="Остаётся за мной" data-en="Stays with me">Остаётся за мной</div>
         <ul>
-          <li data-ru="Архитектура и модель данных" data-en="Architecture and the data model">Архитектура и модель данных</li>
-          <li data-ru="Журнал транзакций и платежи" data-en="The transaction ledger and payments">Журнал транзакций и платежи</li>
-          <li data-ru="Права доступа" data-en="Access control">Права доступа</li>
-          <li data-ru="Безопасность и секреты" data-en="Security and secrets">Безопасность и секреты</li>
+          <li data-ru="Архитектура и правила проекта" data-en="Architecture and project rules">Архитектура и правила проекта</li>
+          <li data-ru="Приоритеты в пуле задач" data-en="Priorities in the task pool">Приоритеты в пуле задач</li>
+          <li data-ru="Приёмка каждого результата" data-en="Reviewing every result">Приёмка каждого результата</li>
+          <li data-ru="Деньги, права доступа и безопасность" data-en="Money, access control and security">Деньги, права доступа и безопасность</li>
         </ul>
       </div>
     </div>
     <div class="mc-facts">
-      <div class="mc-fact"><span class="k" data-ru="инструменты" data-en="tools">инструменты</span><span class="ph" data-ru="[твои инструменты]" data-en="[your tools]">[твои инструменты]</span></div>
-      <div class="mc-fact"><span class="k" data-ru="результат" data-en="results">результат</span><span class="ph" data-ru="[например: MVP за N недель]" data-en="[e.g. MVP in N weeks]">[например: MVP за N недель]</span></div>
+      <div class="mc-fact"><span class="k" data-ru="инструменты" data-en="tools">инструменты</span><span class="v" data-ru="Claude Code · Codex · Greta — мой агент для MetaForge" data-en="Claude Code · Codex · Greta — my own agent for MetaForge">Claude Code · Codex · Greta — мой агент для MetaForge</span></div>
+      <div class="mc-fact"><span class="k" data-ru="скорость" data-en="speed">скорость</span><span class="v" data-ru="задача, на которую junior/middle потратил бы день, — около 5 минут работы агента и моя приёмка" data-en="a task that would take a junior/middle dev a day — about 5 minutes of agent time plus my review">задача, на которую junior/middle потратил бы день, — около 5 минут работы агента и моя приёмка</span></div>
     </div>
   </div>
 </section>
@@ -670,224 +669,9 @@
 
     <div class="subhead">Selected work</div>
 
-    <!-- ============ FEATURE 01 — NFINE ============ -->
-    <div class="feature" id="case-nfine">
-      <div class="nf-hero-row">
-        <div class="nf-hero-text">
-          <div class="feature-eyebrow"><span class="feature-index">01</span><span>/</span><span>CRYPTO · GAMEFI · WEB3</span><span class="status live">LIVE</span></div>
-          <h3>NFINE Ecosystem</h3>
-          <p class="feature-summary" style="max-width:600px" data-ru="От сайта токена до полноценной GameFi-платформы." data-en="From a token website to a full GameFi platform.">От сайта токена до полноценной GameFi-платформы.</p>
-
-          <p class="mf-text" data-ru="NFINE начинался с публичного сайта токена с собственной визуальной идентичностью и актуальными рыночными данными. Следующим этапом стала GameFi-платформа для Telegram, Web и Android с собственной экономикой, социальными функциями и crypto-интеграциями." data-en="NFINE started as a public token website with its own visual identity and live market data. The next stage was a GameFi platform for Telegram, Web, and Android, with its own economy, social features, and crypto integrations.">
-            NFINE начинался с публичного сайта токена с собственной визуальной идентичностью и актуальными рыночными данными. Следующим этапом стала GameFi-платформа для Telegram, Web и Android с собственной экономикой, социальными функциями и crypto-интеграциями.
-          </p>
-
-          <div class="nf-meta">
-            <div><b>Role</b> — Product Design · Frontend · Backend · Integrations</div>
-            <div><b>Platforms</b> — Website · Telegram Mini App · Web App · Android WebView</div>
-            <div><b data-ru="Команда" data-en="Team">Команда</b> — <span class="ph" data-ru="[сколько человек и что лично я]" data-en="[team size and what I did myself]">[сколько человек и что лично я]</span></div>
-            <div><b data-ru="Срок" data-en="Timeline">Срок</b> — <span class="ph" data-ru="[от старта до запуска]" data-en="[from start to launch]">[от старта до запуска]</span></div>
-          </div>
-          <div class="feature-stack" style="margin-top:14px;">
-            <span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="frontend">SCSS Modules</span><span class="tag" data-cat="py">FastAPI</span><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="web3">TON</span>
-          </div>
-          <div class="feature-cta">
-            <a class="btn btn-primary" href="https://notfine.meme" target="_blank" rel="noopener" data-ru="Открыть сайт ↗" data-en="Open site ↗">Открыть сайт ↗</a>
-          </div>
-        </div>
-
-        <!-- Website hero -->
-        <div class="nf-hero-media">
-          <div class="media media-auto nf-hero-shot">
-            <img src="assets/img/nfine-token-site.webp" width="1400" height="787" alt="NOTFINE — публичная страница токена" decoding="async" loading="lazy">
-          </div>
-          <div class="mf-caption" data-ru="NOTFINE — публичная страница токена" data-en="NOTFINE — the public token page">NOTFINE — публичная страница токена</div>
-        </div>
-      </div>
-
-      <div class="case-brief">
-        <div class="case-challenges">
-          <div class="challenge">
-            <div class="n" data-ru="задача 01" data-en="problem 01">задача 01</div>
-            <h4 data-ru="Один баланс — много источников денег" data-en="One balance, many money sources">Один баланс — много источников денег</h4>
-            <p class="prob" data-ru="Игровые награды, донаты, обмен валют и пополнения из блокчейна меняют одни и те же балансы." data-en="Game rewards, donations, currency exchange and on-chain top-ups all change the same balances.">Игровые награды, донаты, обмен валют и пополнения из блокчейна меняют одни и те же балансы.</p>
-            <p class="sol" data-ru="Все изменения идут через типизированные операции и единый журнал транзакций — любую операцию можно проследить от блокчейна до баланса." data-en="Every change goes through typed operations and a single transaction ledger — any operation can be traced from the chain to the balance.">Все изменения идут через типизированные операции и единый журнал транзакций — любую операцию можно проследить от блокчейна до баланса.</p>
-          </div>
-          <div class="challenge">
-            <div class="n" data-ru="задача 02" data-en="problem 02">задача 02</div>
-            <h4 data-ru="Crypto без выхода из приложения" data-en="Crypto without leaving the app">Crypto без выхода из приложения</h4>
-            <p class="prob" data-ru="Пользователи платят и выводят в TON, USDT и NFINE прямо внутри Telegram Mini App." data-en="Users pay and withdraw in TON, USDT and NFINE right inside a Telegram Mini App.">Пользователи платят и выводят в TON, USDT и NFINE прямо внутри Telegram Mini App.</p>
-            <p class="sol" data-ru="Собственный платёжный шлюз: пополнения, конвертация и вывод проходят один путь — шлюз → заявка → финансовый сценарий → журнал." data-en="A custom payment gateway: top-ups, conversion and withdrawals follow one path — gateway → request → financial scenario → ledger.">Собственный платёжный шлюз: пополнения, конвертация и вывод проходят один путь — шлюз → заявка → финансовый сценарий → журнал.</p>
-          </div>
-          <div class="challenge">
-            <div class="n" data-ru="задача 03" data-en="problem 03">задача 03</div>
-            <h4 data-ru="Realtime и фоновые процессы" data-en="Realtime and background jobs">Realtime и фоновые процессы</h4>
-            <p class="prob" data-ru="Чаты, кланы и ежедневные механики должны работать без перезагрузки и ручного вмешательства." data-en="Chats, clans and daily mechanics have to work without reloads or manual work.">Чаты, кланы и ежедневные механики должны работать без перезагрузки и ручного вмешательства.</p>
-            <p class="sol" data-ru="WebSocket для личных и групповых чатов, воркеры для blockchain-проверок, ежедневных заданий, streak-механик и автоматической выдачи наград." data-en="WebSocket for direct and group chats; workers for on-chain checks, daily quests, streaks and automatic reward payouts.">WebSocket для личных и групповых чатов, воркеры для blockchain-проверок, ежедневных заданий, streak-механик и автоматической выдачи наград.</p>
-          </div>
-        </div>
-        <div class="case-results">
-          <span class="k" data-ru="результат" data-en="outcome">результат</span>
-          <span class="ph" data-ru="[N пользователей]" data-en="[N users]">[N пользователей]</span>
-          <span class="ph" data-ru="[объём транзакций]" data-en="[transaction volume]">[объём транзакций]</span>
-          <span class="ph" data-ru="[что изменилось для бизнеса]" data-en="[business impact]">[что изменилось для бизнеса]</span>
-        </div>
-      </div>
-
-      <details class="case-more">
-        <summary><span class="ic">+</span><span data-ru="Подробный разбор кейса" data-en="Full case study">Подробный разбор кейса</span><span class="hint" data-ru="механики · экономика · архитектура · путь операции" data-en="mechanics · economy · architecture · operation flow">механики · экономика · архитектура · путь операции</span></summary>
-        <div class="case-more-body">
-      <div class="mf-label" style="margin-top:34px;" data-ru="Сайт токена" data-en="Token Website">Сайт токена</div>
-      <p class="mf-text" style="max-width:640px" data-ru="Публичная точка входа в NFINE: информация о токене, актуальные данные рынка, адрес контракта, ссылки на покупку и материалы для новых участников проекта." data-en="The public entry point to NFINE: token information, live market data, contract address, buy links, and onboarding material for new project members.">
-        Публичная точка входа в NFINE: информация о токене, актуальные данные рынка, адрес контракта, ссылки на покупку и материалы для новых участников проекта.
-      </p>
-      <div class="mf-caption" style="text-align:left; margin-top:2px;">DexScreener API · GeckoTerminal API</div>
-
-      <!-- Transition -->
-      <div class="nf-transition">
-        <div class="k" data-ru="От запуска к продукту" data-en="From launch to product">От запуска к продукту</div>
-        <p data-ru="После запуска сайта NFINE вырос в полноценный пользовательский продукт — GameFi-приложение с собственной экономикой, социальными механиками и crypto-функциями." data-en="After the website launched, NFINE grew into a full consumer product — a GameFi app with its own economy, social mechanics, and crypto features.">
-          После запуска сайта NFINE вырос в полноценный пользовательский продукт — GameFi-приложение с собственной экономикой, социальными механиками и crypto-функциями.
-        </p>
-      </div>
-
-      <!-- Product pillars -->
-      <div class="eyebrow" style="margin-bottom:16px;" data-ru="Ключевые части продукта" data-en="Product Pillars">Ключевые части продукта</div>
-      <div class="layers">
-        <div class="layer">
-          <div class="t">GameFi</div>
-          <div class="tags" data-ru="фарминг · квесты · колесо · сундуки · достижения · prediction" data-en="farming · quests · wheel · lootboxes · achievements · prediction">фарминг · квесты · колесо · сундуки · достижения · prediction</div>
-          <div class="d" data-ru="Фарминг, задания, колесо фортуны и prediction-игра формируют игровой цикл, который приносит внутреннюю валюту и награды." data-en="Farming, quests, the Fortune Wheel, and the prediction game form a play loop that earns in-game currency and rewards.">Фарминг, задания, колесо фортуны и prediction-игра формируют игровой цикл, который приносит внутреннюю валюту и награды.</div>
-        </div>
-        <div class="layer">
-          <div class="t" data-ru="Сообщество" data-en="Social">Сообщество</div>
-          <div class="tags" data-ru="чаты · кланы · друзья · трейды · рефералы" data-en="chats · clans · friends · trades · referrals">чаты · кланы · друзья · трейды · рефералы</div>
-          <div class="d" data-ru="Мессенджер, кланы с гибкими правами доступа, друзья, обмен предметами и трёхуровневая реферальная система связывают пользователей друг с другом." data-en="A messenger, clans with flexible access rules, friends, item trading, and a three-tier referral system connect users with each other.">Мессенджер, кланы с гибкими правами доступа, друзья, обмен предметами и трёхуровневая реферальная система связывают пользователей друг с другом.</div>
-        </div>
-        <div class="layer">
-          <div class="t">Crypto</div>
-          <div class="tags" data-ru="TON · USDT · P2P-биржа · донаты · вывод средств" data-en="TON · USDT · P2P exchange · donations · withdrawals">TON · USDT · P2P-биржа · донаты · вывод средств</div>
-          <div class="d" data-ru="Донаты, обмен валют и P2P-биржа с плечом работают через собственный платёжный шлюз — без выхода из приложения." data-en="Donations, currency exchange, and a leveraged P2P exchange all run through a custom payment gateway — without leaving the app.">Донаты, обмен валют и P2P-биржа с плечом работают через собственный платёжный шлюз — без выхода из приложения.</div>
-        </div>
-        <div class="layer">
-          <div class="t" data-ru="Экономика" data-en="Economy">Экономика</div>
-          <div class="tags" data-ru="квота на вывод · utility · магазин · награды" data-en="withdrawal quota · utility · shop · rewards">квота на вывод · utility · магазин · награды</div>
-          <div class="d" data-ru="Заработанная валюта тратится внутри приложения или выводится — активность в продукте напрямую увеличивает квоту на вывод." data-en="Earned currency is spent in-app or withdrawn — product activity directly increases a user's withdrawal quota.">Заработанная валюта тратится внутри приложения или выводится — активность в продукте напрямую увеличивает квоту на вывод.</div>
-        </div>
-      </div>
-
-      <!-- Dog Farm -->
-      <div class="nf-split">
-        <div class="nf-split-media">
-          <div class="media media-auto"><img src="assets/img/nfine-dog-farm.webp" width="688" height="1179" alt="Dog Farm — farming-механика NFINE" decoding="async" loading="lazy"></div>
-        </div>
-        <div>
-          <div class="eyebrow" style="margin-bottom:6px;">GameFi</div>
-          <h4 data-ru="Фарминг как источник дохода" data-en="Farming as an income loop">Фарминг как источник дохода</h4>
-          <p data-ru="Коллекционные собаки — это игровой источник дохода: фарминг превращает активность в приложении в валюту, которая работает во всей экосистеме — от покупок в магазине и участия в других активностях до доступа к utility-функциям продукта, включая AI-ассистентов и VPN." data-en="Collectible dogs are an in-app income source: farming turns user activity into currency that works across the whole ecosystem — from shop purchases and other activities to the product's utility features, including AI assistants and VPN.">Коллекционные собаки — это игровой источник дохода: фарминг превращает активность в приложении в валюту, которая работает во всей экосистеме — от покупок в магазине и участия в других активностях до доступа к utility-функциям продукта, включая AI-ассистентов и VPN.</p>
-        </div>
-      </div>
-
-      <!-- Fortune Wheel -->
-      <div class="nf-split nf-split-rev">
-        <div class="nf-split-media">
-          <div class="media media-auto"><img src="assets/img/nfine-fortune-wheel.webp" width="696" height="1244" alt="Fortune Wheel — reward loop NFINE" decoding="async" loading="lazy"></div>
-        </div>
-        <div>
-          <h4 data-ru="Система наград" data-en="Reward system">Система наград</h4>
-          <p data-ru="Награды встроены в каждый слой продукта: ежедневный вход в приложение, колесо фортуны, открытие кейсов, ежедневные и сезонные задания, личные достижения и активность внутри клана — все источники работают на общий прогресс игрока." data-en="Rewards are built into every layer of the product: daily logins, the Fortune Wheel, case openings, daily and seasonal quests, personal achievements, and clan activity — every source feeds into the player's overall progress.">Награды встроены в каждый слой продукта: ежедневный вход в приложение, колесо фортуны, открытие кейсов, ежедневные и сезонные задания, личные достижения и активность внутри клана — все источники работают на общий прогресс игрока.</p>
-        </div>
-      </div>
-
-      <!-- Social + Messenger merged -->
-      <div class="nf-split">
-        <div class="nf-split-media">
-          <div class="media media-auto" style="margin-bottom:14px;"><img src="assets/img/nfine-clan-feed.webp" width="680" height="1081" alt="Клан NFINE — социальная лента" decoding="async" loading="lazy"></div>
-          <div class="media media-auto"><img src="assets/img/nfine-community-chat.webp" width="675" height="1075" alt="Встроенный чат сообщества NFINE" decoding="async" loading="lazy"></div>
-        </div>
-        <div>
-          <h4 data-ru="Социальные механики" data-en="Social mechanics">Социальные механики</h4>
-          <p data-ru="Общение работает на двух уровнях: личные и групповые чаты во встроенном мессенджере — и сообщества, которые пользователи создают и прокачивают за внутреннюю валюту. Доступ гибко настраивается — от закрытых, куда приглашает лидер, до открытых для всех, — а право публиковать посты лидер выдаёт отдельным участникам." data-en="Communication happens on two levels: private and group chats in the built-in messenger, and communities users create and grow with in-game currency. Access is flexible — from closed groups the leader invites people into, to fully open ones — and the leader assigns posting rights to specific members.">Общение работает на двух уровнях: личные и групповые чаты во встроенном мессенджере — и сообщества, которые пользователи создают и прокачивают за внутреннюю валюту. Доступ гибко настраивается — от закрытых, куда приглашает лидер, до открытых для всех, — а право публиковать посты лидер выдаёт отдельным участникам.</p>
-          <p data-ru="Совместная активность в сообществе усиливает личный прогресс: групповой фарминг приносит больше валюты, опыта и репутации клана, а также пополняет казну, которую можно тратить на его развитие. Отдельно работают личные связи — друзья, обмен предметами и валютой, а также трёхуровневая реферальная система, превращающая приглашённых пользователей в источник пассивного дохода." data-en="Group activity inside a community boosts individual progress: joint farming earns more currency, experience, and clan reputation, and fills a shared treasury that funds the community's upgrades. On top of that, players build personal connections — friends, item and currency trades, and a three-tier referral system that turns invited users into a source of passive income.">Совместная активность в сообществе усиливает личный прогресс: групповой фарминг приносит больше валюты, опыта и репутации клана, а также пополняет казну, которую можно тратить на его развитие. Отдельно работают личные связи — друзья, обмен предметами и валютой, а также трёхуровневая реферальная система, превращающая приглашённых пользователей в источник пассивного дохода.</p>
-        </div>
-      </div>
-
-      <!-- Assets / crypto -->
-      <div class="nf-split nf-split-rev">
-        <div class="nf-split-media">
-          <div class="media media-auto"><img src="assets/img/nfine-assets.webp" width="678" height="1076" alt="Assets — crypto и игровые балансы NFINE" decoding="async" loading="lazy"></div>
-        </div>
-        <div>
-          <h4>Crypto <span data-ru="внутри продукта" data-en="inside the product">внутри продукта</span></h4>
-          <p data-ru="TON, USDT и NFINE работают через единый платёжный слой с собственным шлюзом: донаты, конвертация валют и доступ к встроенной P2P-бирже с плечом, где пользователи открывают позиции и торгуют токенами из разных сетей." data-en="TON, USDT, and NFINE run through a single payment layer with a custom gateway: donations, currency conversion, and access to a built-in leveraged P2P exchange, where users open positions and trade tokens across different networks.">TON, USDT и NFINE работают через единый платёжный слой с собственным шлюзом: донаты, конвертация валют и доступ к встроенной P2P-бирже с плечом, где пользователи открывают позиции и торгуют токенами из разных сетей.</p>
-          <p data-ru="Активность в приложении — квесты и участие в игровых механиках — повышает квоту на вывод. Заработанное можно вывести или потратить внутри экосистемы: на utility-функции токена, включая AI-ассистентов, VPN и аудиты от команды проекта." data-en="In-app activity — quests and participation in game mechanics — raises a user's withdrawal quota. Earned funds can be withdrawn or spent inside the ecosystem on the token's utility features, including AI assistants, VPN, and audits from the project team.">Активность в приложении — квесты и участие в игровых механиках — повышает квоту на вывод. Заработанное можно вывести или потратить внутри экосистемы: на utility-функции токена, включая AI-ассистентов, VPN и аудиты от команды проекта.</p>
-        </div>
-      </div>
-
-      <!-- Prediction + Trading -->
-      <div class="modes" style="margin-top:44px;">
-        <div class="mode-card">
-          <div class="t" data-ru="Игра на прогноз цены" data-en="Prediction Game">Игра на прогноз цены</div>
-          <div class="d" data-ru="Раундовая механика, где пользователь предсказывает, вырастет, упадёт или останется стабильным курс токена. Ставки участников формируют общий призовой пул, который распределяется между угадавшими после завершения раунда." data-en="A round-based game where users predict whether the token's price will rise, fall, or stay flat. Player stakes form a shared prize pool, split among the winners once the round ends.">Раундовая механика, где пользователь предсказывает, вырастет, упадёт или останется стабильным курс токена. Ставки участников формируют общий призовой пул, который распределяется между угадавшими после завершения раунда.</div>
-        </div>
-        <div class="mode-card">
-          <div class="t" data-ru="Торговый режим" data-en="Trading">Торговый режим</div>
-          <div class="d" data-ru="Отдельный игровой режим имитирует торговлю с использованием кредитного плеча." data-en="A separate in-app game mode simulates leveraged trading.">Отдельный игровой режим имитирует торговлю с использованием кредитного плеча.</div>
-        </div>
-      </div>
-
-      <!-- Engineering transition -->
-      <div class="nf-transition">
-        <div class="k" data-ru="Инженерная часть" data-en="Engineering">Инженерная часть</div>
-        <p data-ru="За пользовательскими механиками NFINE находится полноценная fullstack-система: отдельная архитектура клиентского приложения, асинхронный backend, единая модель финансовых операций, realtime-коммуникация и фоновые процессы. Компоненты разделены по зонам ответственности, поэтому новые механики можно добавлять поверх существующего ядра без необходимости переписывать весь продукт." data-en="Behind NFINE's user-facing mechanics is a full fullstack system: a dedicated client architecture, an async backend, a unified model for financial operations, realtime communication, and background processes. Components are split by responsibility, so new mechanics can be added on top of the existing core without rewriting the product.">
-          За пользовательскими механиками NFINE находится полноценная fullstack-система: отдельная архитектура клиентского приложения, асинхронный backend, единая модель финансовых операций, realtime-коммуникация и фоновые процессы. Компоненты разделены по зонам ответственности, поэтому новые механики можно добавлять поверх существующего ядра без необходимости переписывать весь продукт.
-        </p>
-      </div>
-
-      <div class="eyebrow" style="margin-bottom:16px;" data-ru="Под капотом" data-en="Under the hood">Под капотом</div>
-      <div class="layers">
-        <div class="layer">
-          <div class="t">Frontend</div>
-          <div class="tags">React · MobX · Router · SCSS Modules</div>
-          <div class="d" data-ru="Большое React-приложение с централизованным состоянием, защищённой маршрутизацией, отдельным API-слоем, переиспользуемой логикой и общей обработкой загрузок и ошибок." data-en="A large React application with centralized state, protected routing, a dedicated API layer, reusable logic, and shared loading and error handling.">Большое React-приложение с централизованным состоянием, защищённой маршрутизацией, отдельным API-слоем, переиспользуемой логикой и общей обработкой загрузок и ошибок.</div>
-        </div>
-        <div class="layer">
-          <div class="t">Backend</div>
-          <div class="tags">FastAPI · Motor · MongoDB · JWT</div>
-          <div class="d" data-ru="Асинхронный FastAPI-backend с разделением API, бизнес-логики, моделей предметной области и слоя работы с MongoDB." data-en="An async FastAPI backend that separates the API, business logic, domain models, and the MongoDB data layer.">Асинхронный FastAPI-backend с разделением API, бизнес-логики, моделей предметной области и слоя работы с MongoDB.</div>
-        </div>
-        <div class="layer">
-          <div class="t" data-ru="Финансы" data-en="Finance">Финансы</div>
-          <div class="tags" data-ru="журнал транзакций · типизированные операции" data-en="transaction ledger · typed operations">журнал транзакций · типизированные операции</div>
-          <div class="d" data-ru="Все изменения балансов проходят через единые правила и фиксируются в журнале транзакций. Связанные операции — от игровых наград до blockchain-пополнений — можно проследить между системами." data-en="Every balance change goes through the same rules and is recorded in a transaction ledger. Linked operations — from in-game rewards to blockchain deposits — can be traced across systems.">Все изменения балансов проходят через единые правила и фиксируются в журнале транзакций. Связанные операции — от игровых наград до blockchain-пополнений — можно проследить между системами.</div>
-        </div>
-        <div class="layer">
-          <div class="t" data-ru="Realtime и фоновые процессы" data-en="Realtime &amp; workers">Realtime и фоновые процессы</div>
-          <div class="tags" data-ru="WebSocket · воркеры · задачи по расписанию" data-en="WebSocket · workers · scheduled jobs">WebSocket · воркеры · задачи по расписанию</div>
-          <div class="d" data-ru="WebSocket обслуживает личные и групповые чаты, а фоновые задачи отвечают за blockchain-проверки, ежедневные задания, streak-механики и автоматическую выдачу наград." data-en="WebSocket powers private and group chats, while background jobs handle blockchain checks, daily quests, streak mechanics, and automatic reward payouts.">WebSocket обслуживает личные и групповые чаты, а фоновые задачи отвечают за blockchain-проверки, ежедневные задания, streak-механики и автоматическую выдачу наград.</div>
-        </div>
-      </div>
-
-      <div class="mf-caption" style="text-align:left; margin-top:24px;" data-ru="Путь одной операции — от блокчейна до баланса пользователя" data-en="The path of a single operation — from blockchain to user balance">Путь одной операции — от блокчейна до баланса пользователя</div>
-      <div class="flow-chain" data-ru="Blockchain → Платёжный шлюз → Заявка / транзакция → Финансовый сценарий → Журнал транзакций → Баланс пользователя" data-en="Blockchain → Payment gateway → Request / transaction → Financial scenario → Transaction ledger → User balance">Blockchain → Платёжный шлюз → Заявка / транзакция → Финансовый сценарий → Журнал транзакций → Баланс пользователя</div>
-
-      <p class="mf-text" style="max-width:680px; margin-top:22px" data-ru="Игровые, торговые и платёжные механики используют общие сервисы и правила работы с данными. Благодаря этому новые функции можно подключать к существующей экономике, а не создавать для каждой отдельную систему учёта." data-en="Game, trading, and payment mechanics all use the same services and data rules. New features can plug into the existing economy instead of each needing its own separate accounting system.">
-        Игровые, торговые и платёжные механики используют общие сервисы и правила работы с данными. Благодаря этому новые функции можно подключать к существующей экономике, а не создавать для каждой отдельную систему учёта.
-      </p>
-
-      <p class="mf-text" style="max-width:680px" data-ru="NFINE потребовал работы сразу на нескольких уровнях: от интерфейсов и пользовательских сценариев до серверной архитектуры, финансового учёта, realtime и crypto-интеграций. В результате проект получил не набор отдельных функций, а единое приложение с общим техническим ядром, поверх которого можно развивать новые игровые и продуктовые механики." data-en="NFINE required work across several levels at once — from interfaces and user flows to server architecture, financial accounting, realtime, and crypto integrations. The result isn't a set of disconnected features, but one application with a shared technical core that new game and product mechanics can be built on top of.">
-        NFINE потребовал работы сразу на нескольких уровнях: от интерфейсов и пользовательских сценариев до серверной архитектуры, финансового учёта, realtime и crypto-интеграций. В результате проект получил не набор отдельных функций, а единое приложение с общим техническим ядром, поверх которого можно развивать новые игровые и продуктовые механики.
-      </p>
-      <div class="feature-stack" style="margin-top:8px;">
-        <span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="py">FastAPI</span><span class="tag" data-cat="py">Motor</span><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="infra">WebSocket</span><span class="tag" data-cat="web3">TON</span>
-      </div>
-        </div>
-      </details>
-    </div>
-
-    <!-- ============ FEATURE 02 — METAFORGE ============ -->
+    <!-- ============ FEATURE 01 — METAFORGE ============ -->
     <div class="feature" id="case-metaforge">
-      <div class="feature-eyebrow"><span class="feature-index">02</span><span>/</span><span>COMPANY WORKSPACE · AI</span><span class="status wip">IN DEVELOPMENT</span></div>
+      <div class="feature-eyebrow"><span class="feature-index">01</span><span>/</span><span>COMPANY WORKSPACE · AI</span><span class="status live">LIVE</span></div>
       <h3>MetaForge</h3>
       <p class="feature-summary" style="max-width:640px" data-ru="Модульная SaaS-платформа для управления компанией и продуктовой разработкой." data-en="A modular SaaS platform for company operations and product development.">Модульная SaaS-платформа для управления компанией и продуктовой разработкой.</p>
       <p class="mf-text" data-ru="MetaForge объединяет проекты, задачи, сотрудников, клиентов, документы, коммуникацию и внутренние инструменты компании в одной системе. Доступ к данным и возможностям платформы формируется индивидуально для каждого сотрудника — от его роли, проектов и лицензии компании." data-en="MetaForge brings a company's projects, tasks, employees, clients, documents, communication, and internal tools into one system. Access to data and platform features is shaped individually for each employee — based on their role, projects, and the company's license.">
@@ -905,8 +689,7 @@
       <div class="feature-meta" style="margin-top:26px;">
         <div><b>Role</b> — <span data-ru="Дизайн продукта · Frontend · Backend · Оркестрация ИИ · Интеграции" data-en="Product Design · Frontend · Backend · AI Orchestration · Integrations">Дизайн продукта · Frontend · Backend · Оркестрация ИИ · Интеграции</span></div>
         <div><b data-ru="Область работы" data-en="Scope">Область работы</b> — <span data-ru="SaaS-платформа · система доступа · ИИ-инструменты · среда разработки · автоматизация" data-en="SaaS platform · access system · AI tooling · dev environment · automation">SaaS-платформа · система доступа · ИИ-инструменты · среда разработки · автоматизация</span></div>
-        <div><b data-ru="Команда" data-en="Team">Команда</b> — <span class="ph" data-ru="[сколько человек и что лично я]" data-en="[team size and what I did myself]">[сколько человек и что лично я]</span></div>
-        <div><b data-ru="Срок" data-en="Timeline">Срок</b> — <span class="ph" data-ru="[сколько в разработке]" data-en="[time in development]">[сколько в разработке]</span></div>
+        <div><b data-ru="Команда" data-en="Team">Команда</b> — <span data-ru="от идеи и архитектуры до MVP — один, дальше команда из 3 человек" data-en="solo from idea and architecture to MVP, then a team of 3">от идеи и архитектуры до MVP — один, дальше команда из 3 человек</span></div>
       </div>
       <div class="feature-stack">
         <span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="go">Go</span><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="data">PostgreSQL</span><span class="tag" data-cat="infra">WebSocket</span><span class="tag" data-cat="infra">Docker</span><span class="tag" data-cat="infra">MinIO</span><span class="tag" data-cat="infra">n8n</span><span class="tag" data-cat="ai">LLM orchestration</span><span class="tag" data-cat="infra">Gitea · GitLab</span>
@@ -935,9 +718,9 @@
         </div>
         <div class="case-results">
           <span class="k" data-ru="результат" data-en="outcome">результат</span>
-          <span class="ph" data-ru="[кто пользуется: компании / сотрудники]" data-en="[who uses it: companies / people]">[кто пользуется: компании / сотрудники]</span>
-          <span class="ph" data-ru="[N модулей]" data-en="[N modules]">[N модулей]</span>
-          <span class="ph" data-ru="[что изменилось для команды]" data-en="[impact on the team]">[что изменилось для команды]</span>
+          <span class="v" data-ru="в продакшене" data-en="in production">в продакшене</span>
+          <span class="v" data-ru="первые клиенты — коммерческие компании" data-en="first clients are commercial companies">первые клиенты — коммерческие компании</span>
+          <span class="v" data-ru="настраиваем платформу под процессы каждого клиента" data-en="we tailor the platform to each client&#39;s processes">настраиваем платформу под процессы каждого клиента</span>
         </div>
       </div>
 
@@ -1117,6 +900,219 @@
       </details>
     </div>
 
+    <!-- ============ FEATURE 02 — NFINE ============ -->
+    <div class="feature" id="case-nfine">
+      <div class="nf-hero-row">
+        <div class="nf-hero-text">
+          <div class="feature-eyebrow"><span class="feature-index">02</span><span>/</span><span>CRYPTO · GAMEFI · WEB3</span><span class="status live">LIVE</span></div>
+          <h3>NFINE Ecosystem</h3>
+          <p class="feature-summary" style="max-width:600px" data-ru="От сайта токена до полноценной GameFi-платформы." data-en="From a token website to a full GameFi platform.">От сайта токена до полноценной GameFi-платформы.</p>
+
+          <p class="mf-text" data-ru="NFINE начинался с публичного сайта токена с собственной визуальной идентичностью и актуальными рыночными данными. Следующим этапом стала GameFi-платформа для Telegram, Web и Android с собственной экономикой, социальными функциями и crypto-интеграциями." data-en="NFINE started as a public token website with its own visual identity and live market data. The next stage was a GameFi platform for Telegram, Web, and Android, with its own economy, social features, and crypto integrations.">
+            NFINE начинался с публичного сайта токена с собственной визуальной идентичностью и актуальными рыночными данными. Следующим этапом стала GameFi-платформа для Telegram, Web и Android с собственной экономикой, социальными функциями и crypto-интеграциями.
+          </p>
+
+          <div class="nf-meta">
+            <div><b>Role</b> — Product Design · Frontend · Backend · Integrations</div>
+            <div><b>Platforms</b> — Website · Telegram Mini App · Web App · Android WebView</div>
+            <div><b data-ru="Команда" data-en="Team">Команда</b> — <span data-ru="сделал в одиночку: дизайн, фронтенд, бэкенд, микросервисы; недавно подключился второй разработчик" data-en="built it single-handedly: design, frontend, backend, microservices; a second developer joined recently">сделал в одиночку: дизайн, фронтенд, бэкенд, микросервисы; недавно подключился второй разработчик</span></div>
+          </div>
+          <div class="feature-stack" style="margin-top:14px;">
+            <span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="frontend">SCSS Modules</span><span class="tag" data-cat="py">FastAPI</span><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="web3">TON</span>
+          </div>
+          <div class="feature-cta">
+            <a class="btn btn-primary" href="https://notfine.meme" target="_blank" rel="noopener" data-ru="Открыть сайт ↗" data-en="Open site ↗">Открыть сайт ↗</a>
+          </div>
+        </div>
+
+        <!-- Website hero -->
+        <div class="nf-hero-media">
+          <div class="media media-auto nf-hero-shot">
+            <img src="assets/img/nfine-token-site.webp" width="1400" height="787" alt="NOTFINE — публичная страница токена" decoding="async" loading="lazy">
+          </div>
+          <div class="mf-caption" data-ru="NOTFINE — публичная страница токена" data-en="NOTFINE — the public token page">NOTFINE — публичная страница токена</div>
+        </div>
+      </div>
+
+      <div class="case-brief">
+        <div class="case-challenges">
+          <div class="challenge">
+            <div class="n" data-ru="задача 01" data-en="problem 01">задача 01</div>
+            <h4 data-ru="Один баланс — много источников денег" data-en="One balance, many money sources">Один баланс — много источников денег</h4>
+            <p class="prob" data-ru="Игровые награды, донаты, обмен валют и пополнения из блокчейна меняют одни и те же балансы." data-en="Game rewards, donations, currency exchange and on-chain top-ups all change the same balances.">Игровые награды, донаты, обмен валют и пополнения из блокчейна меняют одни и те же балансы.</p>
+            <p class="sol" data-ru="Все изменения идут через типизированные операции и единый журнал транзакций — любую операцию можно проследить от блокчейна до баланса." data-en="Every change goes through typed operations and a single transaction ledger — any operation can be traced from the chain to the balance.">Все изменения идут через типизированные операции и единый журнал транзакций — любую операцию можно проследить от блокчейна до баланса.</p>
+          </div>
+          <div class="challenge">
+            <div class="n" data-ru="задача 02" data-en="problem 02">задача 02</div>
+            <h4 data-ru="Crypto без выхода из приложения" data-en="Crypto without leaving the app">Crypto без выхода из приложения</h4>
+            <p class="prob" data-ru="Пользователи платят и выводят в TON, USDT и NFINE прямо внутри Telegram Mini App." data-en="Users pay and withdraw in TON, USDT and NFINE right inside a Telegram Mini App.">Пользователи платят и выводят в TON, USDT и NFINE прямо внутри Telegram Mini App.</p>
+            <p class="sol" data-ru="Собственный платёжный шлюз: пополнения, конвертация и вывод проходят один путь — шлюз → заявка → финансовый сценарий → журнал." data-en="A custom payment gateway: top-ups, conversion and withdrawals follow one path — gateway → request → financial scenario → ledger.">Собственный платёжный шлюз: пополнения, конвертация и вывод проходят один путь — шлюз → заявка → финансовый сценарий → журнал.</p>
+          </div>
+          <div class="challenge">
+            <div class="n" data-ru="задача 03" data-en="problem 03">задача 03</div>
+            <h4 data-ru="Realtime и фоновые процессы" data-en="Realtime and background jobs">Realtime и фоновые процессы</h4>
+            <p class="prob" data-ru="Чаты, кланы и ежедневные механики должны работать без перезагрузки и ручного вмешательства." data-en="Chats, clans and daily mechanics have to work without reloads or manual work.">Чаты, кланы и ежедневные механики должны работать без перезагрузки и ручного вмешательства.</p>
+            <p class="sol" data-ru="WebSocket для личных и групповых чатов, воркеры для blockchain-проверок, ежедневных заданий, streak-механик и автоматической выдачи наград." data-en="WebSocket for direct and group chats; workers for on-chain checks, daily quests, streaks and automatic reward payouts.">WebSocket для личных и групповых чатов, воркеры для blockchain-проверок, ежедневных заданий, streak-механик и автоматической выдачи наград.</p>
+          </div>
+        </div>
+        <div class="case-results">
+          <span class="k" data-ru="результат" data-en="outcome">результат</span>
+          <span class="v" data-ru="5 000 регистраций" data-en="5,000 sign-ups">5 000 регистраций</span>
+          <span class="v" data-ru="500–1 000 активных пользователей" data-en="500–1,000 active users">500–1 000 активных пользователей</span>
+        </div>
+      </div>
+
+      <details class="case-more">
+        <summary><span class="ic">+</span><span data-ru="Подробный разбор кейса" data-en="Full case study">Подробный разбор кейса</span><span class="hint" data-ru="механики · экономика · архитектура · путь операции" data-en="mechanics · economy · architecture · operation flow">механики · экономика · архитектура · путь операции</span></summary>
+        <div class="case-more-body">
+      <div class="mf-label" style="margin-top:34px;" data-ru="Сайт токена" data-en="Token Website">Сайт токена</div>
+      <p class="mf-text" style="max-width:640px" data-ru="Публичная точка входа в NFINE: информация о токене, актуальные данные рынка, адрес контракта, ссылки на покупку и материалы для новых участников проекта." data-en="The public entry point to NFINE: token information, live market data, contract address, buy links, and onboarding material for new project members.">
+        Публичная точка входа в NFINE: информация о токене, актуальные данные рынка, адрес контракта, ссылки на покупку и материалы для новых участников проекта.
+      </p>
+      <div class="mf-caption" style="text-align:left; margin-top:2px;">DexScreener API · GeckoTerminal API</div>
+
+      <!-- Transition -->
+      <div class="nf-transition">
+        <div class="k" data-ru="От запуска к продукту" data-en="From launch to product">От запуска к продукту</div>
+        <p data-ru="После запуска сайта NFINE вырос в полноценный пользовательский продукт — GameFi-приложение с собственной экономикой, социальными механиками и crypto-функциями." data-en="After the website launched, NFINE grew into a full consumer product — a GameFi app with its own economy, social mechanics, and crypto features.">
+          После запуска сайта NFINE вырос в полноценный пользовательский продукт — GameFi-приложение с собственной экономикой, социальными механиками и crypto-функциями.
+        </p>
+      </div>
+
+      <!-- Product pillars -->
+      <div class="eyebrow" style="margin-bottom:16px;" data-ru="Ключевые части продукта" data-en="Product Pillars">Ключевые части продукта</div>
+      <div class="layers">
+        <div class="layer">
+          <div class="t">GameFi</div>
+          <div class="tags" data-ru="фарминг · квесты · колесо · сундуки · достижения · prediction" data-en="farming · quests · wheel · lootboxes · achievements · prediction">фарминг · квесты · колесо · сундуки · достижения · prediction</div>
+          <div class="d" data-ru="Фарминг, задания, колесо фортуны и prediction-игра формируют игровой цикл, который приносит внутреннюю валюту и награды." data-en="Farming, quests, the Fortune Wheel, and the prediction game form a play loop that earns in-game currency and rewards.">Фарминг, задания, колесо фортуны и prediction-игра формируют игровой цикл, который приносит внутреннюю валюту и награды.</div>
+        </div>
+        <div class="layer">
+          <div class="t" data-ru="Сообщество" data-en="Social">Сообщество</div>
+          <div class="tags" data-ru="чаты · кланы · друзья · трейды · рефералы" data-en="chats · clans · friends · trades · referrals">чаты · кланы · друзья · трейды · рефералы</div>
+          <div class="d" data-ru="Мессенджер, кланы с гибкими правами доступа, друзья, обмен предметами и трёхуровневая реферальная система связывают пользователей друг с другом." data-en="A messenger, clans with flexible access rules, friends, item trading, and a three-tier referral system connect users with each other.">Мессенджер, кланы с гибкими правами доступа, друзья, обмен предметами и трёхуровневая реферальная система связывают пользователей друг с другом.</div>
+        </div>
+        <div class="layer">
+          <div class="t">Crypto</div>
+          <div class="tags" data-ru="TON · USDT · P2P-биржа · донаты · вывод средств" data-en="TON · USDT · P2P exchange · donations · withdrawals">TON · USDT · P2P-биржа · донаты · вывод средств</div>
+          <div class="d" data-ru="Донаты, обмен валют и P2P-биржа с плечом работают через собственный платёжный шлюз — без выхода из приложения." data-en="Donations, currency exchange, and a leveraged P2P exchange all run through a custom payment gateway — without leaving the app.">Донаты, обмен валют и P2P-биржа с плечом работают через собственный платёжный шлюз — без выхода из приложения.</div>
+        </div>
+        <div class="layer">
+          <div class="t" data-ru="Экономика" data-en="Economy">Экономика</div>
+          <div class="tags" data-ru="квота на вывод · utility · магазин · награды" data-en="withdrawal quota · utility · shop · rewards">квота на вывод · utility · магазин · награды</div>
+          <div class="d" data-ru="Заработанная валюта тратится внутри приложения или выводится — активность в продукте напрямую увеличивает квоту на вывод." data-en="Earned currency is spent in-app or withdrawn — product activity directly increases a user's withdrawal quota.">Заработанная валюта тратится внутри приложения или выводится — активность в продукте напрямую увеличивает квоту на вывод.</div>
+        </div>
+      </div>
+
+      <!-- Dog Farm -->
+      <div class="nf-split">
+        <div class="nf-split-media">
+          <div class="media media-auto"><img src="assets/img/nfine-dog-farm.webp" width="688" height="1179" alt="Dog Farm — farming-механика NFINE" decoding="async" loading="lazy"></div>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:6px;">GameFi</div>
+          <h4 data-ru="Фарминг как источник дохода" data-en="Farming as an income loop">Фарминг как источник дохода</h4>
+          <p data-ru="Коллекционные собаки — это игровой источник дохода: фарминг превращает активность в приложении в валюту, которая работает во всей экосистеме — от покупок в магазине и участия в других активностях до доступа к utility-функциям продукта, включая AI-ассистентов и VPN." data-en="Collectible dogs are an in-app income source: farming turns user activity into currency that works across the whole ecosystem — from shop purchases and other activities to the product's utility features, including AI assistants and VPN.">Коллекционные собаки — это игровой источник дохода: фарминг превращает активность в приложении в валюту, которая работает во всей экосистеме — от покупок в магазине и участия в других активностях до доступа к utility-функциям продукта, включая AI-ассистентов и VPN.</p>
+        </div>
+      </div>
+
+      <!-- Fortune Wheel -->
+      <div class="nf-split nf-split-rev">
+        <div class="nf-split-media">
+          <div class="media media-auto"><img src="assets/img/nfine-fortune-wheel.webp" width="696" height="1244" alt="Fortune Wheel — reward loop NFINE" decoding="async" loading="lazy"></div>
+        </div>
+        <div>
+          <h4 data-ru="Система наград" data-en="Reward system">Система наград</h4>
+          <p data-ru="Награды встроены в каждый слой продукта: ежедневный вход в приложение, колесо фортуны, открытие кейсов, ежедневные и сезонные задания, личные достижения и активность внутри клана — все источники работают на общий прогресс игрока." data-en="Rewards are built into every layer of the product: daily logins, the Fortune Wheel, case openings, daily and seasonal quests, personal achievements, and clan activity — every source feeds into the player's overall progress.">Награды встроены в каждый слой продукта: ежедневный вход в приложение, колесо фортуны, открытие кейсов, ежедневные и сезонные задания, личные достижения и активность внутри клана — все источники работают на общий прогресс игрока.</p>
+        </div>
+      </div>
+
+      <!-- Social + Messenger merged -->
+      <div class="nf-split">
+        <div class="nf-split-media">
+          <div class="media media-auto" style="margin-bottom:14px;"><img src="assets/img/nfine-clan-feed.webp" width="680" height="1081" alt="Клан NFINE — социальная лента" decoding="async" loading="lazy"></div>
+          <div class="media media-auto"><img src="assets/img/nfine-community-chat.webp" width="675" height="1075" alt="Встроенный чат сообщества NFINE" decoding="async" loading="lazy"></div>
+        </div>
+        <div>
+          <h4 data-ru="Социальные механики" data-en="Social mechanics">Социальные механики</h4>
+          <p data-ru="Общение работает на двух уровнях: личные и групповые чаты во встроенном мессенджере — и сообщества, которые пользователи создают и прокачивают за внутреннюю валюту. Доступ гибко настраивается — от закрытых, куда приглашает лидер, до открытых для всех, — а право публиковать посты лидер выдаёт отдельным участникам." data-en="Communication happens on two levels: private and group chats in the built-in messenger, and communities users create and grow with in-game currency. Access is flexible — from closed groups the leader invites people into, to fully open ones — and the leader assigns posting rights to specific members.">Общение работает на двух уровнях: личные и групповые чаты во встроенном мессенджере — и сообщества, которые пользователи создают и прокачивают за внутреннюю валюту. Доступ гибко настраивается — от закрытых, куда приглашает лидер, до открытых для всех, — а право публиковать посты лидер выдаёт отдельным участникам.</p>
+          <p data-ru="Совместная активность в сообществе усиливает личный прогресс: групповой фарминг приносит больше валюты, опыта и репутации клана, а также пополняет казну, которую можно тратить на его развитие. Отдельно работают личные связи — друзья, обмен предметами и валютой, а также трёхуровневая реферальная система, превращающая приглашённых пользователей в источник пассивного дохода." data-en="Group activity inside a community boosts individual progress: joint farming earns more currency, experience, and clan reputation, and fills a shared treasury that funds the community's upgrades. On top of that, players build personal connections — friends, item and currency trades, and a three-tier referral system that turns invited users into a source of passive income.">Совместная активность в сообществе усиливает личный прогресс: групповой фарминг приносит больше валюты, опыта и репутации клана, а также пополняет казну, которую можно тратить на его развитие. Отдельно работают личные связи — друзья, обмен предметами и валютой, а также трёхуровневая реферальная система, превращающая приглашённых пользователей в источник пассивного дохода.</p>
+        </div>
+      </div>
+
+      <!-- Assets / crypto -->
+      <div class="nf-split nf-split-rev">
+        <div class="nf-split-media">
+          <div class="media media-auto"><img src="assets/img/nfine-assets.webp" width="678" height="1076" alt="Assets — crypto и игровые балансы NFINE" decoding="async" loading="lazy"></div>
+        </div>
+        <div>
+          <h4>Crypto <span data-ru="внутри продукта" data-en="inside the product">внутри продукта</span></h4>
+          <p data-ru="TON, USDT и NFINE работают через единый платёжный слой с собственным шлюзом: донаты, конвертация валют и доступ к встроенной P2P-бирже с плечом, где пользователи открывают позиции и торгуют токенами из разных сетей." data-en="TON, USDT, and NFINE run through a single payment layer with a custom gateway: donations, currency conversion, and access to a built-in leveraged P2P exchange, where users open positions and trade tokens across different networks.">TON, USDT и NFINE работают через единый платёжный слой с собственным шлюзом: донаты, конвертация валют и доступ к встроенной P2P-бирже с плечом, где пользователи открывают позиции и торгуют токенами из разных сетей.</p>
+          <p data-ru="Активность в приложении — квесты и участие в игровых механиках — повышает квоту на вывод. Заработанное можно вывести или потратить внутри экосистемы: на utility-функции токена, включая AI-ассистентов, VPN и аудиты от команды проекта." data-en="In-app activity — quests and participation in game mechanics — raises a user's withdrawal quota. Earned funds can be withdrawn or spent inside the ecosystem on the token's utility features, including AI assistants, VPN, and audits from the project team.">Активность в приложении — квесты и участие в игровых механиках — повышает квоту на вывод. Заработанное можно вывести или потратить внутри экосистемы: на utility-функции токена, включая AI-ассистентов, VPN и аудиты от команды проекта.</p>
+        </div>
+      </div>
+
+      <!-- Prediction + Trading -->
+      <div class="modes" style="margin-top:44px;">
+        <div class="mode-card">
+          <div class="t" data-ru="Игра на прогноз цены" data-en="Prediction Game">Игра на прогноз цены</div>
+          <div class="d" data-ru="Раундовая механика, где пользователь предсказывает, вырастет, упадёт или останется стабильным курс токена. Ставки участников формируют общий призовой пул, который распределяется между угадавшими после завершения раунда." data-en="A round-based game where users predict whether the token's price will rise, fall, or stay flat. Player stakes form a shared prize pool, split among the winners once the round ends.">Раундовая механика, где пользователь предсказывает, вырастет, упадёт или останется стабильным курс токена. Ставки участников формируют общий призовой пул, который распределяется между угадавшими после завершения раунда.</div>
+        </div>
+        <div class="mode-card">
+          <div class="t" data-ru="Торговый режим" data-en="Trading">Торговый режим</div>
+          <div class="d" data-ru="Отдельный игровой режим имитирует торговлю с использованием кредитного плеча." data-en="A separate in-app game mode simulates leveraged trading.">Отдельный игровой режим имитирует торговлю с использованием кредитного плеча.</div>
+        </div>
+      </div>
+
+      <!-- Engineering transition -->
+      <div class="nf-transition">
+        <div class="k" data-ru="Инженерная часть" data-en="Engineering">Инженерная часть</div>
+        <p data-ru="За пользовательскими механиками NFINE находится полноценная fullstack-система: отдельная архитектура клиентского приложения, асинхронный backend, единая модель финансовых операций, realtime-коммуникация и фоновые процессы. Компоненты разделены по зонам ответственности, поэтому новые механики можно добавлять поверх существующего ядра без необходимости переписывать весь продукт." data-en="Behind NFINE's user-facing mechanics is a full fullstack system: a dedicated client architecture, an async backend, a unified model for financial operations, realtime communication, and background processes. Components are split by responsibility, so new mechanics can be added on top of the existing core without rewriting the product.">
+          За пользовательскими механиками NFINE находится полноценная fullstack-система: отдельная архитектура клиентского приложения, асинхронный backend, единая модель финансовых операций, realtime-коммуникация и фоновые процессы. Компоненты разделены по зонам ответственности, поэтому новые механики можно добавлять поверх существующего ядра без необходимости переписывать весь продукт.
+        </p>
+      </div>
+
+      <div class="eyebrow" style="margin-bottom:16px;" data-ru="Под капотом" data-en="Under the hood">Под капотом</div>
+      <div class="layers">
+        <div class="layer">
+          <div class="t">Frontend</div>
+          <div class="tags">React · MobX · Router · SCSS Modules</div>
+          <div class="d" data-ru="Большое React-приложение с централизованным состоянием, защищённой маршрутизацией, отдельным API-слоем, переиспользуемой логикой и общей обработкой загрузок и ошибок." data-en="A large React application with centralized state, protected routing, a dedicated API layer, reusable logic, and shared loading and error handling.">Большое React-приложение с централизованным состоянием, защищённой маршрутизацией, отдельным API-слоем, переиспользуемой логикой и общей обработкой загрузок и ошибок.</div>
+        </div>
+        <div class="layer">
+          <div class="t">Backend</div>
+          <div class="tags">FastAPI · Motor · MongoDB · JWT</div>
+          <div class="d" data-ru="Асинхронный FastAPI-backend с разделением API, бизнес-логики, моделей предметной области и слоя работы с MongoDB." data-en="An async FastAPI backend that separates the API, business logic, domain models, and the MongoDB data layer.">Асинхронный FastAPI-backend с разделением API, бизнес-логики, моделей предметной области и слоя работы с MongoDB.</div>
+        </div>
+        <div class="layer">
+          <div class="t" data-ru="Финансы" data-en="Finance">Финансы</div>
+          <div class="tags" data-ru="журнал транзакций · типизированные операции" data-en="transaction ledger · typed operations">журнал транзакций · типизированные операции</div>
+          <div class="d" data-ru="Все изменения балансов проходят через единые правила и фиксируются в журнале транзакций. Связанные операции — от игровых наград до blockchain-пополнений — можно проследить между системами." data-en="Every balance change goes through the same rules and is recorded in a transaction ledger. Linked operations — from in-game rewards to blockchain deposits — can be traced across systems.">Все изменения балансов проходят через единые правила и фиксируются в журнале транзакций. Связанные операции — от игровых наград до blockchain-пополнений — можно проследить между системами.</div>
+        </div>
+        <div class="layer">
+          <div class="t" data-ru="Realtime и фоновые процессы" data-en="Realtime &amp; workers">Realtime и фоновые процессы</div>
+          <div class="tags" data-ru="WebSocket · воркеры · задачи по расписанию" data-en="WebSocket · workers · scheduled jobs">WebSocket · воркеры · задачи по расписанию</div>
+          <div class="d" data-ru="WebSocket обслуживает личные и групповые чаты, а фоновые задачи отвечают за blockchain-проверки, ежедневные задания, streak-механики и автоматическую выдачу наград." data-en="WebSocket powers private and group chats, while background jobs handle blockchain checks, daily quests, streak mechanics, and automatic reward payouts.">WebSocket обслуживает личные и групповые чаты, а фоновые задачи отвечают за blockchain-проверки, ежедневные задания, streak-механики и автоматическую выдачу наград.</div>
+        </div>
+      </div>
+
+      <div class="mf-caption" style="text-align:left; margin-top:24px;" data-ru="Путь одной операции — от блокчейна до баланса пользователя" data-en="The path of a single operation — from blockchain to user balance">Путь одной операции — от блокчейна до баланса пользователя</div>
+      <div class="flow-chain" data-ru="Blockchain → Платёжный шлюз → Заявка / транзакция → Финансовый сценарий → Журнал транзакций → Баланс пользователя" data-en="Blockchain → Payment gateway → Request / transaction → Financial scenario → Transaction ledger → User balance">Blockchain → Платёжный шлюз → Заявка / транзакция → Финансовый сценарий → Журнал транзакций → Баланс пользователя</div>
+
+      <p class="mf-text" style="max-width:680px; margin-top:22px" data-ru="Игровые, торговые и платёжные механики используют общие сервисы и правила работы с данными. Благодаря этому новые функции можно подключать к существующей экономике, а не создавать для каждой отдельную систему учёта." data-en="Game, trading, and payment mechanics all use the same services and data rules. New features can plug into the existing economy instead of each needing its own separate accounting system.">
+        Игровые, торговые и платёжные механики используют общие сервисы и правила работы с данными. Благодаря этому новые функции можно подключать к существующей экономике, а не создавать для каждой отдельную систему учёта.
+      </p>
+
+      <p class="mf-text" style="max-width:680px" data-ru="NFINE потребовал работы сразу на нескольких уровнях: от интерфейсов и пользовательских сценариев до серверной архитектуры, финансового учёта, realtime и crypto-интеграций. В результате проект получил не набор отдельных функций, а единое приложение с общим техническим ядром, поверх которого можно развивать новые игровые и продуктовые механики." data-en="NFINE required work across several levels at once — from interfaces and user flows to server architecture, financial accounting, realtime, and crypto integrations. The result isn't a set of disconnected features, but one application with a shared technical core that new game and product mechanics can be built on top of.">
+        NFINE потребовал работы сразу на нескольких уровнях: от интерфейсов и пользовательских сценариев до серверной архитектуры, финансового учёта, realtime и crypto-интеграций. В результате проект получил не набор отдельных функций, а единое приложение с общим техническим ядром, поверх которого можно развивать новые игровые и продуктовые механики.
+      </p>
+      <div class="feature-stack" style="margin-top:8px;">
+        <span class="tag" data-cat="frontend">React</span><span class="tag" data-cat="frontend">MobX</span><span class="tag" data-cat="py">FastAPI</span><span class="tag" data-cat="py">Motor</span><span class="tag" data-cat="data">MongoDB</span><span class="tag" data-cat="infra">WebSocket</span><span class="tag" data-cat="web3">TON</span>
+      </div>
+        </div>
+      </details>
+    </div>
+
     <!-- ============ FEATURE 03 — BAC TOKEN ============ -->
     <div class="feature" id="case-bac">
       <div class="feature-grid flip">
@@ -1231,7 +1227,7 @@
       <div class="skill-card" style="--c:var(--c-platform)">
         <div class="h"><span class="dot"></span><h4 data-ru="ИИ-системы" data-en="AI systems">ИИ-системы</h4></div>
         <p class="d" data-ru="Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода." data-en="An agent pipeline, permission-scoped context, one gateway to several providers and isolated execution of generated code.">Конвейер агентов, контекст по правам пользователя, единый шлюз к провайдерам и изолированный запуск сгенерированного кода.</p>
-        <div class="tags"><span class="tag" data-cat="ai">LLM orchestration</span><span class="tag" data-cat="ai">Multi-agent pipeline</span><span class="tag" data-cat="ai">Claude · OpenAI · DeepSeek · Grok</span><span class="tag" data-cat="ai">Docker sandboxes</span><span class="tag" data-cat="ai">n8n</span></div>
+        <div class="tags"><span class="tag" data-cat="ai">Claude Code · Codex</span><span class="tag" data-cat="ai">LLM orchestration</span><span class="tag" data-cat="ai">Multi-agent pipeline</span><span class="tag" data-cat="ai">Claude · OpenAI · DeepSeek · Grok</span><span class="tag" data-cat="ai">Docker sandboxes</span><span class="tag" data-cat="ai">n8n</span></div>
         <div class="where"><span data-ru="где:" data-en="used in:">где:</span> <a href="#case-metaforge">MetaForge</a> · <span>NDA</span> · <a href="#mindcoding" data-ru="майндкодинг" data-en="mindcoding">майндкодинг</a></div>
       </div>
       <div class="skill-card" style="--c:var(--c-data)">
@@ -1257,7 +1253,7 @@
     </div>
     <div class="resume-box">
       <div>
-        <div class="t" data-ru="Qyedo_CV.pdf" data-en="Qyedo_CV_EN.pdf">Qyedo_CV.pdf</div>
+        <div class="t" data-ru="Vitalij_Levin_CV_RU.pdf" data-en="Vitalij_Levin_CV_EN.pdf">Vitalij_Levin_CV_RU.pdf</div>
         <div class="d" data-ru="Опыт, технологии и контакты на одной странице." data-en="Experience, tech stack, and contacts on one page.">Опыт, технологии и контакты на одной странице.</div>
       </div>
       <a id="resume-dl" class="btn btn-primary" download="Qyedo_CV.pdf" href="#" data-ru="Скачать резюме" data-en="Download resume">Скачать резюме</a>
@@ -1271,17 +1267,15 @@
       <div>
         <h2 data-ru="Давайте поговорим" data-en="Let's talk">Давайте поговорим</h2>
         <p class="foot-lead" data-ru="Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ." data-en="I'm looking for a team that needs an engineer who owns the whole product — from the interface to the money layer and AI.">Ищу команду, где нужен инженер, который отвечает за продукт целиком — от интерфейса до денег и ИИ.</p>
-        <div class="meta">full-time remote · utc-2 — utc+2</div>
+        <div class="meta" data-ru="full-time · удалённо или в офисе · UTC-2 — UTC+2" data-en="full-time · remote or on-site · UTC-2 — UTC+2">full-time · удалённо или в офисе · UTC-2 — UTC+2</div>
       </div>
       <div class="contacts">
         <a href="https://t.me/qyedo" target="_blank" rel="noopener">Telegram @qyedo →</a>
-        <span class="ph">[email]</span>
-        <span class="ph">[LinkedIn]</span>
-        <span class="ph">[GitHub]</span>
+        <a href="mailto:qyedodev@gmail.com">qyedodev@gmail.com →</a>
       </div>
     </div>
     <div class="bottom">
-      <div>qyedo · <span class="ph" data-ru="[Имя Фамилия]" data-en="[Full Name]">[Имя Фамилия]</span></div>
+      <div data-ru="qyedo · Виталий Левин" data-en="qyedo · Vitalij Levin">qyedo · Виталий Левин</div>
       <div>2026</div>
     </div>
   </div>
@@ -1295,7 +1289,7 @@
 <script>
 // ---------- i18n ----------
 const RESUME_URL = { ru: "Qyedo_CV.pdf", en: "Qyedo_CV_EN.pdf" };
-const RESUME_NAME = { ru: "Qyedo_CV.pdf", en: "Qyedo_CV_EN.pdf" };
+const RESUME_NAME = { ru: "Vitalij_Levin_CV_RU.pdf", en: "Vitalij_Levin_CV_EN.pdf" };
 
 // Texts that contain markup (accents, placeholders) — swapped via innerHTML.
 // Plain texts keep using data-ru / data-en attributes.
@@ -1305,41 +1299,41 @@ const I18N_HTML = {
     en: 'I build <em>whole</em> products — from the interface to the money layer and AI&nbsp;agents'
   },
   'hero.sub': {
-    ru: 'Построил GameFi-экосистему для Telegram, Web и Android с собственным финансовым ядром, мультитенантную SaaS-платформу с оркестрацией ИИ-моделей и платёжный слой на TON для <span class="ph">[N]</span> продуктов.',
-    en: 'Shipped a GameFi ecosystem across Telegram, Web and Android with its own financial core, a multi-tenant SaaS platform with multi-model AI orchestration, and a TON payment layer used by <span class="ph">[N]</span> products.'
+    ru: 'В одиночку построил GameFi-экосистему для Telegram, Web и Android (5&nbsp;000 регистраций), с&nbsp;нуля до&nbsp;MVP — SaaS-платформу с&nbsp;ИИ-агентами, которой уже пользуются первые клиенты, и&nbsp;crypto-платёжный слой для пяти продуктов.',
+    en: 'Single-handedly built a GameFi ecosystem for Telegram, Web and Android (5,000 sign-ups), took a SaaS platform with AI agents from idea to MVP — now used by its first clients — and built a crypto payment layer shared by five products.'
   },
   'mc.what': {
-    ru: 'Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг — когда знает и отвечает за каждую строку.</b>',
-    en: 'Vibe coding is not knowing what the model wrote. <b>Mindcoding is knowing — and owning every line.</b>'
+    ru: 'Вайбкодинг — это когда разработчик не знает, что сгенерировала модель. <b>Майндкодинг</b> — мой термин для обратного: <b>знаешь и отвечаешь за каждую строку.</b>',
+    en: 'Vibe coding is not knowing what the model wrote. <b>Mindcoding</b> — my term for the opposite: <b>knowing it and owning every line.</b>'
   }
 };
 
 // ---------- mindcoding session (hero terminal) ----------
-// Illustrative session: replace with a real story once available.
+// Stylised run of the real workflow: rules → map → task pool → batch → self-check → human review.
 const MC_SCRIPT = {
   ru: {
-    cmd: 'mindcode "вывод средств на TON-кошелёк"',
+    cmd: 'claude "возьми задачи из пула: платежи"',
     steps: [
-      ['spec',   'сценарии, лимиты, сбои сети', 'ok'],
-      ['plan',   '5 шагов · модель под каждый шаг', 'ok'],
-      ['gen',    'агент пишет код малыми diff’ами', 'ok'],
-      ['review', 'повтор запроса → двойное списание', 'bad'],
-      ['fix',    'ключ идемпотентности + запись в журнал', 'ok'],
-      ['check',  'тесты + ручная проверка денежных путей', 'ok']
+      ['rules',  'правила проекта и памятка агента', 'ok'],
+      ['map',    'карта проекта · архитектурные файлы', 'ok'],
+      ['pool',   'пачка задач по направлению «платежи»', 'ok'],
+      ['build',  'код и тесты по каждой задаче', 'ok'],
+      ['check',  'сверка с архитектурой · +1 задача в пул', 'ok'],
+      ['review', 'отправлено на приёмку человеку', 'ok']
     ],
-    done: 'готово · каждая строка прочитана человеком'
+    done: 'решение о приёмке — за мной'
   },
   en: {
-    cmd: 'mindcode "withdrawals to a TON wallet"',
+    cmd: 'claude "take tasks from the pool: payments"',
     steps: [
-      ['spec',   'flows, limits, network failures', 'ok'],
-      ['plan',   '5 steps · a model per step', 'ok'],
-      ['gen',    'agent writes small diffs', 'ok'],
-      ['review', 'retried request → double debit', 'bad'],
-      ['fix',    'idempotency key + ledger entry', 'ok'],
-      ['check',  'tests + manual check of money paths', 'ok']
+      ['rules',  'project rules and the agent guide', 'ok'],
+      ['map',    'project map · architecture docs', 'ok'],
+      ['pool',   'a batch of tasks: payments', 'ok'],
+      ['build',  'code and tests for each task', 'ok'],
+      ['check',  'checked against architecture · +1 task', 'ok'],
+      ['review', 'sent for human review', 'ok']
     ],
-    done: 'done · every line read by a human'
+    done: 'acceptance is my call'
   }
 };
 
@@ -1357,7 +1351,7 @@ function startMindTerm(lang){
   body.innerHTML =
     '<div class="mc-cmd"><span class="p">$ </span><span class="c"></span><span class="mc-caret"></span></div>' +
     data.steps.map(([s, t, kind]) =>
-      `<div class="mc-line${kind === 'bad' ? ' bad' : ''}${s === 'fix' ? ' fix' : ''}"><span class="s">${s}</span><span class="t">${esc(t)}</span><span class="m"></span></div>`
+      `<div class="mc-line${kind === 'bad' ? ' bad' : ''}${s === 'review' ? ' fix' : ''}"><span class="s">${s}</span><span class="t">${esc(t)}</span><span class="m"></span></div>`
     ).join('') +
     `<div class="mc-done">✓ ${esc(data.done)}<span class="mc-caret"></span></div>`;
 
@@ -1408,8 +1402,11 @@ function startMindTerm(lang){
   })();
 }
 
+const TITLE = { ru: 'Виталий Левин — fullstack product engineer', en: 'Vitalij Levin — fullstack product engineer' };
+
 function setLang(lang){
   document.getElementById('html-root').lang = lang;
+  document.title = TITLE[lang];
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     el.textContent = el.getAttribute('data-' + lang);
   });
@@ -1428,7 +1425,10 @@ function setLang(lang){
 }
 
 document.querySelectorAll('.langtoggle button').forEach(b => {
-  b.addEventListener('click', () => setLang(b.dataset.lang));
+  b.addEventListener('click', () => {
+    setLang(b.dataset.lang);
+    try { localStorage.setItem('lang', b.dataset.lang); } catch (e) {}
+  });
 });
 
 
@@ -1509,7 +1509,15 @@ function renderPrivateWork(){
 
 renderMoreWork();
 renderPrivateWork();
-setLang(document.getElementById('html-root').lang || 'ru');
+// ?lang=en in a shared link wins, then the visitor's last choice, then the browser language.
+function initialLang(){
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q === 'ru' || q === 'en') return q;
+  try { const saved = localStorage.getItem('lang'); if (saved === 'ru' || saved === 'en') return saved; } catch (e) {}
+  const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+  return langs.some(l => /^ru\b/i.test(l)) ? 'ru' : 'en';
+}
+setLang(initialLang());
 
 // ---------- lightbox (click any real screenshot to zoom) ----------
 const lightbox = document.getElementById('lightbox');

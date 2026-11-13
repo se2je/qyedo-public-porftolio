@@ -1,0 +1,2 @@
+# local CV previews from cv/build.ps1 (without -Final)
+cv/*_draft_*.pdf
